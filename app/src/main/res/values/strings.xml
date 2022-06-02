@@ -20,4 +20,9 @@
     <string name="add_new_contact">Add New Contact</string>
     <string name="contact_identifier">Enter Contact Identifier</string>
     <string name="button">Add</string>
+    <string name="display_name">Display name</string>
+    <string name="register">Register</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="password">Password</string>
+    <string name="already_have_an_account_login">Already have an account? Login</string>
 </resources>
