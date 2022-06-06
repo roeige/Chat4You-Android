@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/umbre"
+    android:background="@color/mainBg"
     tools:context=".RegisterActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Register"
-        android:textColor="@color/white"
+        android:textColor="@color/textColor"
         android:textSize="35dp"
         android:id="@+id/signin"
         android:layout_margin="50dp"
@@ -19,18 +19,21 @@
         android:gravity="center" />
 
     <EditText
+        android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/username"
         android:layout_below="@id/signin"
-        android:hint="Username"
-        android:textColorHint="@color/white"
-        android:layout_margin="10dp"
-        android:background="#10ffffff"
-        android:padding="20dp"
-        android:textColor="@color/white"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/editText"
         android:drawableLeft="@drawable/ic_baseline_person_24"
-        android:drawablePadding="10dp"/>
+        android:drawablePadding="10dp"
+        android:hint="Username"
+        android:padding="20dp"
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/hintColor" />
 
     <EditText
         android:id="@+id/name"
@@ -41,13 +44,13 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#10ffffff"
+        android:background="@color/editText"
         android:drawableLeft="@drawable/ic_baseline_person_24"
         android:drawablePadding="10dp"
         android:hint="@string/display_name"
         android:padding="20dp"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white" />
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/hintColor" />
 
     <EditText
         android:id="@+id/password"
@@ -57,43 +60,47 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:textColorHint="@color/white"
         android:layout_marginBottom="10dp"
-        android:background="#10ffffff"
+        android:background="@color/editText"
         android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
         android:drawablePadding="10dp"
-        android:inputType="textPassword"
         android:hint="@string/password"
+        android:inputType="textPassword"
         android:padding="20dp"
-        android:textColor="@color/white" />
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/hintColor" />
+
     <EditText
         android:id="@+id/confirm_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColorHint="@color/white"
-        android:inputType="textPassword"
         android:layout_below="@id/password"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:background="#10ffffff"
+        android:background="@color/editText"
         android:drawableLeft="@drawable/ic_baseline_vpn_key_24"
         android:drawablePadding="10dp"
         android:hint="@string/confirm_password"
+        android:inputType="textPassword"
         android:padding="20dp"
-        android:textColor="@color/white" />
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/hintColor" />
+
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/registerBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/registerBtn"
         android:layout_below="@id/confirm_password"
-        android:background="@color/cardview_light_background"
-        android:text="@string/register"
-        android:backgroundTint="@color/design_default_color_secondary"
         android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"
-        />
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/textColor"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/btns"
+        android:text="@string/register" />
 
 
 </RelativeLayout>
