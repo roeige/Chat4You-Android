@@ -6,24 +6,24 @@
     android:layout_height="match_parent"
     android:background="@drawable/umbre"
     android:orientation="vertical"
-    tools:context=".AddContactActivity">
+    tools:context=".SettingActivity">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
-        android:text="@string/add_new_contact"
-        android:textColor="@color/white"
+        android:text="@string/settings"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textColorHighlight="#803939"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.049" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,33 +31,33 @@
         android:orientation="vertical"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.446"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintVertical_bias="0.08"
+        tools:ignore="MissingConstraints">
 
-        <EditText
-            android:id="@+id/contactIdn"
+        <Switch
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:autofillHints=""
-            android:ems="10"
-            android:hint="@string/contact_identifier"
-            android:inputType="text"
             android:minHeight="48dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:textColorHint="#757575" />
+            android:text="@string/enable_darkmode"
+            android:textColor="@color/white"
+            tools:ignore="MissingConstraints,UseSwitchCompatOrMaterialXml" />
 
-        <Button
-            android:id="@+id/btnAddContact"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:text="@string/button"
-            android:textAlignment="center"
-            android:textColorLink="#784242" />
+            android:autofillHints=""
+            android:hint="@string/set_server"
+            android:inputType="textPostalAddress"
+            android:textColor="@color/white"
+            android:textColorHint="#BAB2B2"
+            tools:ignore="TouchTargetSizeCheck"
+            tools:layout_editor_absoluteX="137dp"
+            tools:layout_editor_absoluteY="186dp" />
 
     </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
