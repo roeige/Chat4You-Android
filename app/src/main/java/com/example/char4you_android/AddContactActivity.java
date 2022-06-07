@@ -20,8 +20,8 @@ public class AddContactActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJvcmllbCIsImp0aSI6IjQ3Yzg0NDQ5LTk0OWUtNGY2MS1hMjFkLWExZjFhNTNlNWYzMSIsImlhdCI6IjE2NTQ2Mjg0ODQiLCJ1c2VyaWQiOiJvcmllbCIsImV4cCI6MTY1NDY1MDA4NCwiaXNzIjoiQ2hhdDRZb3UiLCJhdWQiOiJpZGsifQ.7zZM7odlebmIxQKGoYefRxnXi_Pgi3Gaid8OnhO9nTw";
-        user = new User("oriel", "111111", "Oriel", token);
+        String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJpbmJhciIsImp0aSI6ImY0ZGE3NWMwLWIyMzMtNDgwNC05ZGZiLTcxNGU1MTliY2QyMiIsImlhdCI6IjE2NTQ2MzI2NTkiLCJ1c2VyaWQiOiJpbmJhciIsImV4cCI6MTY1NDY1NDI1OSwiaXNzIjoiQ2hhdDRZb3UiLCJhdWQiOiJpZGsifQ.F7hC3uObLvU4p1nq6Ghs_AZAzQVGTN8vyoSByF0nTg0";
+        user = new User("inbar", "111111", "Inbar", token);
         context = getApplicationContext();
         super.onCreate(savedInstanceState);
         ContactsAPI contactsAPI = new ContactsAPI(token);
