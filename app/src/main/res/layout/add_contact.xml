@@ -14,8 +14,8 @@
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
         android:text="@string/add_new_contact"
-        android:textColor="@color/white"
         android:textAlignment="center"
+        android:textColor="@color/white"
         android:textColorHighlight="#803939"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -29,12 +29,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dp"
+        android:padding="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:layout_constraintVertical_bias="0.446"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="0dp">
+
+        <EditText
+            android:id="@+id/nickName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/nickname"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="#757575" />
 
         <EditText
             android:id="@+id/contactIdn"
@@ -48,7 +63,24 @@
             android:minHeight="48dp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
+            android:textColor="@color/white"
             android:textColorHint="#757575" />
+        <EditText
+            android:id="@+id/serverAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/server_address"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="#757575"
+            />
+
 
         <Button
             android:id="@+id/btnAddContact"

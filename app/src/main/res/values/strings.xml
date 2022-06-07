@@ -18,7 +18,7 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="add_new_contact">Add New Contact</string>
-    <string name="contact_identifier">Enter Contact Identifier</string>
+    <string name="contact_identifier">Contact\'s Identifier</string>
     <string name="button">Add</string>
     <string name="display_name">Display name</string>
     <string name="register">Register</string>
@@ -30,4 +30,6 @@
     <string name="default_server">Default Server</string>
     <string name="set_server">http://10.0.2.2:7019/</string>
     <string name="BaseUrl">http://10.0.2.2:7019/api</string>
+    <string name="nickname">Nickname</string>
+    <string name="server_address">Server Address</string>
 </resources>

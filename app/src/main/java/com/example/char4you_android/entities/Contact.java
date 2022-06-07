@@ -9,13 +9,13 @@ import java.util.Date;
 public class Contact {
     private String ownerId;
     @PrimaryKey(autoGenerate=true)
-    private int id;
+    private String id;
     private String name;
     private String server;
     private String last;
     private Date lastdate;
 
-    public Contact(String ownerId, int id, String name, String server, String last, Date lastdate) {
+    public Contact(String ownerId, String id, String name, String server, String last, Date lastdate) {
         this.ownerId = ownerId;
         this.id = id;
         this.name = name;
@@ -23,12 +23,17 @@ public class Contact {
         this.last = last;
         this.lastdate = lastdate;
     }
+    public Contact(String id,String name,String server){
+        this.id=id;
+        this.name=name;
+        this.server=server;
+    }
 
     public void setOwnerId(String ownerId) {
         this.ownerId = ownerId;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -52,7 +57,7 @@ public class Contact {
         return ownerId;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 

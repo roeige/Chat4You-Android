@@ -4,9 +4,10 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.example.char4you_android.AddContactActivity;
 import com.example.char4you_android.Chat4You;
-import com.example.char4you_android.R;
 import com.example.char4you_android.entities.Contact;
+import com.example.char4you_android.entities.Invite;
 
 
 import java.util.List;
@@ -22,19 +23,21 @@ public class ContactsAPI {
 //
     Retrofit retrofit;
     WebServiceAPI webServiceAPI;
+    public static String token;
 
-    public ContactsAPI() {
+    public ContactsAPI(String Ctoken) {
 //        this.postListData = postListData;
 //        this.dao = dao;
+        token = Ctoken;
         retrofit = new Retrofit.Builder()
-                .baseUrl(Chat4You.context.getString(R.string.BaseUrl))
+                .baseUrl("http://10.0.2.2:7019/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         webServiceAPI = retrofit.create(WebServiceAPI.class);
     }
 
     public void get() {
-        Call<List<Contact>> call = webServiceAPI.getContacts();
+        Call<List<Contact>> call = webServiceAPI.getContacts("Bearer " + token);
         call.enqueue(new Callback<List<Contact>>() {
             @Override
             public void onResponse(@NonNull Call<List<Contact>> call, @NonNull Response<List<Contact>> response) {
@@ -49,23 +52,41 @@ public class ContactsAPI {
         });
     }
 
-    public void post(String contactId) {
-        Call<Void> call = webServiceAPI.createPost(contactId);
+    public void post(Contact contact) {
+        Call<Void> call = webServiceAPI.createContact("Bearer " + token, contact);
         call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
-                Toast.makeText(Chat4You.context, "Data added to API", Toast.LENGTH_LONG).show();
+                Toast.makeText(AddContactActivity.context, "Data added to API", Toast.LENGTH_LONG).show();
                 String responseString = "Response Code : " + response.code();
-                Toast.makeText(Chat4You.context, responseString, Toast.LENGTH_LONG).show();
+                Toast.makeText(AddContactActivity.context, responseString, Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onFailure(@NonNull Call<Void> call, @NonNull Throwable t) {
                 String responseString = "Error : " + t.toString();
-                Toast.makeText(Chat4You.context, responseString, Toast.LENGTH_LONG).show();
-
+                Toast.makeText(AddContactActivity.context, responseString, Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    public void inviteContact(Invite invite) {
+        Call<Void> call = webServiceAPI.inviteContact("Bearer " + token, invite);
+        call.enqueue(new Callback<Void>() {
+            @Override
+            public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
+                Toast.makeText(AddContactActivity.context, "Data added to API", Toast.LENGTH_LONG).show();
+                String responseString = "Response Code : " + response.code();
+                Toast.makeText(AddContactActivity.context, responseString, Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<Void> call, @NonNull Throwable t) {
+                String responseString = "Error : " + t.toString();
+                Toast.makeText(AddContactActivity.context, responseString, Toast.LENGTH_LONG).show();
+            }
+        });
+
 
     }
 
