@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.char4you_android.entities.User;
 import com.google.android.material.button.MaterialButton;
 
 import org.json.JSONException;
@@ -104,6 +105,7 @@ public class RegisterActivity extends AppCompatActivity {
                     else if(result.getBoolean("success")){
                         Log.i("H","User created, need to move to chat screen");
                         String token = result.getString("token");
+                        User user = new User(username.getText().toString(),username.getText().toString(),token);
                         //move to chat activity with the token
                     }
                     else{

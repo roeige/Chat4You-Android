@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.char4you_android.entities.User;
 import com.google.android.material.button.MaterialButton;
 
 import org.json.JSONException;
@@ -92,8 +93,8 @@ public class LoginActivity extends AppCompatActivity {
                                                         } else if (result.getBoolean("success")) {
                                                             Log.i("H", "Logged in");
                                                             String token = result.getString("token");
-                                                            Log.i("LOL",token);
-                                                            //move to chat activity with the token
+                                                            User user = new User(username.getText().toString(),username.getText().toString(),token);
+                                                            //move to chat activity with the user
                                                         } else {
                                                             Log.i("H", "Not");
                                                             Toast.makeText(LoginActivity.this, result.getString("message"), Toast.LENGTH_LONG).show();

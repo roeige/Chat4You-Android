@@ -21,7 +21,7 @@ public class AddContactActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJpbmJhciIsImp0aSI6ImY0ZGE3NWMwLWIyMzMtNDgwNC05ZGZiLTcxNGU1MTliY2QyMiIsImlhdCI6IjE2NTQ2MzI2NTkiLCJ1c2VyaWQiOiJpbmJhciIsImV4cCI6MTY1NDY1NDI1OSwiaXNzIjoiQ2hhdDRZb3UiLCJhdWQiOiJpZGsifQ.F7hC3uObLvU4p1nq6Ghs_AZAzQVGTN8vyoSByF0nTg0";
-        user = new User("inbar", "111111", "Inbar", token);
+        user = new User("inbar", "Inbar", token);
         context = getApplicationContext();
         super.onCreate(savedInstanceState);
         ContactsAPI contactsAPI = new ContactsAPI(token);
