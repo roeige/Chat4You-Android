@@ -14,6 +14,7 @@ import com.google.android.material.button.MaterialButton;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import okhttp3.MediaType;
@@ -44,8 +45,10 @@ public class RegisterActivity extends AppCompatActivity {
                 RequestBody body = RequestBody.create(JSON, json.toString());
                 Request request = new Request.Builder().url("http://10.0.2.2:7019/api/register").post(body).build();
                 Response response = client.newCall(request).execute();
+                List<String> Cookielist = response.headers().values("Set-Cookie");
+                String token = (Cookielist .get(0).split(";"))[0].split("=")[1];
                 if (response.code() == 201)
-                    return new JSONObject().put("success", true).put("message", "Created");
+                    return new JSONObject().put("success", true).put("message", "Created").put("token",token);
                 return new JSONObject().put("success", false).put("message", response.body().string());
             } catch (Exception e) {
                 Log.i("H", e.toString());
@@ -100,6 +103,8 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                     else if(result.getBoolean("success")){
                         Log.i("H","User created, need to move to chat screen");
+                        String token = result.getString("token");
+                        //move to chat activity with the token
                     }
                     else{
                         Log.i("H","Not");

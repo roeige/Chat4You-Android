@@ -17,6 +17,7 @@ import org.json.JSONObject;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 import okhttp3.FormBody;
@@ -47,8 +48,10 @@ public class LoginActivity extends AppCompatActivity {
                 RequestBody body = RequestBody.create(JSON, json.toString());
                 Request request = new Request.Builder().url("http://10.0.2.2:7019/api/login").post(body).build();
                 Response response = client.newCall(request).execute();
+                List<String> Cookielist = response.headers().values("Set-Cookie");
+                String token = (Cookielist .get(0).split(";"))[0].split("=")[1];
                 if (response.code() == 200)
-                    return new JSONObject().put("success", true).put("message", "Logged in");
+                    return new JSONObject().put("success", true).put("message", "Logged in").put("token",token);
                 return new JSONObject().put("success", false).put("message", response.body().string());
             } catch (Exception e) {
                 Log.i("H", e.toString());
@@ -88,6 +91,9 @@ public class LoginActivity extends AppCompatActivity {
                                                             return;
                                                         } else if (result.getBoolean("success")) {
                                                             Log.i("H", "Logged in");
+                                                            String token = result.getString("token");
+                                                            Log.i("LOL",token);
+                                                            //move to chat activity with the token
                                                         } else {
                                                             Log.i("H", "Not");
                                                             Toast.makeText(LoginActivity.this, result.getString("message"), Toast.LENGTH_LONG).show();
