@@ -7,16 +7,30 @@
     android:background="@color/mainBg"
     tools:context=".LoginActivity">
 
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Sign in"
-    android:textColor="@color/textColor"
-    android:textSize="35dp"
-    android:id="@+id/signin"
-    android:layout_margin="50dp"
-    android:textStyle="bold"
-    android:gravity="center" />
+    <ImageView
+        android:id="@+id/settings_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="-4dp"
+        android:contentDescription="Settings"
+        android:padding="10dp"
+        android:layout_marginRight="5dp"
+        app:srcCompat="@drawable/ic_settings" />
+
+    <TextView
+        android:id="@+id/signin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:text="@string/sign_in"
+        android:textColor="@color/textColor"
+        android:textSize="35sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/username"
@@ -28,12 +42,14 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:background="@color/editText"
-        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawableStart="@drawable/ic_baseline_person_24"
         android:drawablePadding="10dp"
         android:hint="Username"
         android:padding="20dp"
         android:textColor="@color/textColor"
-        android:textColorHint="@color/hintColor" />
+        android:textColorHint="@color/hintColor"
+        android:autofillHints=""
+         />
 
     <EditText
         android:id="@+id/password"
@@ -66,7 +82,7 @@
         android:backgroundTint="@color/btns"
         android:text="Log in"
         android:textAllCaps="false"
-        android:textColor="@color/textColor" />
+        android:textColor="#000000" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -100,7 +116,7 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_centerVertical="true"
-            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
             android:layout_toRightOf="@id/tvText"
             android:background="@color/textColor"
             />
@@ -118,9 +134,11 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:backgroundTint="@color/btns"
-        android:text="Create new account"
+        android:text="@string/create_new_account"
         android:textAllCaps="false"
-        android:textColor="@color/textColor"
-        android:textSize="17dp" />
+        android:textColor="#000000"
+        android:textSize="17sp" />
+
+
 
 </RelativeLayout>

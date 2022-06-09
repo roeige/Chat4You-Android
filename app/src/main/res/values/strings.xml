@@ -33,4 +33,6 @@
     <string name="nickname">Nickname</string>
     <string name="server_address">Server Address</string>
     <string name="registerTitle">Register</string>
+    <string name="sign_in">Sign in</string>
+    <string name="create_new_account">Create new account</string>
 </resources>

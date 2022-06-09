@@ -2,10 +2,12 @@ package com.example.char4you_android;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -26,7 +28,7 @@ import okhttp3.Response;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    public class RegisterTask extends AsyncTask<String,String,JSONObject> {
+    public class RegisterTask extends AsyncTask<String, String, JSONObject> {
 
 
         public final MediaType JSON
@@ -47,9 +49,9 @@ public class RegisterActivity extends AppCompatActivity {
                 Request request = new Request.Builder().url("http://10.0.2.2:7019/api/register").post(body).build();
                 Response response = client.newCall(request).execute();
                 List<String> Cookielist = response.headers().values("Set-Cookie");
-                String token = (Cookielist .get(0).split(";"))[0].split("=")[1];
+                String token = (Cookielist.get(0).split(";"))[0].split("=")[1];
                 if (response.code() == 201)
-                    return new JSONObject().put("success", true).put("message", "Created").put("token",token);
+                    return new JSONObject().put("success", true).put("message", "Created").put("token", token);
                 return new JSONObject().put("success", false).put("message", response.body().string());
             } catch (Exception e) {
                 Log.i("H", e.toString());
@@ -68,7 +70,13 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
+        ImageView imgFavorite = (ImageView) findViewById(R.id.settings_button);
+        imgFavorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegisterActivity.this, SettingActivity.class));
+            }
+        });
         TextView username = (TextView) findViewById(R.id.username);
         TextView name = (TextView) findViewById(R.id.name);
         TextView password = (TextView) findViewById(R.id.password);
@@ -78,47 +86,43 @@ public class RegisterActivity extends AppCompatActivity {
         MaterialButton registerBtn = (MaterialButton) findViewById(R.id.registerBtn);
 
         registerBtn.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View v) {
-                if(username.getText().toString().length()==0){
+            @Override
+            public void onClick(View v) {
+                if (username.getText().toString().length() == 0) {
                     Toast.makeText(RegisterActivity.this, "Username can not be empty", Toast.LENGTH_LONG).show();
                     return;
                 }
-                if(name.getText().toString().length()==0){
+                if (name.getText().toString().length() == 0) {
                     Toast.makeText(RegisterActivity.this, "Name can not be empty", Toast.LENGTH_LONG).show();
                     return;
                 }
-                if(password.getText().toString().length()<6){
+                if (password.getText().toString().length() < 6) {
                     Toast.makeText(RegisterActivity.this, "Password must be at least 6 characters", Toast.LENGTH_LONG).show();
                     return;
                 }
-                if(!password.getText().toString().equals(confirmPassword.getText().toString())){
+                if (!password.getText().toString().equals(confirmPassword.getText().toString())) {
                     Toast.makeText(RegisterActivity.this, "Passwords don't match", Toast.LENGTH_LONG).show();
                     return;
                 }
                 try {
-                    JSONObject result = new RegisterTask().execute(username.getText().toString(),name.getText().toString(),password.getText().toString()).get();
-                    if(result==null){
+                    JSONObject result = new RegisterTask().execute(username.getText().toString(), name.getText().toString(), password.getText().toString()).get();
+                    if (result == null) {
                         Toast.makeText(RegisterActivity.this, "Error occurred", Toast.LENGTH_LONG).show();
                         return;
-                    }
-                    else if(result.getBoolean("success")){
-                        Log.i("H","User created, need to move to chat screen");
+                    } else if (result.getBoolean("success")) {
+                        Log.i("H", "User created, need to move to chat screen");
                         String token = result.getString("token");
-                        User user = new User(username.getText().toString(),username.getText().toString(),token);
+                        User user = new User(username.getText().toString(), username.getText().toString(), token);
                         //move to chat activity with the token
-                    }
-                    else{
-                        Log.i("H","Not");
+                    } else {
+                        Log.i("H", "Not");
                         Toast.makeText(RegisterActivity.this, result.getString("message"), Toast.LENGTH_LONG).show();
                     }
-                }
-             catch (InterruptedException e) {
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            }
-                catch (JSONException e){
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }

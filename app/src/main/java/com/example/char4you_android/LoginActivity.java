@@ -1,12 +1,15 @@
 package com.example.char4you_android;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -68,11 +71,19 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
+        @RequiresApi(api = Build.VERSION_CODES.Q)
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            setTheme(getTheme());
             setContentView(R.layout.activity_login);
-
+            ImageView imgFavorite = (ImageView) findViewById(R.id.settings_button);
+            imgFavorite.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    startActivity(new Intent(LoginActivity.this, SettingActivity.class));
+                }
+            });
             TextView username = (TextView) findViewById(R.id.username);
             TextView password = (TextView) findViewById(R.id.password);
 

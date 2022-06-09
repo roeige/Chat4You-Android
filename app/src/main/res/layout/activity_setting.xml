@@ -32,26 +32,38 @@
         app:layout_constraintVertical_bias="0.08"
         tools:ignore="MissingConstraints">
 
-        <Switch
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/editText"
+            android:drawableLeft="@drawable/ic_nightmode"
+            android:drawablePadding="10dp"
+            android:padding="20dp"
             android:text="@string/enable_darkmode"
             android:textColor="@color/textColor"
-            tools:ignore="MissingConstraints,UseSwitchCompatOrMaterialXml" />
+            android:textColorHint="@color/hintColor"
+             />
 
         <EditText
-            android:id="@+id/textView3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:autofillHints=""
+            android:id="@+id/settingsServerAddress"
             android:hint="@string/set_server"
-            android:inputType="textPostalAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/editText"
+            android:drawableLeft="@drawable/ic_server"
+            android:drawablePadding="10dp"
+            android:padding="20dp"
             android:textColor="@color/textColor"
-            android:textColorHint="#BAB2B2"
-            tools:ignore="TouchTargetSizeCheck"
-            tools:layout_editor_absoluteX="137dp"
-            tools:layout_editor_absoluteY="186dp" />
+            android:textColorHint="@color/hintColor" />
 
     </LinearLayout>
 

@@ -5,7 +5,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 
 import com.example.char4you_android.AddContactActivity;
-import com.example.char4you_android.Chat4You;
 import com.example.char4you_android.entities.Contact;
 import com.example.char4you_android.entities.Invite;
 
@@ -55,6 +54,7 @@ public class ContactsAPI {
     public void post(Contact contact) {
         Call<Void> call = webServiceAPI.createContact("Bearer " + token, contact);
         call.enqueue(new Callback<Void>() {
+            Boolean returnVal;
             @Override
             public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
                 Toast.makeText(AddContactActivity.context, "Data added to API", Toast.LENGTH_LONG).show();
