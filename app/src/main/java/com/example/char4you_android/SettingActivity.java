@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.char4you_android.dialogs.SetServerDialog;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 public class SettingActivity extends AppCompatActivity {
@@ -38,6 +40,17 @@ public class SettingActivity extends AppCompatActivity {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             }
         });
+        SetServerDialog cdd = new SetServerDialog(SettingActivity.this);
+        TextView serverDef = findViewById(R.id.settingsServerAddress);
+        serverDef.setOnClickListener(v -> {
+            cdd.show();
+            cdd.setDialogResult(new SetServerDialog.OnMyDialogResult() {
+                @Override
+                public void finish(String result) {
+                    TextView serverDef = (TextView) findViewById(R.id.settingsServerAddress);
+                    serverDef.setText(result);
+                }
+            });
+        });
     }
-
 }

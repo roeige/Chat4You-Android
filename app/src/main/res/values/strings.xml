@@ -35,4 +35,7 @@
     <string name="registerTitle">Register</string>
     <string name="sign_in">Sign in</string>
     <string name="create_new_account">Create new account</string>
+    <string name="set">Set</string>
+    <string name="set_server_address">Set Server Address</string>
+    <string name="serverDefAdr">http://10.0.2.2:7019/</string>
 </resources>
