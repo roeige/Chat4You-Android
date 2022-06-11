@@ -9,7 +9,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="textColor">#000000</color>
-    <color name="hintColor">#000000</color>
+    <color name="hintColor">#A9A9A9</color>
     <color name="mainBg">#ffffff</color>
     <color name="btns">#1b7ced</color>
     <color name="editText">#101e1e1e</color>

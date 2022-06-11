@@ -3,6 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/amit.cohen/StudioProjects/Chat4You-Android/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.12" />
+        <entry key="..\:/Users/amit.cohen/StudioProjects/Chat4You-Android/app/src/main/res/layout/activity_chat_screen.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/amit.cohen/StudioProjects/Chat4You-Android/app/src/main/res/layout/activity_login.xml" value="0.16893115942028986" />
+        <entry key="..\:/Users/amit.cohen/StudioProjects/Chat4You-Android/app/src/main/res/layout/activity_register.xml" value="0.15625" />
+        <entry key="..\:/Users/amit.cohen/StudioProjects/Chat4You-Android/app/src/main/res/layout/activity_setting.xml" value="0.16893115942028986" />
+        <entry key="..\:/Users/amit.cohen/StudioProjects/Chat4You-Android/app/src/main/res/layout/activity_single_chat.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/amit.cohen/StudioProjects/Chat4You-Android/app/src/main/res/layout/add_contact.xml" value="0.16893115942028986" />
+        <entry key="..\:/Users/amit.cohen/StudioProjects/Chat4You-Android/app/src/main/res/layout/contact_layout.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/amit.cohen/StudioProjects/Chat4You-Android/app/src/main/res/layout/content_scrolling.xml" value="0.15625" />
+        <entry key="..\:/Users/amit.cohen/StudioProjects/Chat4You-Android/app/src/main/res/layout/setserver_dialog.xml" value="0.15625" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/drawable-anydpi/ic_server.xml" value="0.13" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/drawable-anydpi/ic_server_night.xml" value="0.13" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/drawable-night-mdpi/ic_server.xml" value="0.13" />

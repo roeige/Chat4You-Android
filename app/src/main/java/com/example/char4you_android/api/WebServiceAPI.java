@@ -2,6 +2,7 @@ package com.example.char4you_android.api;
 
 import com.example.char4you_android.entities.Contact;
 import com.example.char4you_android.entities.Invite;
+import com.example.char4you_android.entities.Message;
 
 import java.util.List;
 
@@ -25,4 +26,7 @@ public interface WebServiceAPI {
 
     @DELETE("contacts/{id}")
     Call<Void> deletePost(@Header("Authorization") String token, @Path("id") String id);
+
+    @GET("contacts/{id}/messages")
+    Call<List<Message>> getMessages(@Header("Authorization") String token, @Path("id") String id);
 }

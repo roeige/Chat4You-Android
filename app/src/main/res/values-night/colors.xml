@@ -8,7 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="textColor">#FFFFFFFF</color>
-    <color name="hintColor">#FFFFFFFF</color>
+    <color name="hintColor">#A9A9A9</color>
     <color name="mainBg">#2D313D</color>
     <color name="btns">#FF6200EE</color>
     <color name="editText">#10ffffff</color>

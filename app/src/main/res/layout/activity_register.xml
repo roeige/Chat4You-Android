@@ -6,15 +6,16 @@
     android:layout_height="match_parent"
     android:background="@color/mainBg"
     tools:context=".RegisterActivity">
+
     <ImageView
         android:id="@+id/settings_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="-4dp"
+        android:layout_marginRight="5dp"
         android:contentDescription="Settings"
         android:padding="10dp"
-        android:layout_marginRight="5dp"
         app:srcCompat="@drawable/ic_settings" />
 
     <TextView
@@ -110,11 +111,11 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
-        android:textColor="@color/textColor"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/btns"
-        android:text="@string/register" />
+        android:text="@string/register"
+        android:textColor="@color/textColor" />
 
 
 </RelativeLayout>

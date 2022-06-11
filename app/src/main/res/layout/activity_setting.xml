@@ -49,21 +49,21 @@
             android:textColorHint="@color/hintColor"
              />
 
-        <EditText
-            android:id="@+id/settingsServerAddress"
-            android:hint="@string/set_server"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@color/editText"
-            android:drawableLeft="@drawable/ic_server"
-            android:drawablePadding="10dp"
-            android:padding="20dp"
-            android:textColor="@color/textColor"
-            android:textColorHint="@color/hintColor" />
+    <TextView
+        android:id="@+id/settingsServerAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@color/editText"
+        android:drawableLeft="@drawable/ic_server"
+        android:drawablePadding="10dp"
+        android:text="@string/serverDefAdr"
+        android:padding="20dp"
+        android:textColor="@color/textColor"
+       />
 
     </LinearLayout>
 
