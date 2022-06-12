@@ -3,10 +3,11 @@ package com.example.char4you_android;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
+//import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -15,10 +16,11 @@ import com.example.char4you_android.api.ContactsAPI;
 import com.example.char4you_android.entities.Contact;
 import com.example.char4you_android.entities.User;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChatScreenActivity extends AppCompatActivity {
+public class ChatScreenActivity extends AppCompatActivity implements Serializable {
 
     public static User user;
 
@@ -27,6 +29,9 @@ public class ChatScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_screen);
+        Intent i = getIntent();
+        user = (User) i.getSerializableExtra("user");
+
 
         ImageView settingsBtn = (ImageView) findViewById(R.id.settings_button);
         settingsBtn.setOnClickListener(new View.OnClickListener() {
