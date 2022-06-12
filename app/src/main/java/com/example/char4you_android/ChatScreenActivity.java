@@ -58,6 +58,9 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
 
     @Override
     public void onContactClick(int positon) {
-        startActivity(new Intent(ChatScreenActivity.this,SingleChatActivity.class));
+        List<Contact> contactList = ContactListAdapter.getContacts();
+        Contact curContact = contactList.get(positon);
+        startActivity(new Intent(ChatScreenActivity.this,SingleChatActivity.class)
+                .putExtra("contact",curContact));
     }
 }

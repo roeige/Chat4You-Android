@@ -3,10 +3,11 @@ package com.example.char4you_android.entities;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class Contact {
+public class Contact implements Serializable {
     private String ownerId;
     @PrimaryKey(autoGenerate=true)
     private String id;

@@ -39,7 +39,7 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
     }
 
     private final LayoutInflater mInflater;
-    private List<Contact> contacts;
+    private static List<Contact> contacts;
     private final ContactClickListener mOnClickListener;
 
     public ContactListAdapter(Context context, ContactClickListener onClickListener) {
@@ -84,7 +84,7 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
         return 0;
     }
 
-    public List<Contact> getContacts() {
+    public static List<Contact> getContacts() {
         return contacts;
     }
     public void setContacts(List<Contact> c){
