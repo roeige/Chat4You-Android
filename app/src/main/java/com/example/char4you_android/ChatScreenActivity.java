@@ -3,6 +3,7 @@ package com.example.char4you_android;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 //import androidx.room.Room;
 
 import android.content.Intent;
@@ -11,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
+import com.example.char4you_android.adapters.ContactClickListener;
 import com.example.char4you_android.adapters.ContactListAdapter;
 import com.example.char4you_android.api.ContactsAPI;
 import com.example.char4you_android.entities.Contact;
@@ -20,7 +22,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChatScreenActivity extends AppCompatActivity implements Serializable {
+public class ChatScreenActivity extends AppCompatActivity implements Serializable, ContactClickListener {
 
     public static User user;
 
@@ -29,6 +31,8 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_screen);
+        SwipeRefreshLayout swipeRefreshLayout = findViewById(R.id.refreshLayout);
+        swipeRefreshLayout.setEnabled(false);
         Intent i = getIntent();
         user = (User) i.getSerializableExtra("user");
 
@@ -41,7 +45,7 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
             }
         });
         RecyclerView listContacts = findViewById(R.id.listContacts);
-        final ContactListAdapter adapter = new ContactListAdapter(this);
+        final ContactListAdapter adapter = new ContactListAdapter(this,this);
         listContacts.setAdapter(adapter);
         listContacts.setLayoutManager(new LinearLayoutManager(this));
 
@@ -50,5 +54,10 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
 
 
 
+    }
+
+    @Override
+    public void onContactClick(int positon) {
+        startActivity(new Intent(ChatScreenActivity.this,SingleChatActivity.class));
     }
 }

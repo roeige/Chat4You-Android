@@ -9,13 +9,14 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.char4you_android.R;
 import com.example.char4you_android.entities.Contact;
 
 import java.util.List;
 
 public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.ContactViewHolder> {
-    class ContactViewHolder extends RecyclerView.ViewHolder{
+    class ContactViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private final TextView nickname;
         private final TextView date;
         private final TextView lastMessageContent;
@@ -27,13 +28,24 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
             date = itemView.findViewById(R.id.date);
             lastMessageContent = itemView.findViewById(R.id.lastMessageContent);
             contactPic = itemView.findViewById(R.id.picture);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            int position =getAdapterPosition();
+            mOnClickListener.onContactClick(position);
         }
     }
 
     private final LayoutInflater mInflater;
     private List<Contact> contacts;
+    private final ContactClickListener mOnClickListener;
 
-    public ContactListAdapter(Context context) {mInflater = LayoutInflater.from(context);}
+    public ContactListAdapter(Context context, ContactClickListener onClickListener) {
+        mInflater = LayoutInflater.from(context);
+        mOnClickListener = onClickListener;
+    }
 
     @Override
     public ContactViewHolder onCreateViewHolder(ViewGroup parent, int viewType){

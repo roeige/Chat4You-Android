@@ -6,6 +6,7 @@
     android:layout_height="wrap_content">
 
     <LinearLayout
+        android:id="@+id/singleContact"
         android:layout_width="409dp"
         android:layout_height="95dp"
         android:orientation="horizontal"
