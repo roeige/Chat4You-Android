@@ -45,11 +45,25 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
     public void onBindViewHolder(@NonNull ContactViewHolder holder, int position) {
         if(contacts != null){
             final Contact current = contacts.get(position);
-          //  holder.date.setText(current.getLastdate().toString());
+             String curdate = current.getLastdate().substring(8,10) + '/' + current.getLastdate().substring(5,7) +
+             '/' +current.getLastdate().substring(2,4) + ' ' +
+                     current.getLastdate().substring(11,13) + ':' + current.getLastdate().substring(14,16);
+            holder.date.setText(curdate);
             holder.nickname.setText(current.getName());
-           // holder.contactPic.setImageResource();
+            String lastMessage = current.getLast();
+            if(current.getLast().length() > 15){
+                lastMessage = current.getLast().substring(0,15) + "...";
+            }
+            if(current.getLast().length() < 15){
+                int countSpaces = 15 - current.getLast().length();
+                for(int i=0;i<countSpaces;i++)
+                    lastMessage += " ";
+            }
+            holder.lastMessageContent.setText(lastMessage);
+            //holder.contactPic.setImageResource();
         }
     }
+
 
     @Override
     public int getItemCount() {

@@ -28,28 +28,24 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:textColor="@color/textColor"
-            android:textStyle="bold"
-            android:text="@string/nickname" />
+            android:text="@string/nickname"
+            android:textColor="@color/purple_500"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/date"
-            android:layout_width="wrap_content"
+            android:layout_width="41dp"
             android:layout_height="106dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:textColor="@color/textColor"
-            android:textStyle="bold"
-            android:text="last massage date" />
+            android:text="12/06/22 16:58"
+            android:textColor="@color/hintColor" />
 
         <TextView
             android:id="@+id/lastMessageContent"
             android:layout_width="wrap_content"
             android:layout_height="106dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:textColor="@color/textColor"
-            android:textStyle="bold"
-            android:text="lastMessageContent" />
+            android:text="ma kore ahsheli akol tov?"
+            android:textColor="@color/teal_200" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

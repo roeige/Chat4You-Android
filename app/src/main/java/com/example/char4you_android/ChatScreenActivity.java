@@ -40,37 +40,15 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
                 startActivity(new Intent(ChatScreenActivity.this, SettingActivity.class));
             }
         });
-
         RecyclerView listContacts = findViewById(R.id.listContacts);
         final ContactListAdapter adapter = new ContactListAdapter(this);
         listContacts.setAdapter(adapter);
         listContacts.setLayoutManager(new LinearLayoutManager(this));
 
-        //hard coded user should get user from other activities
-        String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhbWl0IiwianRpIjoiZmU5N2MxNTQtMzc5OS00NTg3LTlhNjgtMmY2NDllZjZjNzI1IiwiaWF0IjoiMTY1NTAzNjUzOSIsInVzZXJpZCI6ImFtaXQiLCJleHAiOjE2NTUwNDAxMzksImlzcyI6IkNoYXQ0WW91IiwiYXVkIjoiaWRrIn0.QGSNuSua2pvQ3pvlH4TmtaW5oZtPa0KIurR7GV3ba9I";
-        user = new User("amit", "cantgetban", token);
         ContactsAPI contactsAPI = new ContactsAPI(user.getToken());
-        contactsAPI.get();
+        contactsAPI.get(adapter);
 
 
-        //hard coded contacts
-       List<Contact> contacts = new ArrayList<>();
-//        contacts.add(new Contact("1","Amit","1111"));
-//        contacts.add(new Contact("2","Oriel","1111"));
-//        contacts.add(new Contact("3","Roei","1111"));
-//        contacts.add(new Contact("4","Hen","1111"));
-//        contacts.add(new Contact("5","Noam","1111"));
-//        contacts.add(new Contact("6","Noa","1111"));
-//        contacts.add(new Contact("7","Hadar","1111"));
-//        contacts.add(new Contact("8","Daniel","1111"));
-//        contacts.add(new Contact("9","Tom","1111"));
-//        contacts.add(new Contact("10","Dani","1111"));
-//        contacts.add(new Contact("11","Yossi","1111"));
-//        contacts.add(new Contact("12","Noam","1111"));
-
-
-
-        adapter.setContacts(contacts);
 
     }
 }
