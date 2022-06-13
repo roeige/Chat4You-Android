@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.char4you_android.R;
+import com.example.char4you_android.Utils.Utils;
 import com.example.char4you_android.entities.Contact;
 
 import java.util.List;
@@ -19,6 +20,7 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
     class ContactViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         private final TextView nickname;
         private final TextView date;
+        private final TextView time;
         private final TextView lastMessageContent;
         private final ImageView contactPic;
 
@@ -26,6 +28,7 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
             super(itemView);
             nickname = itemView.findViewById(R.id.nick);
             date = itemView.findViewById(R.id.date);
+            time = itemView.findViewById(R.id.time);
             lastMessageContent = itemView.findViewById(R.id.lastMessageContent);
             contactPic = itemView.findViewById(R.id.picture);
             itemView.setOnClickListener(this);
@@ -57,22 +60,13 @@ public class ContactListAdapter extends RecyclerView.Adapter<ContactListAdapter.
     public void onBindViewHolder(@NonNull ContactViewHolder holder, int position) {
         if(contacts != null){
             final Contact current = contacts.get(position);
-             String curdate = current.getLastdate().substring(8,10) + '/' + current.getLastdate().substring(5,7) +
-             '/' +current.getLastdate().substring(2,4) + ' ' +
-                     current.getLastdate().substring(11,13) + ':' + current.getLastdate().substring(14,16);
-            holder.date.setText(curdate);
+            int month = Integer.parseInt(current.getLastdate().substring(5, 7));
+            holder.date.setText(Utils.getMonth(month) +" " + current.getLastdate().substring(8,10));
             holder.nickname.setText(current.getName());
+            holder.time.setText(current.getLastdate().substring(11,13) + ':' + current.getLastdate().substring(14,16));
             String lastMessage = current.getLast();
-            if(current.getLast().length() > 15){
-                lastMessage = current.getLast().substring(0,15) + "...";
-            }
-            if(current.getLast().length() < 15){
-                int countSpaces = 15 - current.getLast().length();
-                for(int i=0;i<countSpaces;i++)
-                    lastMessage += " ";
-            }
             holder.lastMessageContent.setText(lastMessage);
-            //holder.contactPic.setImageResource();
+           // holder.contactPic.setImageResource();
         }
     }
 

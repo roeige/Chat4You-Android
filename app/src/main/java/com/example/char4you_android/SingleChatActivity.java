@@ -68,6 +68,9 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
         MessageAPI messageAPI = new MessageAPI(user.getToken());
         messageAPI.get(adapter,currentContact.getId());
 
+        LinearLayoutManager manager = new LinearLayoutManager(getApplicationContext());
+        manager.setStackFromEnd(false);
+        manager.setReverseLayout(true);
 
     }
 }

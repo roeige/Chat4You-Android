@@ -88,7 +88,7 @@ public class MessageListAdapter extends RecyclerView.Adapter {
         void bind(Message message) {
             msgText.setText(message.getContent());
             int month = Integer.parseInt(message.getCreated().substring(5, 7));
-            timeText.setText( message.getCreated().substring(11,13) + ':' + message.getCreated().substring(14,16));
+            timeText.setText(message.getCreated().substring(11,13) + ':' + message.getCreated().substring(14,16));
             dateText.setText(Utils.getMonth(month) +" " + message.getCreated().substring(8,10));
         }
     }

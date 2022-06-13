@@ -21,7 +21,8 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listMessages"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
     <LinearLayout
@@ -58,6 +59,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:backgroundTint="@color/btns"
             android:text="SEND" />
     </LinearLayout>
 
@@ -66,6 +68,7 @@
         android:layout_width="412dp"
         android:layout_height="67dp"
         android:orientation="horizontal"
+        android:background="@drawable/border"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -75,7 +78,7 @@
             android:layout_width="48dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:srcCompat="@drawable/ic_baseline_person_24" />
+            app:srcCompat="@mipmap/ic_launcher_round" />
 
         <TextView
             android:id="@+id/ContactNickname"
@@ -84,7 +87,7 @@
             android:layout_weight="10"
             android:gravity="center"
             android:text="Contact nickname"
-            android:textColor="@color/textColor"
+            android:textColor="@color/btns"
             android:textSize="35sp"
             android:textStyle="bold" />
 
