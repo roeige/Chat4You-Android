@@ -49,6 +49,7 @@
         <Button
             android:id="@+id/setServerBtn"
             android:text="@string/set"
+            android:backgroundTint="@color/btns"
             android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
