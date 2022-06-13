@@ -1,34 +1,73 @@
 package com.example.char4you_android;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.example.char4you_android.DB.AppDB;
+import com.example.char4you_android.adapters.MessageListAdapter;
+import com.example.char4you_android.api.MessageAPI;
+import com.example.char4you_android.dao.MessageDao;
 import com.example.char4you_android.entities.Contact;
+import com.example.char4you_android.entities.Message;
 import com.example.char4you_android.entities.User;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 public class SingleChatActivity extends AppCompatActivity implements Serializable {
     public static Contact currentContact;
+    public static User user;
+    private AppDB db;
+    private MessageDao messageDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_chat);
-
+        SwipeRefreshLayout swipeRefreshLayout = findViewById(R.id.refreshSingleChat);
+        swipeRefreshLayout.setEnabled(false);
         ImageView settingsBtn = (ImageView) findViewById(R.id.settings_button);
-        settingsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(SingleChatActivity.this, SettingActivity.class));
-            }
-        });
+        settingsBtn.setOnClickListener(v -> startActivity(new Intent(SingleChatActivity.this, SettingActivity.class)));
         Intent i = getIntent();
         currentContact = (Contact) i.getSerializableExtra("contact");
+        TextView ContactNickname = findViewById(R.id.ContactNickname);
+        ContactNickname.setText(currentContact.getName());
+        user = (User) i.getSerializableExtra("user");
+
+        db= Room.databaseBuilder(getApplicationContext(), AppDB.class,"MessageDB")
+                .allowMainThreadQueries().build();
+        messageDao = db.messageDao();
+
+        Button sendBtn = findViewById(R.id.sendBtn);
+        sendBtn.setOnClickListener(view -> {
+            EditText msgBox = findViewById(R.id.msgBox);
+            Message message = new Message(0,msgBox.getText().toString(),
+                    new Date().toString(),true);
+            messageDao.insert(message);
+
+        });
+        RecyclerView listMessages = findViewById(R.id.listMessages);
+        final MessageListAdapter adapter = new MessageListAdapter(this);
+        listMessages.setAdapter(adapter);
+        listMessages.setLayoutManager(new LinearLayoutManager(this));
+
+        MessageAPI messageAPI = new MessageAPI(user.getToken());
+        messageAPI.get(adapter,currentContact.getId());
+
+
     }
 }

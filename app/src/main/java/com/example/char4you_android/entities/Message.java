@@ -1,17 +1,24 @@
 package com.example.char4you_android.entities;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+import java.io.Serializable;
 import java.util.Date;
 
-public class Message {
+@Entity
+public class Message implements Serializable {
+
+    @PrimaryKey(autoGenerate = true)
     int id;
-    String Content;
-    Date Created;
+    String content;
+    String created;
     boolean sent;
 
-    public Message(int id, String content, Date created, boolean sent) {
+    public Message(int id, String content, String created, boolean sent) {
         this.id = id;
-        Content = content;
-        Created = created;
+        this.content = content;
+        this.created = created;
         this.sent = sent;
     }
 
@@ -24,19 +31,19 @@ public class Message {
     }
 
     public String getContent() {
-        return Content;
+        return content;
     }
 
     public void setContent(String content) {
-        Content = content;
+        content = content;
     }
 
-    public Date getCreated() {
-        return Created;
+    public String getCreated() {
+        return created;
     }
 
-    public void setCreated(Date created) {
-        Created = created;
+    public void setCreated(String created) {
+        created = created;
     }
 
     public boolean isSent() {

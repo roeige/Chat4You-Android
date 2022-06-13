@@ -61,6 +61,6 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
         List<Contact> contactList = ContactListAdapter.getContacts();
         Contact curContact = contactList.get(positon);
         startActivity(new Intent(ChatScreenActivity.this,SingleChatActivity.class)
-                .putExtra("contact",curContact));
+                .putExtra("contact",curContact).putExtra("user",user));
     }
 }
