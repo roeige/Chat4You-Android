@@ -53,15 +53,6 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
         db= Room.databaseBuilder(getApplicationContext(), AppDB.class,"MessageDB")
                 .allowMainThreadQueries().build();
         messageDao = db.messageDao();
-
-        Button sendBtn = findViewById(R.id.sendBtn);
-        sendBtn.setOnClickListener(view -> {
-            EditText msgBox = findViewById(R.id.msgBox);
-            Message message = new Message(0,msgBox.getText().toString(),
-                    new Date().toString(),true);
-            messageDao.insert(message);
-
-        });
         RecyclerView listMessages = findViewById(R.id.listMessages);
         final MessageListAdapter adapter = new MessageListAdapter(this);
         listMessages.setAdapter(adapter);
@@ -71,6 +62,17 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
 
         MessageAPI messageAPI = new MessageAPI(user.getToken());
         messageAPI.get(adapter,currentContact.getId());
+
+        Button sendBtn = findViewById(R.id.sendBtn);
+        sendBtn.setOnClickListener(view -> {
+            EditText msgBox = findViewById(R.id.msgBox);
+            Message message = new Message(0,msgBox.getText().toString(),
+                    null,true);
+            messageDao.insert(message);
+            messageAPI.post(adapter,currentContact.getId(),message);
+            msgBox.setText(null);
+            messageAPI.get(adapter,currentContact.getId());
+        });
 
     }
 }

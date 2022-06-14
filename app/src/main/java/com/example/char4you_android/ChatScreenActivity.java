@@ -48,7 +48,9 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
         RecyclerView listContacts = findViewById(R.id.listContacts);
         final ContactListAdapter adapter = new ContactListAdapter(this,this);
         listContacts.setAdapter(adapter);
-        listContacts.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        manager.setReverseLayout(true);
+        listContacts.setLayoutManager(manager);
 
         ContactsAPI contactsAPI = new ContactsAPI(user.getToken());
         contactsAPI.get(adapter);

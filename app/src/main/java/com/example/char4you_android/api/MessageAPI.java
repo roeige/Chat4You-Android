@@ -47,27 +47,24 @@ public class MessageAPI {
 
             @Override
             public void onFailure(@NonNull Call<List<Message>> call, @NonNull Throwable t) {
-                Log.i("fail","fail");
+                Log.i("fail","fail get messages");
             }
         });
     }
 
-    public void post(Contact contact) {
-        Call<Void> call = webServiceAPI.createContact("Bearer " + token, contact);
+    public void post(final MessageListAdapter adapter,String id,Message message) {
+        Call<Void> call = webServiceAPI.createMessage("Bearer " + token, id,message);
         call.enqueue(new Callback<Void>() {
             Boolean returnVal;
 
             @Override
             public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
-                Toast.makeText(AddContactActivity.context, "Data added to API", Toast.LENGTH_LONG).show();
-                String responseString = "Response Code : " + response.code();
-                Toast.makeText(AddContactActivity.context, responseString, Toast.LENGTH_LONG).show();
+                Log.i("success","success post message");
             }
 
             @Override
             public void onFailure(@NonNull Call<Void> call, @NonNull Throwable t) {
-                String responseString = "Error : " + t.toString();
-                Toast.makeText(AddContactActivity.context, responseString, Toast.LENGTH_LONG).show();
+                Log.i("fail","fail post message");
             }
         });
     }
