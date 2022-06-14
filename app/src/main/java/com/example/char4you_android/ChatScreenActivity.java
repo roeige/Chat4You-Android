@@ -59,7 +59,7 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
         addNewContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ChatScreenActivity.this, AddContactActivity.class));
+                startActivity(new Intent(ChatScreenActivity.this, AddContactActivity.class).putExtra("user",user));
             }
         });
 
