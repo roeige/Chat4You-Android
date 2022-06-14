@@ -44,7 +44,6 @@ public class AddContactActivity extends AppCompatActivity {
                 startActivity(new Intent(AddContactActivity.this, SettingActivity.class));
             }
         });
-        contactsAPI.get();
         Button btnAddContact = findViewById(R.id.btnAddContact);
         btnAddContact.setOnClickListener(v -> {
             /*

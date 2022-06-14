@@ -1,10 +1,12 @@
 package com.example.char4you_android.api;
 
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
 import com.example.char4you_android.AddContactActivity;
+import com.example.char4you_android.adapters.ContactListAdapter;
 import com.example.char4you_android.entities.Contact;
 import com.example.char4you_android.entities.Invite;
 
@@ -35,18 +37,18 @@ public class ContactsAPI {
         webServiceAPI = retrofit.create(WebServiceAPI.class);
     }
 
-    public void get() {
+    public void get(final ContactListAdapter adapter) {
         Call<List<Contact>> call = webServiceAPI.getContacts("Bearer " + token);
         call.enqueue(new Callback<List<Contact>>() {
             @Override
             public void onResponse(@NonNull Call<List<Contact>> call, @NonNull Response<List<Contact>> response) {
-                List<Contact> contactList = response.body();
+                adapter.setContacts(response.body());
             }
 
 
             @Override
             public void onFailure(@NonNull Call<List<Contact>> call, @NonNull Throwable t) {
-
+                Log.i("fail","fail");
             }
         });
     }
@@ -55,6 +57,7 @@ public class ContactsAPI {
         Call<Void> call = webServiceAPI.createContact("Bearer " + token, contact);
         call.enqueue(new Callback<Void>() {
             Boolean returnVal;
+
             @Override
             public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
                 Toast.makeText(AddContactActivity.context, "Data added to API", Toast.LENGTH_LONG).show();

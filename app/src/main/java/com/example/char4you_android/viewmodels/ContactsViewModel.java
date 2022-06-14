@@ -7,17 +7,17 @@ import com.example.char4you_android.entities.Contact;
 
 import java.util.List;
 
-//public class ContactsViewModel extends ViewModel {
-//    private ContactsRepository mRepository;
-//    private LiveData<List<Contact>> contacts;
-//    public ContactsViewModel(){
-//        mRepository=new ContactsRepository();
-//        contacts= mRepository.getAll();
-//    }
-//    public LiveData<List<Contact>> get(){return contacts;}
+public class ContactsViewModel extends ViewModel {
+    private LiveData<List<Contact>> Contacts;
+//    private ContactsRepository mContacts;
 //
-//    public void add(Contact contact){mRepository.add(contact);}
-//    public void delete(Contact contact){mRepository.delete(contact);}
-//    public void reload(){mRepository.reload();}
-//}
+//    public ContactsViewModel(){
+//        mContacts = new ContactsRepository();
+//        Contacts = mContacts.getAll();
+//    }
+//
+//    public LiveData<List<Contact>> get() { return Contacts;}
+//    public void add(Contact contact) {mContacts.add(contact);}
+//    public void reload() {mContacts.reload();}
 
+}

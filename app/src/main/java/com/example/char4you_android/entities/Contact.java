@@ -3,19 +3,20 @@ package com.example.char4you_android.entities;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-public class Contact {
+public class Contact implements Serializable {
     private String ownerId;
     @PrimaryKey(autoGenerate=true)
     private String id;
     private String name;
     private String server;
     private String last;
-    private Date lastdate;
+    private String lastdate;
 
-    public Contact(String ownerId, String id, String name, String server, String last, Date lastdate) {
+    public Contact(String ownerId, String id, String name, String server, String last, String lastdate) {
         this.ownerId = ownerId;
         this.id = id;
         this.name = name;
@@ -49,7 +50,7 @@ public class Contact {
         this.last = last;
     }
 
-    public void setLastdate(Date lastdate) {
+    public void setLastdate(String lastdate) {
         this.lastdate = lastdate;
     }
 
@@ -73,7 +74,7 @@ public class Contact {
         return last;
     }
 
-    public Date getLastdate() {
+    public String getLastdate() {
         return lastdate;
     }
 }

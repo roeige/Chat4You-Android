@@ -7,6 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,7 +50,8 @@ public class RegisterActivity extends AppCompatActivity {
                 Request request = new Request.Builder().url("http://10.0.2.2:7019/api/register").post(body).build();
                 Response response = client.newCall(request).execute();
                 List<String> Cookielist = response.headers().values("Set-Cookie");
-                String token = (Cookielist.get(0).split(";"))[0].split("=")[1];
+                String token = "";
+                if(Cookielist.size()>0) token = (Cookielist .get(0).split(";"))[0].split("=")[1];
                 if (response.code() == 201)
                     return new JSONObject().put("success", true).put("message", "Created").put("token", token);
                 return new JSONObject().put("success", false).put("message", response.body().string());
@@ -113,6 +115,7 @@ public class RegisterActivity extends AppCompatActivity {
                         Log.i("H", "User created, need to move to chat screen");
                         String token = result.getString("token");
                         User user = new User(username.getText().toString(), username.getText().toString(), token);
+                        startActivity(new Intent(RegisterActivity.this,ChatScreenActivity.class).putExtra("user",user));
                         //move to chat activity with the token
                     } else {
                         Log.i("H", "Not");

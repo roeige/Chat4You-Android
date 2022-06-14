@@ -18,6 +18,7 @@
         android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@+id/add_contact"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_settings" />
 
     <TextView
@@ -99,6 +100,7 @@
             android:layout_height="match_parent"
             android:layout_gravity="center"
             android:text="@string/button"
+            android:backgroundTint="@color/btns"
             android:textAlignment="center"
             android:textColorLink="#784242" />
 

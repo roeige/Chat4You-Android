@@ -9,26 +9,39 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_monkey"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_monkey_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Char4You_Android"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".SingleChatActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ChatScreenActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.RUN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".SettingActivity"
             android:exported="true"
             android:label="Chat4You">
             <intent-filter>
                 <action android:name="android.intent.action.RUN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".RegisterActivity"
             android:exported="true" />
-
         <activity
             android:name=".LoginActivity"
             android:exported="true"
@@ -42,10 +55,7 @@
         <activity
             android:name=".AddContactActivity"
             android:exported="true"
-            android:label="Chat4You">
-
-        </activity>
-
+            android:label="Chat4You" />
     </application>
 
 </manifest>

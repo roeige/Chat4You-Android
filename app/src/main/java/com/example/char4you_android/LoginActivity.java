@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -53,7 +54,8 @@ public class LoginActivity extends AppCompatActivity {
                 Request request = new Request.Builder().url("http://10.0.2.2:7019/api/login").post(body).build();
                 Response response = client.newCall(request).execute();
                 List<String> Cookielist = response.headers().values("Set-Cookie");
-                String token = (Cookielist .get(0).split(";"))[0].split("=")[1];
+                String token = "";
+                if(Cookielist.size()>0) token = (Cookielist .get(0).split(";"))[0].split("=")[1];
                 if (response.code() == 200)
                     return new JSONObject().put("success", true).put("message", "Logged in").put("token",token);
                 return new JSONObject().put("success", false).put("message", response.body().string());
@@ -105,6 +107,7 @@ public class LoginActivity extends AppCompatActivity {
                                                             Log.i("H", "Logged in");
                                                             String token = result.getString("token");
                                                             User user = new User(username.getText().toString(),username.getText().toString(),token);
+                                                            startActivity(new Intent(LoginActivity.this,ChatScreenActivity.class).putExtra("user",user));
                                                             //move to chat activity with the user
                                                         } else {
                                                             Log.i("H", "Not");
