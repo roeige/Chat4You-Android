@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -38,6 +39,7 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_chat);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         SwipeRefreshLayout swipeRefreshLayout = findViewById(R.id.refreshSingleChat);
         swipeRefreshLayout.setEnabled(false);
         ImageView settingsBtn = (ImageView) findViewById(R.id.settings_button);
@@ -63,14 +65,12 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
         RecyclerView listMessages = findViewById(R.id.listMessages);
         final MessageListAdapter adapter = new MessageListAdapter(this);
         listMessages.setAdapter(adapter);
-        listMessages.setLayoutManager(new LinearLayoutManager(this));
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        manager.setStackFromEnd(true);
+        listMessages.setLayoutManager(manager);
 
         MessageAPI messageAPI = new MessageAPI(user.getToken());
         messageAPI.get(adapter,currentContact.getId());
-
-        LinearLayoutManager manager = new LinearLayoutManager(getApplicationContext());
-        manager.setStackFromEnd(false);
-        manager.setReverseLayout(true);
 
     }
 }
