@@ -6,10 +6,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 //import androidx.room.Room;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -21,7 +22,6 @@ import com.example.char4you_android.entities.Contact;
 import com.example.char4you_android.entities.User;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ChatScreenActivity extends AppCompatActivity implements Serializable, ContactClickListener {
@@ -39,6 +39,7 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
         user = (User) i.getSerializableExtra("user");
 //        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         ImageView settingsBtn = (ImageView) findViewById(R.id.settings_button);
+
         settingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,7 +47,7 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
             }
         });
         RecyclerView listContacts = findViewById(R.id.listContacts);
-        final ContactListAdapter adapter = new ContactListAdapter(this,this);
+        final ContactListAdapter adapter = new ContactListAdapter(this, this);
         listContacts.setAdapter(adapter);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setReverseLayout(true);
@@ -59,11 +60,9 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
         addNewContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ChatScreenActivity.this, AddContactActivity.class).putExtra("user",user));
+                startActivity(new Intent(ChatScreenActivity.this, AddContactActivity.class).putExtra("user", user));
             }
         });
-
-
 
     }
 
@@ -71,7 +70,19 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
     public void onContactClick(int positon) {
         List<Contact> contactList = ContactListAdapter.getContacts();
         Contact curContact = contactList.get(positon);
-        startActivity(new Intent(ChatScreenActivity.this,SingleChatActivity.class)
-                .putExtra("contact",curContact).putExtra("user",user));
+        int orientation = getResources().getConfiguration().orientation;
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            // In landscape
+//            FragmentManager fragmentManager = getFragmentManager();
+//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+//            ChatFragment fragment = new ChatFragment();
+////            fragmentTransaction.add(R.id.my_parent_layout, fragment);
+//            fragmentTransaction.commit();
+        } else {
+            // In portrait
+
+            startActivity(new Intent(ChatScreenActivity.this, SingleChatActivity.class)
+                    .putExtra("contact", curContact).putExtra("user", user));
+        }
     }
 }
