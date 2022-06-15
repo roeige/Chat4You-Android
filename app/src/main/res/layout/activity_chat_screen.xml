@@ -28,9 +28,9 @@
             <ImageView
                 android:id="@+id/picture"
                 android:layout_width="match_parent"
-                android:layout_height="63dp"
+                android:layout_height="70dp"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/ic_cool_avatar_round" />
+                android:src="@mipmap/ic_logo" />
 
         </androidx.cardview.widget.CardView>
 
