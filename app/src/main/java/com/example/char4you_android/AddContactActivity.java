@@ -55,9 +55,10 @@ public class AddContactActivity extends AppCompatActivity {
                 Toast.makeText(AddContactActivity.this, "Please enter right contact Id", Toast.LENGTH_SHORT).show();
                 return;
             }
-            contactsAPI.post(contact);
-            //need to check if post succeeded, only if it did, go and invite contact.
-            contactsAPI.inviteContact(new Invite(user.getUsername(), contactIdStr, serverAdrsStr));
+            if (contactsAPI.post(contact)) {
+                contactsAPI.inviteContact(new Invite(user.getUsername(), contactIdStr, serverAdrsStr));
+            }
+            startActivity(new Intent(AddContactActivity.this, ChatScreenActivity.class));
         });
     }
 

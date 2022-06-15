@@ -48,29 +48,32 @@ public class ContactsAPI {
 
             @Override
             public void onFailure(@NonNull Call<List<Contact>> call, @NonNull Throwable t) {
-                Log.i("fail","fail");
+                Log.i("fail", "fail");
             }
         });
     }
 
-    public void post(Contact contact) {
+    public Boolean post(Contact contact) {
+        final Boolean[] success = new Boolean[1];
         Call<Void> call = webServiceAPI.createContact("Bearer " + token, contact);
         call.enqueue(new Callback<Void>() {
-            Boolean returnVal;
-
             @Override
             public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
                 Toast.makeText(AddContactActivity.context, "Data added to API", Toast.LENGTH_LONG).show();
                 String responseString = "Response Code : " + response.code();
                 Toast.makeText(AddContactActivity.context, responseString, Toast.LENGTH_LONG).show();
+                success[0] = true;
+
             }
 
             @Override
             public void onFailure(@NonNull Call<Void> call, @NonNull Throwable t) {
                 String responseString = "Error : " + t.toString();
                 Toast.makeText(AddContactActivity.context, responseString, Toast.LENGTH_LONG).show();
+                success[0] = false;
             }
         });
+        return success[0];
     }
 
     public void inviteContact(Invite invite) {

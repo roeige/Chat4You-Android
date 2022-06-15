@@ -8,17 +8,16 @@
 
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="412dp"
-        android:layout_height="67dp"
-        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:background="@drawable/border"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBaseline_toBottomOf="@+id/refreshLayout"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="44dp"
+            android:layout_width="20dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_weight="1"
@@ -45,34 +44,43 @@
             android:textSize="25sp"
             android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/settings_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginBottom="7dp"
-            android:contentDescription="Settings"
-            android:padding="10dp"
-            app:layout_constraintBottom_toTopOf="@+id/add_contact"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_settings" />
-
     </LinearLayout>
+
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/refreshLayout"
-        android:layout_width="393dp"
-        android:layout_height="421dp"
-        android:paddingLeft="3dp"
+        android:paddingTop="5dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginStart="4dp"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/btnAddNewContact"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
         tools:ignore="MissingConstraints">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/listContacts"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refreshSingleChat"
+        android:layout_width="304dp"
+        android:layout_height="254dp"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/btnAddNewContact"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toEndOf="@+id/refreshLayout"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listMessages"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
@@ -84,12 +92,26 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="10dp"
         android:backgroundTint="@color/btns"
-        android:text="Add"
+        android:text="@string/add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/refreshLayout" />
+
+    <ImageView
+        android:id="@+id/settings_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="7dp"
+        android:contentDescription="Settings"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/add_contact"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_settings" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
