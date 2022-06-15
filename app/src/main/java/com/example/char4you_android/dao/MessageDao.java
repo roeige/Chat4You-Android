@@ -13,11 +13,11 @@ import java.util.List;
 @Dao
 public interface MessageDao {
 
-//    @Query("SELECT * FROM messages")
-//    List<Message> index();
-//
-//    @Query("SELECT * FROM messages WHERE id =:id")
-//    Message get(int id);
+    @Query("SELECT * FROM message")
+    List<Message> index();
+
+    @Query("SELECT * FROM message WHERE id =:id")
+    Message get(int id);
 
     @Insert
     void insert(Message... messages);

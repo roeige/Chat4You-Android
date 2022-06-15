@@ -55,6 +55,10 @@ public class MessageListAdapter extends RecyclerView.Adapter {
         notifyDataSetChanged();
     }
 
+    public List<Message> getMessages() {
+        return messages;
+    }
+
     @Override
     public int getItemViewType(int positon) {
         Message message = messages.get(positon);

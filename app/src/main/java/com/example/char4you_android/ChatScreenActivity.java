@@ -1,20 +1,18 @@
 package com.example.char4you_android;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-//import androidx.room.Room;
-
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
+import com.example.char4you_android.DB.AppDB;
 import com.example.char4you_android.adapters.ContactClickListener;
 import com.example.char4you_android.adapters.ContactListAdapter;
 import com.example.char4you_android.api.ContactsAPI;
@@ -27,6 +25,7 @@ import java.util.List;
 public class ChatScreenActivity extends AppCompatActivity implements Serializable, ContactClickListener {
 
     public static User user;
+    public static AppDB db;
 
 
     @Override
@@ -37,13 +36,15 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
         swipeRefreshLayout.setEnabled(false);
         Intent i = getIntent();
         user = (User) i.getSerializableExtra("user");
+        db = Room.databaseBuilder(getApplicationContext(), AppDB.class, "roomDB")
+                .allowMainThreadQueries().build();
 //        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         ImageView settingsBtn = (ImageView) findViewById(R.id.settings_button);
 
         settingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ChatScreenActivity.this, SettingActivity.class));
+                startActivity(new Intent(ChatScreenActivity.this, SettingActivity.class).putExtra("roomDB", db));
             }
         });
         RecyclerView listContacts = findViewById(R.id.listContacts);
@@ -70,19 +71,7 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
     public void onContactClick(int positon) {
         List<Contact> contactList = ContactListAdapter.getContacts();
         Contact curContact = contactList.get(positon);
-        int orientation = getResources().getConfiguration().orientation;
-        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            // In landscape
-//            FragmentManager fragmentManager = getFragmentManager();
-//            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-//            ChatFragment fragment = new ChatFragment();
-////            fragmentTransaction.add(R.id.my_parent_layout, fragment);
-//            fragmentTransaction.commit();
-        } else {
-            // In portrait
-
-            startActivity(new Intent(ChatScreenActivity.this, SingleChatActivity.class)
-                    .putExtra("contact", curContact).putExtra("user", user));
-        }
+        startActivity(new Intent(ChatScreenActivity.this, SingleChatActivity.class)
+                .putExtra("contact", curContact).putExtra("user", user).putExtra("roomDB", db));
     }
 }

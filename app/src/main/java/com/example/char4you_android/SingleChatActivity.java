@@ -1,20 +1,17 @@
 package com.example.char4you_android;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.char4you_android.DB.AppDB;
 import com.example.char4you_android.adapters.MessageListAdapter;
@@ -25,9 +22,6 @@ import com.example.char4you_android.entities.Message;
 import com.example.char4you_android.entities.User;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 public class SingleChatActivity extends AppCompatActivity implements Serializable {
     public static Contact currentContact;
@@ -49,9 +43,9 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
         TextView ContactNickname = findViewById(R.id.ContactNickname);
         ContactNickname.setText(currentContact.getName());
         user = (User) i.getSerializableExtra("user");
+        db = (AppDB) i.getSerializableExtra("roomDB");
 
-        db= Room.databaseBuilder(getApplicationContext(), AppDB.class,"MessageDB")
-                .allowMainThreadQueries().build();
+
         messageDao = db.messageDao();
         RecyclerView listMessages = findViewById(R.id.listMessages);
         final MessageListAdapter adapter = new MessageListAdapter(this);
@@ -68,7 +62,6 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
             EditText msgBox = findViewById(R.id.msgBox);
             Message message = new Message(0,msgBox.getText().toString(),
                     null,true);
-            messageDao.insert(message);
             messageAPI.post(adapter,currentContact.getId(),message);
             msgBox.setText(null);
             messageAPI.get(adapter,currentContact.getId());

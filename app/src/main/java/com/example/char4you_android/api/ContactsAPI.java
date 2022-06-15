@@ -25,6 +25,7 @@ public class ContactsAPI {
     Retrofit retrofit;
     WebServiceAPI webServiceAPI;
     public static String token;
+    private static ContactsAPI api;
 
     public ContactsAPI(String Ctoken) {
 //        this.postListData = postListData;
@@ -36,6 +37,7 @@ public class ContactsAPI {
                 .build();
         webServiceAPI = retrofit.create(WebServiceAPI.class);
     }
+
 
     public void get(final ContactListAdapter adapter) {
         Call<List<Contact>> call = webServiceAPI.getContacts("Bearer " + token);
