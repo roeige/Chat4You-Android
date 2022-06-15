@@ -18,8 +18,10 @@ import android.widget.ImageView;
 import com.example.char4you_android.adapters.ContactClickListener;
 import com.example.char4you_android.adapters.ContactListAdapter;
 import com.example.char4you_android.api.ContactsAPI;
+import com.example.char4you_android.api.FirebaseAPI;
 import com.example.char4you_android.entities.Contact;
 import com.example.char4you_android.entities.User;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.io.Serializable;
 import java.util.List;
@@ -62,6 +64,12 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
             public void onClick(View view) {
                 startActivity(new Intent(ChatScreenActivity.this, AddContactActivity.class).putExtra("user", user));
             }
+        });
+
+        FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(ChatScreenActivity.this,instanceIdResult -> {
+            String newToken = instanceIdResult.getToken();
+            FirebaseAPI firebaseAPI = new FirebaseAPI(user.getToken());
+            firebaseAPI.post(newToken);
         });
 
     }
