@@ -7,6 +7,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 //import androidx.room.Room;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -36,8 +37,7 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
         swipeRefreshLayout.setEnabled(false);
         Intent i = getIntent();
         user = (User) i.getSerializableExtra("user");
-
-
+//        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         ImageView settingsBtn = (ImageView) findViewById(R.id.settings_button);
         settingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,7 +59,7 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
         addNewContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ChatScreenActivity.this, AddContactActivity.class));
+                startActivity(new Intent(ChatScreenActivity.this, AddContactActivity.class).putExtra("user",user));
             }
         });
 

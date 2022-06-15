@@ -26,17 +26,12 @@ public class AddContactActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        String token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJpbmJhciIsImp0aSI6IjkxZmE0ODJkLWMzMDUtNDI4MC05Mjk0LWZlYTU0MTYwMTcyYiIsImlhdCI6IjE2NTQ2ODE2NzEiLCJ1c2VyaWQiOiJpbmJhciIsImV4cCI6MTY1NDcwMzI3MSwiaXNzIjoiQ2hhdDRZb3UiLCJhdWQiOiJpZGsifQ.ST3gOGD5zVNlfQzyogTEoRV-k7xYivyhxi4YvSpxBnQ";
-        user = new User("inbar", "Inbar", token);
         context = getApplicationContext();
         super.onCreate(savedInstanceState);
-        // calling the action bar
-        // ActionBar actionBar = getSupportActionBar();
-        // showing the back button in action bar
-//        assert actionBar != null;
-//        actionBar.setDisplayHomeAsUpEnabled(true);
-        ContactsAPI contactsAPI = new ContactsAPI(user.getToken());
         setContentView(R.layout.add_contact);
+        Intent i = getIntent();
+        user = (User) i.getSerializableExtra("user");
+        ContactsAPI contactsAPI = new ContactsAPI(user.getToken());
         ImageView imgFavorite = (ImageView) findViewById(R.id.settings_button);
         imgFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,8 +55,10 @@ public class AddContactActivity extends AppCompatActivity {
                 Toast.makeText(AddContactActivity.this, "Please enter right contact Id", Toast.LENGTH_SHORT).show();
                 return;
             }
-            contactsAPI.post(contact);
-            contactsAPI.inviteContact(new Invite(user.getUsername(), contactIdStr, serverAdrsStr));
+            if (contactsAPI.post(contact)) {
+                contactsAPI.inviteContact(new Invite(user.getUsername(), contactIdStr, serverAdrsStr));
+            }
+            startActivity(new Intent(AddContactActivity.this, ChatScreenActivity.class));
         });
     }
 
