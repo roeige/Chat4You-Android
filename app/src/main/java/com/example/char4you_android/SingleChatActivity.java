@@ -48,10 +48,11 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
         listMessages.setLayoutManager(manager);
         MessageAPI messageAPI = new MessageAPI(user.getToken());
         MessageViewModel messageViewModel = new MessageViewModel(this.getApplicationContext(),
-                messageAPI, user.getUsername(), currentContact.getId());
+        messageAPI, user.getUsername(), currentContact.getId());
         //swipeRefreshLayout.setOnRefreshListener(messageViewModel::reload);
         messageViewModel.get().observe(this, messages -> {
-            adapter.setMessages(messages);
+
+            if(messages.size()>0) adapter.setMessages(messages);
             // messageViewModel.update();
             swipeRefreshLayout.setRefreshing(false);
         });

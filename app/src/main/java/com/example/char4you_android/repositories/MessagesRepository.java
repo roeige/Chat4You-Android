@@ -32,7 +32,7 @@ public class MessagesRepository {
         //create instance of Messages API
         this.fromId = userId;
         this.messagesAPI = api;
-        this.messagesAPI.get(this, fromId);
+        this.messagesAPI.get(this, toId);
         this.toId = toId;
         //user of who we chat with right now.
 
@@ -54,15 +54,16 @@ public class MessagesRepository {
      * @param message
      */
     public void postHandle(Message message) {
-        ArrayList<Message> tempLst = (ArrayList<Message>) this.messagesListData.getValue();
-        if (tempLst != null) {
-            tempLst.add(message);
-            this.messagesListData.setValue(tempLst);
-            // insert message to dao.
-            new Thread(() -> {
-                dao.insert(message);
-            }).start();
-        }
+        messagesAPI.get(this,toId);
+//        ArrayList<Message> tempLst = (ArrayList<Message>) this.messagesListData.getValue();
+//        if (tempLst != null) {
+//            tempLst.add(message);
+//            this.messagesListData.setValue(tempLst);
+//            // insert message to dao.
+//            new Thread(() -> {
+//                dao.insert(message);
+//            }).start();
+//        }
     }
 
     class MessagesListData extends MutableLiveData<List<Message>> {
@@ -73,6 +74,7 @@ public class MessagesRepository {
 
         class PrimeThread extends Thread {
             public void run() {
+                List<Message> asd = dao.index(fromId, toId);
                 messagesListData.postValue(dao.index(fromId, toId));
             }
         }
@@ -94,7 +96,7 @@ public class MessagesRepository {
         //while we load Messages from local DB, we request new data from API.
         protected void doInBackground() throws InterruptedException {
             new Thread(() -> {
-                dao.insertAll(messagesListData.getValue());
+ //               dao.insertAll(messagesListData.getValue());
             }).start();
 
         }
@@ -108,8 +110,19 @@ public class MessagesRepository {
         if (status == 200) {
             messagesListData.setValue(messages);
             new Thread(() -> {
-                dao.insertAll(messagesListData.getValue());
+                List<Message> a = messagesListData.getValue();
+                dao.insertAll(updateMessagesFields(messages));
+                List<Message> list = dao.getAllData();
+                List<Message> list1 = dao.index(fromId,toId);
             }).start();
         }
+    }
+
+    private List<Message> updateMessagesFields(List<Message> messages){
+        for(Message message : messages){
+            message.setFromId(message.isSent() ? fromId : toId);
+            message.setToId(message.isSent() ? toId : fromId);
+        }
+        return messages;
     }
 }

@@ -226,6 +226,62 @@ public final class MessageDao_Impl implements MessageDao {
   }
 
   @Override
+  public List<Message> getAllData() {
+    final String _sql = "SELECT * FROM message";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+    __db.assertNotSuspendingTransaction();
+    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
+    try {
+      final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
+      final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(_cursor, "content");
+      final int _cursorIndexOfCreated = CursorUtil.getColumnIndexOrThrow(_cursor, "created");
+      final int _cursorIndexOfSent = CursorUtil.getColumnIndexOrThrow(_cursor, "sent");
+      final int _cursorIndexOfFromId = CursorUtil.getColumnIndexOrThrow(_cursor, "fromId");
+      final int _cursorIndexOfToId = CursorUtil.getColumnIndexOrThrow(_cursor, "toId");
+      final List<Message> _result = new ArrayList<Message>(_cursor.getCount());
+      while(_cursor.moveToNext()) {
+        final Message _item;
+        final int _tmpId;
+        _tmpId = _cursor.getInt(_cursorIndexOfId);
+        final String _tmpContent;
+        if (_cursor.isNull(_cursorIndexOfContent)) {
+          _tmpContent = null;
+        } else {
+          _tmpContent = _cursor.getString(_cursorIndexOfContent);
+        }
+        final String _tmpCreated;
+        if (_cursor.isNull(_cursorIndexOfCreated)) {
+          _tmpCreated = null;
+        } else {
+          _tmpCreated = _cursor.getString(_cursorIndexOfCreated);
+        }
+        final boolean _tmpSent;
+        final int _tmp;
+        _tmp = _cursor.getInt(_cursorIndexOfSent);
+        _tmpSent = _tmp != 0;
+        final String _tmpFromId;
+        if (_cursor.isNull(_cursorIndexOfFromId)) {
+          _tmpFromId = null;
+        } else {
+          _tmpFromId = _cursor.getString(_cursorIndexOfFromId);
+        }
+        final String _tmpToId;
+        if (_cursor.isNull(_cursorIndexOfToId)) {
+          _tmpToId = null;
+        } else {
+          _tmpToId = _cursor.getString(_cursorIndexOfToId);
+        }
+        _item = new Message(_tmpId,_tmpContent,_tmpCreated,_tmpSent,_tmpFromId,_tmpToId);
+        _result.add(_item);
+      }
+      return _result;
+    } finally {
+      _cursor.close();
+      _statement.release();
+    }
+  }
+
+  @Override
   public Message get(final int id) {
     final String _sql = "SELECT * FROM message WHERE id =?";
     final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);

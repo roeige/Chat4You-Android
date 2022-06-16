@@ -17,6 +17,9 @@ public interface MessageDao {
     @Query("SELECT * FROM message WHERE fromId=:fromId AND toId=:toId")
     List<Message> index(String fromId, String toId);
 
+    @Query("SELECT * FROM message")
+    List<Message> getAllData();
+
     @Query("SELECT * FROM message WHERE id =:id")
     Message get(int id);
 
@@ -25,6 +28,7 @@ public interface MessageDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insertAll(List<Message> messages);
+
 
     @Update
     void update(Message... messages);
