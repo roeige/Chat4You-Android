@@ -20,14 +20,17 @@ public class ContactsRepository {
     private final ContactsAPI contactsAPI;
     private final ContactListAdapter contactListAdapter;
     private ContactsListData.PrimeThread t;
+    private final String id;
 
-    public ContactsRepository(Context context, ContactListAdapter adapter, ContactsAPI api) {
+    public ContactsRepository(Context context, ContactListAdapter adapter, ContactsAPI api, String userId) {
         AppDB db = AppDB.getInstance(context);
         contactListAdapter = adapter;
         dao = db.contactsDao();
         contactsListData = new ContactsListData();
         //create instance of contacts API
         contactsAPI = api;
+        id = userId;
+
 
     }
 
@@ -44,7 +47,7 @@ public class ContactsRepository {
 
         class PrimeThread extends Thread {
             public void run() {
-                contactsListData.postValue(dao.index());
+                contactsListData.postValue(dao.index(id));
             }
         }
 
@@ -63,8 +66,8 @@ public class ContactsRepository {
 
         //while we load contacts from local DB, we request new data from API.
         protected void doInBackground() throws InterruptedException {
-            t.join();
             contactsAPI.get(contactListAdapter);
+            t.join();
             contactsListData.setValue(ContactListAdapter.getContacts());
         }
     }

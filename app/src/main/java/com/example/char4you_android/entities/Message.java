@@ -4,7 +4,6 @@ import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
 import java.io.Serializable;
-import java.util.Date;
 
 @Entity
 public class Message implements Serializable {
@@ -14,12 +13,32 @@ public class Message implements Serializable {
     String content;
     String created;
     boolean sent;
+    private String fromId;
+    private String toId;
 
-    public Message(int id, String content, String created, boolean sent) {
+    public Message(int id, String content, String created, boolean sent, String fromId, String toId) {
         this.id = id;
         this.content = content;
         this.created = created;
         this.sent = sent;
+        this.fromId = fromId;
+        this.toId = toId;
+    }
+
+    public String getFromId() {
+        return fromId;
+    }
+
+    public void setFromId(String fromId) {
+        this.fromId = fromId;
+    }
+
+    public String getToId() {
+        return toId;
+    }
+
+    public void setToId(String toId) {
+        this.toId = toId;
     }
 
     public int getId() {

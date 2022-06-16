@@ -32,7 +32,7 @@ public final class MessageDao_Impl implements MessageDao {
     this.__insertionAdapterOfMessage = new EntityInsertionAdapter<Message>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR ABORT INTO `Message` (`id`,`content`,`created`,`sent`) VALUES (nullif(?, 0),?,?,?)";
+        return "INSERT OR IGNORE INTO `Message` (`id`,`content`,`created`,`sent`,`fromId`,`toId`) VALUES (nullif(?, 0),?,?,?,?,?)";
       }
 
       @Override
@@ -50,6 +50,16 @@ public final class MessageDao_Impl implements MessageDao {
         }
         final int _tmp = value.isSent() ? 1 : 0;
         stmt.bindLong(4, _tmp);
+        if (value.getFromId() == null) {
+          stmt.bindNull(5);
+        } else {
+          stmt.bindString(5, value.getFromId());
+        }
+        if (value.getToId() == null) {
+          stmt.bindNull(6);
+        } else {
+          stmt.bindString(6, value.getToId());
+        }
       }
     };
     this.__deletionAdapterOfMessage = new EntityDeletionOrUpdateAdapter<Message>(__db) {
@@ -66,7 +76,7 @@ public final class MessageDao_Impl implements MessageDao {
     this.__updateAdapterOfMessage = new EntityDeletionOrUpdateAdapter<Message>(__db) {
       @Override
       public String createQuery() {
-        return "UPDATE OR ABORT `Message` SET `id` = ?,`content` = ?,`created` = ?,`sent` = ? WHERE `id` = ?";
+        return "UPDATE OR ABORT `Message` SET `id` = ?,`content` = ?,`created` = ?,`sent` = ?,`fromId` = ?,`toId` = ? WHERE `id` = ?";
       }
 
       @Override
@@ -84,13 +94,35 @@ public final class MessageDao_Impl implements MessageDao {
         }
         final int _tmp = value.isSent() ? 1 : 0;
         stmt.bindLong(4, _tmp);
-        stmt.bindLong(5, value.getId());
+        if (value.getFromId() == null) {
+          stmt.bindNull(5);
+        } else {
+          stmt.bindString(5, value.getFromId());
+        }
+        if (value.getToId() == null) {
+          stmt.bindNull(6);
+        } else {
+          stmt.bindString(6, value.getToId());
+        }
+        stmt.bindLong(7, value.getId());
       }
     };
   }
 
   @Override
   public void insert(final Message... messages) {
+    __db.assertNotSuspendingTransaction();
+    __db.beginTransaction();
+    try {
+      __insertionAdapterOfMessage.insert(messages);
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+    }
+  }
+
+  @Override
+  public void insertAll(final List<Message> messages) {
     __db.assertNotSuspendingTransaction();
     __db.beginTransaction();
     try {
@@ -126,9 +158,21 @@ public final class MessageDao_Impl implements MessageDao {
   }
 
   @Override
-  public List<Message> index() {
-    final String _sql = "SELECT * FROM message";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 0);
+  public List<Message> index(final String fromId, final String toId) {
+    final String _sql = "SELECT * FROM message WHERE fromId=? AND toId=?";
+    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
+    int _argIndex = 1;
+    if (fromId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, fromId);
+    }
+    _argIndex = 2;
+    if (toId == null) {
+      _statement.bindNull(_argIndex);
+    } else {
+      _statement.bindString(_argIndex, toId);
+    }
     __db.assertNotSuspendingTransaction();
     final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
     try {
@@ -136,6 +180,8 @@ public final class MessageDao_Impl implements MessageDao {
       final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(_cursor, "content");
       final int _cursorIndexOfCreated = CursorUtil.getColumnIndexOrThrow(_cursor, "created");
       final int _cursorIndexOfSent = CursorUtil.getColumnIndexOrThrow(_cursor, "sent");
+      final int _cursorIndexOfFromId = CursorUtil.getColumnIndexOrThrow(_cursor, "fromId");
+      final int _cursorIndexOfToId = CursorUtil.getColumnIndexOrThrow(_cursor, "toId");
       final List<Message> _result = new ArrayList<Message>(_cursor.getCount());
       while(_cursor.moveToNext()) {
         final Message _item;
@@ -157,7 +203,19 @@ public final class MessageDao_Impl implements MessageDao {
         final int _tmp;
         _tmp = _cursor.getInt(_cursorIndexOfSent);
         _tmpSent = _tmp != 0;
-        _item = new Message(_tmpId,_tmpContent,_tmpCreated,_tmpSent);
+        final String _tmpFromId;
+        if (_cursor.isNull(_cursorIndexOfFromId)) {
+          _tmpFromId = null;
+        } else {
+          _tmpFromId = _cursor.getString(_cursorIndexOfFromId);
+        }
+        final String _tmpToId;
+        if (_cursor.isNull(_cursorIndexOfToId)) {
+          _tmpToId = null;
+        } else {
+          _tmpToId = _cursor.getString(_cursorIndexOfToId);
+        }
+        _item = new Message(_tmpId,_tmpContent,_tmpCreated,_tmpSent,_tmpFromId,_tmpToId);
         _result.add(_item);
       }
       return _result;
@@ -180,6 +238,8 @@ public final class MessageDao_Impl implements MessageDao {
       final int _cursorIndexOfContent = CursorUtil.getColumnIndexOrThrow(_cursor, "content");
       final int _cursorIndexOfCreated = CursorUtil.getColumnIndexOrThrow(_cursor, "created");
       final int _cursorIndexOfSent = CursorUtil.getColumnIndexOrThrow(_cursor, "sent");
+      final int _cursorIndexOfFromId = CursorUtil.getColumnIndexOrThrow(_cursor, "fromId");
+      final int _cursorIndexOfToId = CursorUtil.getColumnIndexOrThrow(_cursor, "toId");
       final Message _result;
       if(_cursor.moveToFirst()) {
         final int _tmpId;
@@ -200,7 +260,19 @@ public final class MessageDao_Impl implements MessageDao {
         final int _tmp;
         _tmp = _cursor.getInt(_cursorIndexOfSent);
         _tmpSent = _tmp != 0;
-        _result = new Message(_tmpId,_tmpContent,_tmpCreated,_tmpSent);
+        final String _tmpFromId;
+        if (_cursor.isNull(_cursorIndexOfFromId)) {
+          _tmpFromId = null;
+        } else {
+          _tmpFromId = _cursor.getString(_cursorIndexOfFromId);
+        }
+        final String _tmpToId;
+        if (_cursor.isNull(_cursorIndexOfToId)) {
+          _tmpToId = null;
+        } else {
+          _tmpToId = _cursor.getString(_cursorIndexOfToId);
+        }
+        _result = new Message(_tmpId,_tmpContent,_tmpCreated,_tmpSent,_tmpFromId,_tmpToId);
       } else {
         _result = null;
       }

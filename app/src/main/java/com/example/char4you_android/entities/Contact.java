@@ -82,4 +82,5 @@ public class Contact implements Serializable {
     public String getLastdate() {
         return lastdate;
     }
+
 }

@@ -1,15 +1,12 @@
 package com.example.char4you_android.api;
 
 import android.util.Log;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.example.char4you_android.AddContactActivity;
-import com.example.char4you_android.adapters.ContactListAdapter;
-import com.example.char4you_android.adapters.MessageListAdapter;
-import com.example.char4you_android.entities.Contact;
 import com.example.char4you_android.entities.Message;
+import com.example.char4you_android.entities.Transfer;
+import com.example.char4you_android.repositories.MessagesRepository;
 
 import java.util.List;
 
@@ -36,35 +33,52 @@ public class MessageAPI {
     }
 
 
-    public void get(final MessageListAdapter adapter,String id) {
-        Call<List<Message>> call = webServiceAPI.getMessages("Bearer " + token,id);
+    public void get(MessagesRepository repository, String id) {
+        Call<List<Message>> call = webServiceAPI.getMessages("Bearer " + token, id);
         call.enqueue(new Callback<List<Message>>() {
             @Override
             public void onResponse(@NonNull Call<List<Message>> call, @NonNull Response<List<Message>> response) {
-                adapter.setMessages(response.body());
+                repository.handleAPIData(response.code(),response.body());
             }
 
 
             @Override
             public void onFailure(@NonNull Call<List<Message>> call, @NonNull Throwable t) {
-                Log.i("fail","fail get messages");
+                Log.i("fail", "fail get messages");
             }
         });
     }
-
-    public void post(final MessageListAdapter adapter,String id,Message message) {
-        Call<Void> call = webServiceAPI.createMessage("Bearer " + token, id,message);
+public void transfer(Transfer transfer, Message message, MessagesRepository repository){
+        Call<Void> call=webServiceAPI.transfer("Bearer "+token,transfer);
         call.enqueue(new Callback<Void>() {
-            Boolean returnVal;
+            @Override
+            public void onResponse(Call<Void> call, Response<Void> response) {
+                Log.i("success", "success transfer action");
+                repository.afterTransfer(transfer,message);
+            }
+
+            @Override
+            public void onFailure(Call<Void> call, Throwable t) {
+                Log.i("fail", "fail transfer message");
+
+            }
+        });
+
+}
+    public void post(String id, Message message,MessagesRepository repository) {
+//        final boolean[] success = {false};
+        Call<Void> call = webServiceAPI.createMessage("Bearer " + token, id, message);
+        call.enqueue(new Callback<Void>() {
 
             @Override
             public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
-                Log.i("success","success post message");
+                Log.i("success", "success post message");
+                repository.postHandle(message);
             }
 
             @Override
             public void onFailure(@NonNull Call<Void> call, @NonNull Throwable t) {
-                Log.i("fail","fail post message");
+                Log.i("fail", "fail post message");
             }
         });
     }

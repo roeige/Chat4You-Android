@@ -3,15 +3,14 @@ package com.example.char4you_android.api;
 import com.example.char4you_android.entities.Contact;
 import com.example.char4you_android.entities.Invite;
 import com.example.char4you_android.entities.Message;
+import com.example.char4you_android.entities.Transfer;
 
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
-import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
-import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 
@@ -25,8 +24,8 @@ public interface WebServiceAPI {
     @POST("invitations")
     Call<Void> inviteContact(@Header("Authorization")String token,@Body Invite invite);
 
-    @DELETE("contacts/{id}")
-    Call<Void> deletePost(@Header("Authorization") String token, @Path("id") String id);
+   @POST("transfer")
+   Call<Void> transfer(@Header("Authorization")String token,@Body Transfer transfer);
 
     @GET("contacts/{id}/messages")
     Call<List<Message>> getMessages(@Header("Authorization") String token, @Path("id") String id);

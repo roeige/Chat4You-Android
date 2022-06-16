@@ -13,10 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.example.char4you_android.DB.AppDB;
 import com.example.char4you_android.adapters.MessageListAdapter;
 import com.example.char4you_android.api.MessageAPI;
-import com.example.char4you_android.dao.MessageDao;
 import com.example.char4you_android.entities.Contact;
 import com.example.char4you_android.entities.Message;
 import com.example.char4you_android.entities.User;
@@ -27,8 +25,6 @@ import java.io.Serializable;
 public class SingleChatActivity extends AppCompatActivity implements Serializable {
     public static Contact currentContact;
     public static User user;
-    private AppDB db;
-    private MessageDao messageDao;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,20 +47,23 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
         manager.setStackFromEnd(true);
         listMessages.setLayoutManager(manager);
         MessageAPI messageAPI = new MessageAPI(user.getToken());
-        MessageViewModel messageViewModel = new MessageViewModel(this.getApplicationContext(), adapter, messageAPI, user.getUsername());
-       //swipeRefreshLayout.setOnRefreshListener(messageViewModel::reload);
+        MessageViewModel messageViewModel = new MessageViewModel(this.getApplicationContext(),
+                messageAPI, user.getUsername(), currentContact.getId());
+        //swipeRefreshLayout.setOnRefreshListener(messageViewModel::reload);
         messageViewModel.get().observe(this, messages -> {
             adapter.setMessages(messages);
+            // messageViewModel.update();
             swipeRefreshLayout.setRefreshing(false);
         });
         Button sendBtn = findViewById(R.id.sendBtn);
         sendBtn.setOnClickListener(view -> {
             EditText msgBox = findViewById(R.id.msgBox);
-            Message message = new Message(0, msgBox.getText().toString(),
-                    null, true);
-            messageAPI.post(adapter, currentContact.getId(), message);
+            Message message = new Message(0, msgBox.getText().toString()
+                    , null, true, user.getUsername(), currentContact.getId());
+
+            messageViewModel.add(currentContact.getId(), message);
             msgBox.setText(null);
-            messageAPI.get(adapter, currentContact.getId());
+//            messageAPI.get(adapter, currentContact.getId());
         });
 
     }

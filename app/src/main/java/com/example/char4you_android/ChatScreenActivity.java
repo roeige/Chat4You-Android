@@ -1,15 +1,6 @@
 package com.example.char4you_android;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-//import androidx.room.Room;
-
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -55,9 +46,8 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setReverseLayout(true);
         listContacts.setLayoutManager(manager);
-
         ContactsAPI contactsAPI = new ContactsAPI(user.getToken());
-        cViewModel = new ContactsViewModel(this.getApplicationContext(), adapter, contactsAPI);
+        cViewModel = new ContactsViewModel(this.getApplicationContext(), adapter, contactsAPI,user.getUsername());
         Button addNewContact = findViewById(R.id.btnAddNewContact);
         cViewModel.get().observe(this, contacts -> {
             adapter.setContacts(contacts);

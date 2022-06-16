@@ -17,8 +17,8 @@ public class ContactsViewModel extends ViewModel implements Serializable {
     private final LiveData<List<Contact>> Contacts;
     private final ContactsRepository repository;
 
-    public ContactsViewModel(Context context, ContactListAdapter adapter, ContactsAPI api) {
-        repository = new ContactsRepository(context, adapter, api);
+    public ContactsViewModel(Context context, ContactListAdapter adapter, ContactsAPI api,String id) {
+        repository = new ContactsRepository(context, adapter, api,id);
         Contacts = repository.getAll();
     }
 
