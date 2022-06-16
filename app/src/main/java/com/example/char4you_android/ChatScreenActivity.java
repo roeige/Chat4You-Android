@@ -46,9 +46,7 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
         listContacts.setLayoutManager(manager);
         ContactsAPI contactsAPI = new ContactsAPI(user.getToken());
         cViewModel = new ContactsViewModel(this.getApplicationContext(), adapter, contactsAPI);
-        cViewModel.reload();
         Button addNewContact = findViewById(R.id.btnAddNewContact);
-//        swipeRefreshLayout.setOnRefreshListener(cViewModel::reload);
         cViewModel.get().observe(this, contacts -> {
             adapter.setContacts(contacts);
             swipeRefreshLayout.setRefreshing(false);

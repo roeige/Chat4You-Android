@@ -34,11 +34,7 @@ public class ContactsRepository {
         return contactsAPI.post(contact);
     }
 
-    public void reload() {
-    }
 
-    public void delete(Contact contact) {
-    }
 
     class ContactsListData extends MutableLiveData<List<Contact>> {
         public ContactsListData() {

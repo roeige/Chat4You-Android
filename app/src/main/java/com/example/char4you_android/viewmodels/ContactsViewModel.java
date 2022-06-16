@@ -30,12 +30,5 @@ public class ContactsViewModel extends ViewModel implements Serializable {
         return repository.add(contact);
     }
 
-    public void delete(Contact contact) {
-        repository.delete(contact);
-    }
-
-    public void reload() {
-        repository.reload();
-    }
 
 }

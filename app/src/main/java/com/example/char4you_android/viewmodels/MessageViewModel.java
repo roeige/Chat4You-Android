@@ -25,8 +25,5 @@ public class MessageViewModel extends ViewModel {
 
     public void add(Message message) {mRepository.add(message);}
 
-    public void delete(Message message) {mRepository.delete(message);}
-
-    public void reload(){mRepository.reload();}
 
 }

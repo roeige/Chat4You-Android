@@ -36,13 +36,6 @@ public class MessagesRepository {
         messagesAPI.post(messageListAdapter,id,message);
     }
 
-    public void delete(Message message) {
-
-    }
-
-    public void reload() {
-    }
-
     class MessagesListData extends MutableLiveData<List<Message>> {
         public MessagesListData() {
             super();
