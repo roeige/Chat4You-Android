@@ -17,8 +17,12 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import androidx.sqlite.db.SupportSQLiteOpenHelper;
 import androidx.sqlite.db.SupportSQLiteOpenHelper.Callback;
 import androidx.sqlite.db.SupportSQLiteOpenHelper.Configuration;
+import com.example.char4you_android.dao.ContactsDao;
+import com.example.char4you_android.dao.ContactsDao_Impl;
 import com.example.char4you_android.dao.MessageDao;
 import com.example.char4you_android.dao.MessageDao_Impl;
+import com.example.char4you_android.dao.SettingsDao;
+import com.example.char4you_android.dao.SettingsDao_Impl;
 import java.lang.Class;
 import java.lang.Override;
 import java.lang.String;
@@ -34,19 +38,27 @@ import java.util.Set;
 public final class AppDB_Impl extends AppDB {
   private volatile MessageDao _messageDao;
 
+  private volatile SettingsDao _settingsDao;
+
+  private volatile ContactsDao _contactsDao;
+
   @Override
   protected SupportSQLiteOpenHelper createOpenHelper(DatabaseConfiguration configuration) {
     final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(1) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
         _db.execSQL("CREATE TABLE IF NOT EXISTS `Message` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `content` TEXT, `created` TEXT, `sent` INTEGER NOT NULL)");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `Contact` (`ownerId` TEXT, `id` TEXT NOT NULL, `name` TEXT, `server` TEXT, `last` TEXT, `lastdate` TEXT, PRIMARY KEY(`id`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `Settings` (`server` TEXT NOT NULL, PRIMARY KEY(`server`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '9ecf8ee0f138d5c94b23fcc447c8cd73')");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '59f4b464ec6100b43bfdc8b859a24d09')");
       }
 
       @Override
       public void dropAllTables(SupportSQLiteDatabase _db) {
         _db.execSQL("DROP TABLE IF EXISTS `Message`");
+        _db.execSQL("DROP TABLE IF EXISTS `Contact`");
+        _db.execSQL("DROP TABLE IF EXISTS `Settings`");
         if (mCallbacks != null) {
           for (int _i = 0, _size = mCallbacks.size(); _i < _size; _i++) {
             mCallbacks.get(_i).onDestructiveMigration(_db);
@@ -99,9 +111,36 @@ public final class AppDB_Impl extends AppDB {
                   + " Expected:\n" + _infoMessage + "\n"
                   + " Found:\n" + _existingMessage);
         }
+        final HashMap<String, TableInfo.Column> _columnsContact = new HashMap<String, TableInfo.Column>(6);
+        _columnsContact.put("ownerId", new TableInfo.Column("ownerId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsContact.put("id", new TableInfo.Column("id", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsContact.put("name", new TableInfo.Column("name", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsContact.put("server", new TableInfo.Column("server", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsContact.put("last", new TableInfo.Column("last", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsContact.put("lastdate", new TableInfo.Column("lastdate", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysContact = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesContact = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoContact = new TableInfo("Contact", _columnsContact, _foreignKeysContact, _indicesContact);
+        final TableInfo _existingContact = TableInfo.read(_db, "Contact");
+        if (! _infoContact.equals(_existingContact)) {
+          return new RoomOpenHelper.ValidationResult(false, "Contact(com.example.char4you_android.entities.Contact).\n"
+                  + " Expected:\n" + _infoContact + "\n"
+                  + " Found:\n" + _existingContact);
+        }
+        final HashMap<String, TableInfo.Column> _columnsSettings = new HashMap<String, TableInfo.Column>(1);
+        _columnsSettings.put("server", new TableInfo.Column("server", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        final HashSet<TableInfo.ForeignKey> _foreignKeysSettings = new HashSet<TableInfo.ForeignKey>(0);
+        final HashSet<TableInfo.Index> _indicesSettings = new HashSet<TableInfo.Index>(0);
+        final TableInfo _infoSettings = new TableInfo("Settings", _columnsSettings, _foreignKeysSettings, _indicesSettings);
+        final TableInfo _existingSettings = TableInfo.read(_db, "Settings");
+        if (! _infoSettings.equals(_existingSettings)) {
+          return new RoomOpenHelper.ValidationResult(false, "Settings(com.example.char4you_android.entities.Settings).\n"
+                  + " Expected:\n" + _infoSettings + "\n"
+                  + " Found:\n" + _existingSettings);
+        }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "9ecf8ee0f138d5c94b23fcc447c8cd73", "e150ecd344a65d5c95e08faca19c319c");
+    }, "59f4b464ec6100b43bfdc8b859a24d09", "327c5fdd526fe6244498965e60d218d4");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)
@@ -114,7 +153,7 @@ public final class AppDB_Impl extends AppDB {
   protected InvalidationTracker createInvalidationTracker() {
     final HashMap<String, String> _shadowTablesMap = new HashMap<String, String>(0);
     HashMap<String, Set<String>> _viewTables = new HashMap<String, Set<String>>(0);
-    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "Message");
+    return new InvalidationTracker(this, _shadowTablesMap, _viewTables, "Message","Contact","Settings");
   }
 
   @Override
@@ -124,6 +163,8 @@ public final class AppDB_Impl extends AppDB {
     try {
       super.beginTransaction();
       _db.execSQL("DELETE FROM `Message`");
+      _db.execSQL("DELETE FROM `Contact`");
+      _db.execSQL("DELETE FROM `Settings`");
       super.setTransactionSuccessful();
     } finally {
       super.endTransaction();
@@ -138,6 +179,8 @@ public final class AppDB_Impl extends AppDB {
   protected Map<Class<?>, List<Class<?>>> getRequiredTypeConverters() {
     final HashMap<Class<?>, List<Class<?>>> _typeConvertersMap = new HashMap<Class<?>, List<Class<?>>>();
     _typeConvertersMap.put(MessageDao.class, MessageDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(SettingsDao.class, SettingsDao_Impl.getRequiredConverters());
+    _typeConvertersMap.put(ContactsDao.class, ContactsDao_Impl.getRequiredConverters());
     return _typeConvertersMap;
   }
 
@@ -163,6 +206,34 @@ public final class AppDB_Impl extends AppDB {
           _messageDao = new MessageDao_Impl(this);
         }
         return _messageDao;
+      }
+    }
+  }
+
+  @Override
+  public SettingsDao settingsDao() {
+    if (_settingsDao != null) {
+      return _settingsDao;
+    } else {
+      synchronized(this) {
+        if(_settingsDao == null) {
+          _settingsDao = new SettingsDao_Impl(this);
+        }
+        return _settingsDao;
+      }
+    }
+  }
+
+  @Override
+  public ContactsDao contactsDao() {
+    if (_contactsDao != null) {
+      return _contactsDao;
+    } else {
+      synchronized(this) {
+        if(_contactsDao == null) {
+          _contactsDao = new ContactsDao_Impl(this);
+        }
+        return _contactsDao;
       }
     }
   }
