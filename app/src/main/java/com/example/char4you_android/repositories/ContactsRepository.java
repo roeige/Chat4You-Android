@@ -19,6 +19,7 @@ public class ContactsRepository {
     private final ContactsListData contactsListData;
     private final ContactsAPI contactsAPI;
     private final ContactListAdapter contactListAdapter;
+    private ContactsListData.PrimeThread t;
 
     public ContactsRepository(Context context, ContactListAdapter adapter, ContactsAPI api) {
         AppDB db = AppDB.getInstance(context);
@@ -35,7 +36,6 @@ public class ContactsRepository {
     }
 
 
-
     class ContactsListData extends MutableLiveData<List<Contact>> {
         public ContactsListData() {
             super();
@@ -48,11 +48,11 @@ public class ContactsRepository {
             }
         }
 
-        PrimeThread t = new PrimeThread();
 
         @Override
         protected void onActive() {
             super.onActive();
+            t = new PrimeThread();
             t.start();
             try {
                 doInBackground();
