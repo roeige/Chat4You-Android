@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.char4you_android.app-mergeDebugResources-4:/values-it/values-it.xml",
+            "outputFile": "com.example.char4you_android.app-mergeDebugResources-34:/values-it/values-it.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\yhood\\Downloads\\gradle-7.3.3-bin\\gradle-7.3.3\\caches\\transforms-3\\9e848763d532ec680f9c62e38a108c73\\transformed\\play-services-base-17.0.0\\res\\values-it\\values.xml",
+                    "source": "C:\\Users\\Oriel\\.gradle\\caches\\transforms-3\\9e848763d532ec680f9c62e38a108c73\\transformed\\play-services-base-17.0.0\\res\\values-it\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -21,24 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\yhood\\Downloads\\gradle-7.3.3-bin\\gradle-7.3.3\\caches\\transforms-3\\cce0b4627e9f0951f3dc594483ad5999\\transformed\\play-services-basement-17.0.0\\res\\values-it\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "194",
-                        "endOffsets": "441"
-                    },
-                    "to": {
-                        "startLines": "45",
-                        "startColumns": "4",
-                        "startOffsets": "4523",
-                        "endColumns": "194",
-                        "endOffsets": "4713"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\yhood\\Downloads\\gradle-7.3.3-bin\\gradle-7.3.3\\caches\\transforms-3\\745bfc2110a70fb21f259909d7d57f16\\transformed\\firebase-messaging-20.0.0\\res\\values-it\\values.xml",
+                    "source": "C:\\Users\\Oriel\\.gradle\\caches\\transforms-3\\745bfc2110a70fb21f259909d7d57f16\\transformed\\firebase-messaging-20.0.0\\res\\values-it\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -55,7 +38,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\yhood\\Downloads\\gradle-7.3.3-bin\\gradle-7.3.3\\caches\\transforms-3\\2408ae0c6b64e074ad570504f0fa7cb6\\transformed\\core-1.7.0\\res\\values-it\\values-it.xml",
+                    "source": "C:\\Users\\Oriel\\.gradle\\caches\\transforms-3\\e5ab22eab39bae8354a5f405516b02c6\\transformed\\preference-1.2.0\\res\\values-it\\values-it.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "105,174,261,341,476,645,725",
+                        "endColumns": "68,86,79,134,168,79,75",
+                        "endOffsets": "169,256,336,471,640,720,796"
+                    },
+                    "to": {
+                        "startLines": "55,57,107,109,112,113,114",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "6077,6212,10292,10452,10770,10939,11019",
+                        "endColumns": "68,86,79,134,168,79,75",
+                        "endOffsets": "6141,6294,10367,10582,10934,11014,11090"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Oriel\\.gradle\\caches\\transforms-3\\2408ae0c6b64e074ad570504f0fa7cb6\\transformed\\core-1.7.0\\res\\values-it\\values-it.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -72,7 +72,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\yhood\\Downloads\\gradle-7.3.3-bin\\gradle-7.3.3\\caches\\transforms-3\\53cd386dece606142369ed2b2f9fbe1c\\transformed\\material-1.6.1\\res\\values-it\\values-it.xml",
+                    "source": "C:\\Users\\Oriel\\.gradle\\caches\\transforms-3\\53cd386dece606142369ed2b2f9fbe1c\\transformed\\material-1.6.1\\res\\values-it\\values-it.xml",
                     "from": {
                         "startLines": "2,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -91,7 +91,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\yhood\\Downloads\\gradle-7.3.3-bin\\gradle-7.3.3\\caches\\transforms-3\\d1278b834c44ef63e0cd766340cc5b6a\\transformed\\appcompat-1.4.2\\res\\values-it\\values-it.xml",
+                    "source": "C:\\Users\\Oriel\\.gradle\\caches\\transforms-3\\d1278b834c44ef63e0cd766340cc5b6a\\transformed\\appcompat-1.4.2\\res\\values-it\\values-it.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -108,20 +108,20 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\yhood\\Downloads\\gradle-7.3.3-bin\\gradle-7.3.3\\caches\\transforms-3\\e5ab22eab39bae8354a5f405516b02c6\\transformed\\preference-1.2.0\\res\\values-it\\values-it.xml",
+                    "source": "C:\\Users\\Oriel\\.gradle\\caches\\transforms-3\\cce0b4627e9f0951f3dc594483ad5999\\transformed\\play-services-basement-17.0.0\\res\\values-it\\values.xml",
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "105,174,261,341,476,645,725",
-                        "endColumns": "68,86,79,134,168,79,75",
-                        "endOffsets": "169,256,336,471,640,720,796"
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "194",
+                        "endOffsets": "441"
                     },
                     "to": {
-                        "startLines": "55,57,107,109,112,113,114",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "6077,6212,10292,10452,10770,10939,11019",
-                        "endColumns": "68,86,79,134,168,79,75",
-                        "endOffsets": "6141,6294,10367,10582,10934,11014,11090"
+                        "startLines": "45",
+                        "startColumns": "4",
+                        "startOffsets": "4523",
+                        "endColumns": "194",
+                        "endOffsets": "4713"
                     }
                 }
             ]

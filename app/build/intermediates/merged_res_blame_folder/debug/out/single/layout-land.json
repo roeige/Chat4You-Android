@@ -1,14 +1,14 @@
 [
     {
-        "merged": "com.example.char4you_android.app-mergeDebugResources-5:/layout-land/activity_chat_screen.xml",
-        "source": "com.example.char4you_android.app-main-8:/layout-land/activity_chat_screen.xml"
+        "merged": "com.example.char4you_android.app-mergeDebugResources-35:/layout-land/activity_chat_screen.xml",
+        "source": "com.example.char4you_android.app-main-38:/layout-land/activity_chat_screen.xml"
     },
     {
-        "merged": "com.example.char4you_android.app-mergeDebugResources-5:/layout-land/activity_single_chat.xml",
-        "source": "com.example.char4you_android.app-main-8:/layout-land/activity_single_chat.xml"
+        "merged": "com.example.char4you_android.app-mergeDebugResources-35:/layout-land/activity_single_chat.xml",
+        "source": "com.example.char4you_android.app-main-38:/layout-land/activity_single_chat.xml"
     },
     {
-        "merged": "com.example.char4you_android.app-mergeDebugResources-5:/layout-land/contact_layout.xml",
-        "source": "com.example.char4you_android.app-main-8:/layout-land/contact_layout.xml"
+        "merged": "com.example.char4you_android.app-mergeDebugResources-35:/layout-land/contact_layout.xml",
+        "source": "com.example.char4you_android.app-main-38:/layout-land/contact_layout.xml"
     }
 ]
