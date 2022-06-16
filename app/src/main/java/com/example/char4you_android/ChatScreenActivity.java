@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.char4you_android.DB.AppDB;
@@ -18,6 +17,7 @@ import com.example.char4you_android.adapters.ContactListAdapter;
 import com.example.char4you_android.api.ContactsAPI;
 import com.example.char4you_android.entities.Contact;
 import com.example.char4you_android.entities.User;
+import com.example.char4you_android.viewmodels.ContactsViewModel;
 
 import java.io.Serializable;
 import java.util.List;
@@ -26,6 +26,7 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
 
     public static User user;
     public static AppDB db;
+    public static ContactsViewModel cViewModel;
 
 
     @Override
@@ -36,28 +37,28 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
         swipeRefreshLayout.setEnabled(false);
         Intent i = getIntent();
         user = (User) i.getSerializableExtra("user");
-        db = Room.databaseBuilder(getApplicationContext(), AppDB.class, "roomDB")
-                .allowMainThreadQueries().build();
-//        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         ImageView settingsBtn = (ImageView) findViewById(R.id.settings_button);
-
-        settingsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ChatScreenActivity.this, SettingActivity.class).putExtra("roomDB", db));
-            }
-        });
         RecyclerView listContacts = findViewById(R.id.listContacts);
         final ContactListAdapter adapter = new ContactListAdapter(this, this);
         listContacts.setAdapter(adapter);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setReverseLayout(true);
         listContacts.setLayoutManager(manager);
-
         ContactsAPI contactsAPI = new ContactsAPI(user.getToken());
-        contactsAPI.get(adapter);
-
+        cViewModel = new ContactsViewModel(this.getApplicationContext(), adapter, contactsAPI);
+        cViewModel.reload();
         Button addNewContact = findViewById(R.id.btnAddNewContact);
+//        swipeRefreshLayout.setOnRefreshListener(cViewModel::reload);
+        cViewModel.get().observe(this, contacts -> {
+            adapter.setContacts(contacts);
+            swipeRefreshLayout.setRefreshing(false);
+        });
+        settingsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ChatScreenActivity.this, SettingActivity.class));
+            }
+        });
         addNewContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -72,6 +73,6 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
         List<Contact> contactList = ContactListAdapter.getContacts();
         Contact curContact = contactList.get(positon);
         startActivity(new Intent(ChatScreenActivity.this, SingleChatActivity.class)
-                .putExtra("contact", curContact).putExtra("user", user).putExtra("roomDB", db));
+                .putExtra("contact", curContact).putExtra("user", user));
     }
 }

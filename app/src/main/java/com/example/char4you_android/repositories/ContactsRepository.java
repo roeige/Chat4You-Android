@@ -30,6 +30,16 @@ public class ContactsRepository {
 
     }
 
+    public boolean add(Contact contact) {
+        return contactsAPI.post(contact);
+    }
+
+    public void reload() {
+    }
+
+    public void delete(Contact contact) {
+    }
+
     class ContactsListData extends MutableLiveData<List<Contact>> {
         public ContactsListData() {
             super();
@@ -38,7 +48,7 @@ public class ContactsRepository {
 
         class PrimeThread extends Thread {
             public void run() {
-                contactsListData.setValue(dao.index());
+                contactsListData.postValue(dao.index());
             }
         }
 

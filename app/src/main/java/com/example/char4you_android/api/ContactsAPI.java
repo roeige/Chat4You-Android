@@ -55,8 +55,8 @@ public class ContactsAPI {
         });
     }
 
-    public Boolean post(Contact contact) {
-        final Boolean[] success = new Boolean[1];
+    public boolean post(Contact contact) {
+        final boolean[] success = {false};
         Call<Void> call = webServiceAPI.createContact("Bearer " + token, contact);
         call.enqueue(new Callback<Void>() {
             @Override

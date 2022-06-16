@@ -32,6 +32,17 @@ public class MessagesRepository {
 
     }
 
+    public void add(Message message) {
+        messagesAPI.post(messageListAdapter,id,message);
+    }
+
+    public void delete(Message message) {
+
+    }
+
+    public void reload() {
+    }
+
     class MessagesListData extends MutableLiveData<List<Message>> {
         public MessagesListData() {
             super();
@@ -40,7 +51,7 @@ public class MessagesRepository {
 
         class PrimeThread extends Thread {
             public void run() {
-                MessagesListData.setValue(dao.index());
+                MessagesListData.postValue(dao.index());
             }
         }
 

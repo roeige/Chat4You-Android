@@ -1,9 +1,5 @@
 package com.example.char4you_android;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,15 +10,20 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.char4you_android.api.ContactsAPI;
 import com.example.char4you_android.entities.Contact;
 import com.example.char4you_android.entities.Invite;
 import com.example.char4you_android.entities.User;
+import com.example.char4you_android.viewmodels.ContactsViewModel;
 
 public class AddContactActivity extends AppCompatActivity {
 
     public static Context context;
     public static User user;
+    public static ContactsViewModel contactsViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +31,13 @@ public class AddContactActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_contact);
         Intent i = getIntent();
-        user = (User) i.getSerializableExtra("user");
+        if (user == null) {
+            user = (User) i.getSerializableExtra("user");
+        }
+        //pass view model with the intent.
+//        if (contactsViewModel == null) {
+//            contactsViewModel = (ContactsViewModel) i.getSerializableExtra("contactsViewModel");
+//        }
         ContactsAPI contactsAPI = new ContactsAPI(user.getToken());
         ImageView imgFavorite = (ImageView) findViewById(R.id.settings_button);
         imgFavorite.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +62,7 @@ public class AddContactActivity extends AppCompatActivity {
                 Toast.makeText(AddContactActivity.this, "Please enter right contact Id", Toast.LENGTH_SHORT).show();
                 return;
             }
-            if (contactsAPI.post(contact)) {
+            if(contactsAPI.post(contact)){
                 contactsAPI.inviteContact(new Invite(user.getUsername(), contactIdStr, serverAdrsStr));
             }
             startActivity(new Intent(AddContactActivity.this, ChatScreenActivity.class));
