@@ -1,6 +1,15 @@
 package com.example.char4you_android;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+//import androidx.room.Room;
+
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,9 +24,11 @@ import com.example.char4you_android.DB.AppDB;
 import com.example.char4you_android.adapters.ContactClickListener;
 import com.example.char4you_android.adapters.ContactListAdapter;
 import com.example.char4you_android.api.ContactsAPI;
+import com.example.char4you_android.api.FirebaseAPI;
 import com.example.char4you_android.entities.Contact;
 import com.example.char4you_android.entities.User;
 import com.example.char4you_android.viewmodels.ContactsViewModel;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.io.Serializable;
 import java.util.List;
@@ -44,6 +55,7 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setReverseLayout(true);
         listContacts.setLayoutManager(manager);
+
         ContactsAPI contactsAPI = new ContactsAPI(user.getToken());
         cViewModel = new ContactsViewModel(this.getApplicationContext(), adapter, contactsAPI);
         Button addNewContact = findViewById(R.id.btnAddNewContact);
@@ -62,6 +74,12 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
             public void onClick(View view) {
                 startActivity(new Intent(ChatScreenActivity.this, AddContactActivity.class).putExtra("user", user));
             }
+        });
+
+        FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(ChatScreenActivity.this,instanceIdResult -> {
+            String newToken = instanceIdResult.getToken();
+            FirebaseAPI firebaseAPI = new FirebaseAPI(user.getToken());
+            firebaseAPI.post(newToken);
         });
 
     }

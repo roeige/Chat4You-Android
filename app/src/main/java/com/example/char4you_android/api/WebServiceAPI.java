@@ -33,4 +33,7 @@ public interface WebServiceAPI {
 
     @POST("contacts/{id}/messages")
     Call<Void> createMessage(@Header("Authorization") String token, @Path("id") String id,@Body Message message);
+
+    @POST("api/firebase/onconnect")
+    Call<Void> firebaseOnConnect(@Header("Authorization") String token, @Body String firebaseToken);
 }
