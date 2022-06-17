@@ -7,6 +7,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
@@ -96,6 +97,12 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
     private void getPicture(String username) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         String encodedPhoto = preferences.getString(username, "");
+        if(encodedPhoto==""){
+            Uri imgUri= Uri.parse("android.resource://" + getPackageName() + "/drawable/" + "chatlogo");
+            profilePicture.setImageURI(null);
+            profilePicture.setImageURI(imgUri);
+            return;
+        }
         byte[] decodedByte = Base64.decode(encodedPhoto, 0);
         Bitmap bitmap =  BitmapFactory
                 .decodeByteArray(decodedByte, 0, decodedByte.length);

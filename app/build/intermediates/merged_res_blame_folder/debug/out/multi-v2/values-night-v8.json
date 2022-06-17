@@ -1,53 +1,17 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.char4you_android.app-mergeDebugResources-4:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.char4you_android.app-mergeDebugResources-34:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\yhood\\AndroidStudioProjects\\Char4You_Android\\app\\src\\main\\res\\values-night\\themes.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "100",
-                        "endLines": "14",
-                        "endColumns": "12",
-                        "endOffsets": "823"
-                    },
-                    "to": {
-                        "startLines": "21",
-                        "startColumns": "4",
-                        "startOffsets": "1264",
-                        "endLines": "33",
-                        "endColumns": "12",
-                        "endOffsets": "1864"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\yhood\\Downloads\\gradle-7.3.3-bin\\gradle-7.3.3\\caches\\transforms-3\\53cd386dece606142369ed2b2f9fbe1c\\transformed\\material-1.6.1\\res\\values-night-v8\\values-night-v8.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,130,241,330,431,538,645,744,847,935,1059,1161,1263,1379,1481,1595,1723,1839,1961,2097,2217,2351,2471,2583,2709,2826,2950,3080,3202,3340,3474,3590",
-                        "endColumns": "74,110,88,100,106,106,98,102,87,123,101,101,115,101,113,127,115,121,135,119,133,119,111,125,116,123,129,121,137,133,115,119",
-                        "endOffsets": "125,236,325,426,533,640,739,842,930,1054,1156,1258,1374,1476,1590,1718,1834,1956,2092,2212,2346,2466,2578,2704,2821,2945,3075,3197,3335,3469,3585,3705"
-                    },
-                    "to": {
-                        "startLines": "34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,59,60,61,62,63,64,65,66",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "1869,1944,2055,2144,2245,2352,2459,2558,2661,2749,2873,2975,3077,3193,3295,3409,3537,3653,3775,3911,4031,4165,4285,4397,4612,4729,4853,4983,5105,5243,5377,5493",
-                        "endColumns": "74,110,88,100,106,106,98,102,87,123,101,101,115,101,113,127,115,121,135,119,133,119,111,125,116,123,129,121,137,133,115,119",
-                        "endOffsets": "1939,2050,2139,2240,2347,2454,2553,2656,2744,2868,2970,3072,3188,3290,3404,3532,3648,3770,3906,4026,4160,4280,4392,4518,4724,4848,4978,5100,5238,5372,5488,5608"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\yhood\\AndroidStudioProjects\\Char4You_Android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Users\\Oriel\\AndroidStudioProjects\\Chat4You-Android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3",
                         "startColumns": "4",
-                        "startOffsets": "56",
+                        "startOffsets": "59",
                         "endLines": "7",
                         "endColumns": "12",
-                        "endOffsets": "181"
+                        "endOffsets": "188"
                     },
                     "to": {
                         "startLines": "67",
@@ -59,24 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\yhood\\AndroidStudioProjects\\Char4You_Android\\app\\src\\main\\res\\values-night\\colors.xml",
-                    "from": {
-                        "startLines": "7,12,13,10,11,2,3,4,5,6,9,8",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "286,501,542,416,460,55,102,149,196,241,370,328",
-                        "endColumns": "41,40,44,43,40,46,46,46,44,44,45,41",
-                        "endOffsets": "323,537,582,455,496,97,144,191,236,281,411,365"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "100,142,183,228,272,313,360,407,454,499,544,590",
-                        "endColumns": "41,40,44,43,40,46,46,46,44,44,45,41",
-                        "endOffsets": "137,178,223,267,308,355,402,449,494,539,585,627"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\yhood\\Downloads\\gradle-7.3.3-bin\\gradle-7.3.3\\caches\\transforms-3\\d1278b834c44ef63e0cd766340cc5b6a\\transformed\\appcompat-1.4.2\\res\\values-night-v8\\values-night-v8.xml",
+                    "source": "C:\\Users\\Oriel\\.gradle\\caches\\transforms-3\\d1278b834c44ef63e0cd766340cc5b6a\\transformed\\appcompat-1.4.2\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -90,6 +37,59 @@
                         "startOffsets": "632,702,786,870,966,1068,1170,4523",
                         "endColumns": "69,83,83,95,101,101,93,88",
                         "endOffsets": "697,781,865,961,1063,1165,1259,4607"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Oriel\\AndroidStudioProjects\\Chat4You-Android\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "102",
+                        "endLines": "14",
+                        "endColumns": "12",
+                        "endOffsets": "837"
+                    },
+                    "to": {
+                        "startLines": "21",
+                        "startColumns": "4",
+                        "startOffsets": "1264",
+                        "endLines": "33",
+                        "endColumns": "12",
+                        "endOffsets": "1864"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Oriel\\AndroidStudioProjects\\Chat4You-Android\\app\\src\\main\\res\\values-night\\colors.xml",
+                    "from": {
+                        "startLines": "7,12,13,10,11,2,3,4,5,6,9,8",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "293,513,555,426,471,57,105,153,201,247,379,336",
+                        "endColumns": "41,40,44,43,40,46,46,46,44,44,45,41",
+                        "endOffsets": "330,549,595,465,507,99,147,195,241,287,420,373"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "100,142,183,228,272,313,360,407,454,499,544,590",
+                        "endColumns": "41,40,44,43,40,46,46,46,44,44,45,41",
+                        "endOffsets": "137,178,223,267,308,355,402,449,494,539,585,627"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Oriel\\.gradle\\caches\\transforms-3\\53cd386dece606142369ed2b2f9fbe1c\\transformed\\material-1.6.1\\res\\values-night-v8\\values-night-v8.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,130,241,330,431,538,645,744,847,935,1059,1161,1263,1379,1481,1595,1723,1839,1961,2097,2217,2351,2471,2583,2709,2826,2950,3080,3202,3340,3474,3590",
+                        "endColumns": "74,110,88,100,106,106,98,102,87,123,101,101,115,101,113,127,115,121,135,119,133,119,111,125,116,123,129,121,137,133,115,119",
+                        "endOffsets": "125,236,325,426,533,640,739,842,930,1054,1156,1258,1374,1476,1590,1718,1834,1956,2092,2212,2346,2466,2578,2704,2821,2945,3075,3197,3335,3469,3585,3705"
+                    },
+                    "to": {
+                        "startLines": "34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,59,60,61,62,63,64,65,66",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1869,1944,2055,2144,2245,2352,2459,2558,2661,2749,2873,2975,3077,3193,3295,3409,3537,3653,3775,3911,4031,4165,4285,4397,4612,4729,4853,4983,5105,5243,5377,5493",
+                        "endColumns": "74,110,88,100,106,106,98,102,87,123,101,101,115,101,113,127,115,121,135,119,133,119,111,125,116,123,129,121,137,133,115,119",
+                        "endOffsets": "1939,2050,2139,2240,2347,2454,2553,2656,2744,2868,2970,3072,3188,3290,3404,3532,3648,3770,3906,4026,4160,4280,4392,4518,4724,4848,4978,5100,5238,5372,5488,5608"
                     }
                 }
             ]
