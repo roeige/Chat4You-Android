@@ -28,6 +28,7 @@ public class ChatService extends FirebaseMessagingService {
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this,"1").setSmallIcon(R.drawable.ic_cool_avatar_background).setContentTitle(remoteMessage.getNotification().getTitle()).setContentText(remoteMessage.getNotification().getBody()).setPriority(NotificationCompat.PRIORITY_DEFAULT);
             NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
             notificationManager.notify(1, builder.build());
+            sendBroadcast(new Intent().setAction("com.chat4u.onMessageReceived").putExtra("username",remoteMessage.getNotification().getTitle()));
         }
     }
 

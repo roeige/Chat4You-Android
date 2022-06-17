@@ -32,6 +32,12 @@ public final class ActivityRegisterBinding implements ViewBinding {
   public final EditText password;
 
   @NonNull
+  public final ImageView photo;
+
+  @NonNull
+  public final MaterialButton photoBtn;
+
+  @NonNull
   public final MaterialButton registerBtn;
 
   @NonNull
@@ -45,12 +51,15 @@ public final class ActivityRegisterBinding implements ViewBinding {
 
   private ActivityRegisterBinding(@NonNull RelativeLayout rootView,
       @NonNull EditText confirmPassword, @NonNull EditText name, @NonNull EditText password,
+      @NonNull ImageView photo, @NonNull MaterialButton photoBtn,
       @NonNull MaterialButton registerBtn, @NonNull ImageView settingsButton,
       @NonNull TextView signin, @NonNull EditText username) {
     this.rootView = rootView;
     this.confirmPassword = confirmPassword;
     this.name = name;
     this.password = password;
+    this.photo = photo;
+    this.photoBtn = photoBtn;
     this.registerBtn = registerBtn;
     this.settingsButton = settingsButton;
     this.signin = signin;
@@ -102,6 +111,18 @@ public final class ActivityRegisterBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.photo;
+      ImageView photo = ViewBindings.findChildViewById(rootView, id);
+      if (photo == null) {
+        break missingId;
+      }
+
+      id = R.id.photoBtn;
+      MaterialButton photoBtn = ViewBindings.findChildViewById(rootView, id);
+      if (photoBtn == null) {
+        break missingId;
+      }
+
       id = R.id.registerBtn;
       MaterialButton registerBtn = ViewBindings.findChildViewById(rootView, id);
       if (registerBtn == null) {
@@ -127,7 +148,7 @@ public final class ActivityRegisterBinding implements ViewBinding {
       }
 
       return new ActivityRegisterBinding((RelativeLayout) rootView, confirmPassword, name, password,
-          registerBtn, settingsButton, signin, username);
+          photo, photoBtn, registerBtn, settingsButton, signin, username);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

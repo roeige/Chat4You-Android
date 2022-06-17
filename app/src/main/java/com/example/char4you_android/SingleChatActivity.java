@@ -1,6 +1,9 @@
 package com.example.char4you_android;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -30,6 +33,11 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_chat);
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("com.chat4u.onMessageReceived");
+        MyBroadcastReceiver receiver = new MyBroadcastReceiver();
+        registerReceiver(receiver, intentFilter);
+
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         SwipeRefreshLayout swipeRefreshLayout = findViewById(R.id.refreshSingleChat);
         swipeRefreshLayout.setEnabled(false);
@@ -48,10 +56,11 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
         listMessages.setLayoutManager(manager);
         MessageAPI messageAPI = new MessageAPI(user.getToken());
         MessageViewModel messageViewModel = new MessageViewModel(this.getApplicationContext(),
-                messageAPI, user.getUsername(), currentContact.getId());
+        messageAPI, user.getUsername(), currentContact.getId());
         //swipeRefreshLayout.setOnRefreshListener(messageViewModel::reload);
         messageViewModel.get().observe(this, messages -> {
-            adapter.setMessages(messages);
+
+            if(messages.size()>0) adapter.setMessages(messages);
             // messageViewModel.update();
             swipeRefreshLayout.setRefreshing(false);
         });
@@ -66,5 +75,14 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
 //            messageAPI.get(adapter, currentContact.getId());
         });
 
+    }
+
+    private class MyBroadcastReceiver extends BroadcastReceiver {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            if(intent.getStringExtra("username")==currentContact.getId()){
+                // need to update chat from api
+            }
+        }
     }
 }

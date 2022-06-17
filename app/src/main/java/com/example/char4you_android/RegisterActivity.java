@@ -1,10 +1,19 @@
 package com.example.char4you_android;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -18,6 +27,8 @@ import com.google.android.material.button.MaterialButton;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -28,6 +39,8 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class RegisterActivity extends AppCompatActivity {
+    TextView username;
+    Bitmap bitmap;
 
     public class RegisterTask extends AsyncTask<String, String, JSONObject> {
 
@@ -79,13 +92,25 @@ public class RegisterActivity extends AppCompatActivity {
                 startActivity(new Intent(RegisterActivity.this, SettingActivity.class));
             }
         });
-        TextView username = (TextView) findViewById(R.id.username);
         TextView name = (TextView) findViewById(R.id.name);
+        username = (TextView) findViewById(R.id.username);
         TextView password = (TextView) findViewById(R.id.password);
         TextView confirmPassword = (TextView) findViewById(R.id.confirm_password);
+//        photo = (ImageView) findViewById(R.id.photo) ;
 
 
         MaterialButton registerBtn = (MaterialButton) findViewById(R.id.registerBtn);
+        MaterialButton photoBtn = (MaterialButton) findViewById(R.id.photoBtn);
+
+        photoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent gallery = new Intent(Intent.ACTION_PICK);
+                gallery.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(gallery,1000);
+            }
+        });
+
 
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,7 +137,9 @@ public class RegisterActivity extends AppCompatActivity {
                         Toast.makeText(RegisterActivity.this, "Error occurred", Toast.LENGTH_LONG).show();
                         return;
                     } else if (result.getBoolean("success")) {
+
                         Log.i("H", "User created, need to move to chat screen");
+                        savePhoto();
                         String token = result.getString("token");
                         User user = new User(username.getText().toString(), username.getText().toString(), token);
                         startActivity(new Intent(RegisterActivity.this,ChatScreenActivity.class).putExtra("user",user));
@@ -131,4 +158,33 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
+
+        if(resultCode==RESULT_OK && requestCode==1000){
+            Uri imageUri = data.getData();
+            try {
+                bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), imageUri);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
+
+    private void savePhoto(){
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+        byte[] b = baos.toByteArray();
+        String imageEncoded = Base64.encodeToString(b, Base64.DEFAULT);
+
+        Log.d("Image Log:", imageEncoded);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString(username.getText().toString(),imageEncoded);
+        editor.commit();
+    }
+
 }

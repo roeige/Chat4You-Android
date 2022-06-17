@@ -66,6 +66,8 @@ id name
 id nick
 id nickName
 id password
+id photo
+id photoBtn
 id picture
 id refreshLayout
 id refreshSingleChat
