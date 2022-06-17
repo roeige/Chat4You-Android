@@ -3039,6 +3039,8 @@ id path
 id pathRelative
 id peekHeight
 id percent
+id photo
+id photoBtn
 id picture
 id pin
 id position

@@ -30,5 +30,7 @@ public class ContactsViewModel extends ViewModel implements Serializable {
         return repository.add(contact);
     }
 
-
+    public ContactsRepository getRepository() {
+        return repository;
+    }
 }
