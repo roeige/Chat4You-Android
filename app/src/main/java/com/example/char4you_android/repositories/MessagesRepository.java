@@ -55,7 +55,6 @@ public class MessagesRepository {
      */
     public void postHandle(Message message) {
         messagesAPI.get(this, toId);
-
         ArrayList<Message> tempLst = (ArrayList<Message>) this.messagesListData.getValue();
         if (tempLst != null) {
             tempLst.add(message);
@@ -93,23 +92,29 @@ public class MessagesRepository {
         }
 
     }
-        public LiveData<List<Message>> getAll() {
-            return messagesListData;
-        }
-        public void handleAPIData(int status, List<Message> messages) {
-            if (status == 200) {
-                messagesListData.setValue(messages);
-                new Thread(() -> {
-                    dao.insertAll(updateMessagesFields(messages));
-                }).start();
-            }
-        }
 
-        private List<Message> updateMessagesFields(List<Message> messages) {
-            for (Message message : messages) {
-                message.setFromId(message.isSent() ? fromId : toId);
-                message.setToId(message.isSent() ? toId : fromId);
-            }
-            return messages;
+    public LiveData<List<Message>> getAll() {
+        return messagesListData;
+    }
+
+    public void handleAPIData(int status, List<Message> messages) {
+        if (status == 200) {
+            messagesListData.setValue(messages);
+            new Thread(() -> {
+                dao.insertAll(updateMessagesFields(messages));
+            }).start();
         }
+    }
+
+    private List<Message> updateMessagesFields(List<Message> messages) {
+        for (Message message : messages) {
+            message.setFromId(message.isSent() ? fromId : toId);
+            message.setToId(message.isSent() ? toId : fromId);
+        }
+        return messages;
+    }
+
+    public void refresh() {
+        this.messagesAPI.get(this, fromId);
+    }
 }

@@ -25,6 +25,10 @@ public class MessageViewModel extends ViewModel {
         return messages;
     }
 
+    public void refresh() {
+        this.mRepository.refresh();
+    }
+
     public void add(String id, Message message) {
         mRepository.add(id, message);
     }

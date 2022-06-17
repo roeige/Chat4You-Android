@@ -21,6 +21,10 @@ public class ContactsViewModel extends ViewModel implements Serializable {
         this.Contacts = this.repository.getAll();
     }
 
+    public void refresh() {
+        this.repository.refresh();
+    }
+
     public LiveData<List<Contact>> get() {
         return Contacts;
     }

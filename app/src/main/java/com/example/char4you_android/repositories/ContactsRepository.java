@@ -89,6 +89,9 @@ public class ContactsRepository {
         }
         return contacts;
     }
+    public void refresh(){
+        this.contactsAPI.get(this);
+    }
 
     public LiveData<List<Contact>> getAll() {
         return contactsListData;
