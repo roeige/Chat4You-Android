@@ -2,7 +2,6 @@ package com.example.char4you_android;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -47,26 +46,19 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
         manager.setReverseLayout(true);
         listContacts.setLayoutManager(manager);
         ContactsAPI contactsAPI = new ContactsAPI(user.getToken());
-        cViewModel = new ContactsViewModel(this.getApplicationContext(), adapter, contactsAPI,user.getUsername());
+        cViewModel = contactViewModelFactory.getViewModel(this.getApplicationContext(), contactsAPI, user.getUsername());
         Button addNewContact = findViewById(R.id.btnAddNewContact);
         cViewModel.get().observe(this, contacts -> {
-            adapter.setContacts(contacts);
+            if (contacts.size() > 0) adapter.setContacts(contacts);
             swipeRefreshLayout.setRefreshing(false);
         });
-        settingsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ChatScreenActivity.this, SettingActivity.class));
-            }
-        });
-        addNewContact.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ChatScreenActivity.this, AddContactActivity.class).putExtra("user", user));
-            }
-        });
+        settingsBtn.setOnClickListener(v ->
+                startActivity(new Intent(ChatScreenActivity.this, SettingActivity.class)));
+        addNewContact.setOnClickListener(view ->
+                startActivity(new Intent(ChatScreenActivity.this, AddContactActivity.class).
+                        putExtra("user", user)));
 
-        FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(ChatScreenActivity.this,instanceIdResult -> {
+        FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(ChatScreenActivity.this, instanceIdResult -> {
             String newToken = instanceIdResult.getToken();
             FirebaseAPI firebaseAPI = new FirebaseAPI(user.getToken());
             firebaseAPI.post(newToken);

@@ -6,10 +6,10 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.example.char4you_android.DB.AppDB;
-import com.example.char4you_android.adapters.ContactListAdapter;
 import com.example.char4you_android.api.ContactsAPI;
 import com.example.char4you_android.dao.ContactsDao;
 import com.example.char4you_android.entities.Contact;
+import com.example.char4you_android.entities.Invite;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -18,24 +18,30 @@ public class ContactsRepository {
     private final ContactsDao dao;
     private final ContactsListData contactsListData;
     private final ContactsAPI contactsAPI;
-    private final ContactListAdapter contactListAdapter;
-    private ContactsListData.PrimeThread t;
-    private final String id;
+    private final String userId;
+    private final AppDB db;
 
-    public ContactsRepository(Context context, ContactListAdapter adapter, ContactsAPI api, String userId) {
-        AppDB db = AppDB.getInstance(context);
-        contactListAdapter = adapter;
-        dao = db.contactsDao();
-        contactsListData = new ContactsListData();
+    public ContactsRepository(Context context, ContactsAPI api, String userId) {
+        this.db = AppDB.getInstance(context);
+        this.dao = db.contactsDao();
+        this.contactsListData = new ContactsListData();
         //create instance of contacts API
-        contactsAPI = api;
-        id = userId;
-
-
+        this.contactsAPI = api;
+        this.contactsAPI.get(this);
+        this.userId = userId;
     }
 
-    public boolean add(Contact contact) {
-        return contactsAPI.post(contact);
+    public void add(Contact contact) {
+        //We want to check if invite first succeeded.
+        contactsAPI.inviteContact(new Invite(contact.getOwnerId(), contact.getId(), contact.getServer()), this, contact);
+    }
+
+    public void afterInvite(Contact contact) {
+        contactsAPI.post(contact, this);
+    }
+
+    public void postHandle() {
+        contactsAPI.get(this);
     }
 
 
@@ -47,7 +53,9 @@ public class ContactsRepository {
 
         class PrimeThread extends Thread {
             public void run() {
-                contactsListData.postValue(dao.index(id));
+                List<Contact> a = dao.index(userId);
+                List<Contact> allList = dao.getAll();
+                contactsListData.postValue(dao.index(userId));
             }
         }
 
@@ -55,21 +63,31 @@ public class ContactsRepository {
         @Override
         protected void onActive() {
             super.onActive();
-            t = new PrimeThread();
+            PrimeThread t = new PrimeThread();
             t.start();
             try {
-                doInBackground();
+                t.join();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
 
-        //while we load contacts from local DB, we request new data from API.
-        protected void doInBackground() throws InterruptedException {
-            contactsAPI.get(contactListAdapter);
-            t.join();
-            contactsListData.setValue(ContactListAdapter.getContacts());
+    }
+
+    public void handleAPIData(int status, List<Contact> contacts) {
+        if (status == 200) {
+            this.contactsListData.setValue(contacts);
+            new Thread(() -> {
+                this.dao.insertAll(updateContactsFields(contacts));
+            }).start();
         }
+    }
+
+    private List<Contact> updateContactsFields(List<Contact> contacts) {
+        for (Contact contact : contacts) {
+            contact.setOwnerId(userId);
+        }
+        return contacts;
     }
 
     public LiveData<List<Contact>> getAll() {

@@ -48,10 +48,10 @@ public final class AppDB_Impl extends AppDB {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
         _db.execSQL("CREATE TABLE IF NOT EXISTS `Message` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `content` TEXT, `created` TEXT, `sent` INTEGER NOT NULL, `fromId` TEXT, `toId` TEXT)");
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `Contact` (`ownerId` TEXT, `id` TEXT NOT NULL, `name` TEXT, `server` TEXT, `last` TEXT, `lastdate` TEXT, PRIMARY KEY(`id`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `Contact` (`ownerId` TEXT NOT NULL, `id` TEXT NOT NULL, `name` TEXT, `server` TEXT, `last` TEXT, `lastdate` TEXT, PRIMARY KEY(`ownerId`, `id`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS `Settings` (`server` TEXT NOT NULL, PRIMARY KEY(`server`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'bb35702f8da5284af99527a25fc13d0f')");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3d5b2c1ec3247a00c80f2c05ca841b64')");
       }
 
       @Override
@@ -114,8 +114,8 @@ public final class AppDB_Impl extends AppDB {
                   + " Found:\n" + _existingMessage);
         }
         final HashMap<String, TableInfo.Column> _columnsContact = new HashMap<String, TableInfo.Column>(6);
-        _columnsContact.put("ownerId", new TableInfo.Column("ownerId", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
-        _columnsContact.put("id", new TableInfo.Column("id", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsContact.put("ownerId", new TableInfo.Column("ownerId", "TEXT", true, 1, null, TableInfo.CREATED_FROM_ENTITY));
+        _columnsContact.put("id", new TableInfo.Column("id", "TEXT", true, 2, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsContact.put("name", new TableInfo.Column("name", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsContact.put("server", new TableInfo.Column("server", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
         _columnsContact.put("last", new TableInfo.Column("last", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY));
@@ -142,7 +142,7 @@ public final class AppDB_Impl extends AppDB {
         }
         return new RoomOpenHelper.ValidationResult(true, null);
       }
-    }, "bb35702f8da5284af99527a25fc13d0f", "18895bcf0452f898f069ed3808d98749");
+    }, "3d5b2c1ec3247a00c80f2c05ca841b64", "ed71db25256ac8e5974ff50d0a86f5fd");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)

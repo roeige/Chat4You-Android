@@ -32,7 +32,7 @@ public class MessagesRepository {
         //create instance of Messages API
         this.fromId = userId;
         this.messagesAPI = api;
-        this.messagesAPI.get(this, toId);
+        this.messagesAPI.get(this, fromId);
         this.toId = toId;
         //user of who we chat with right now.
 
@@ -40,7 +40,7 @@ public class MessagesRepository {
 
     public void add(String toId, @NonNull Message message) {
         // we first want to check if transfer succeeded. if so we activate post action.
-        Transfer transfer = new Transfer(fromId, toId, message.getContent());
+        Transfer transfer = new Transfer(this.fromId, toId, message.getContent());
         messagesAPI.transfer(transfer, message, this);
     }
 
@@ -54,16 +54,17 @@ public class MessagesRepository {
      * @param message
      */
     public void postHandle(Message message) {
-        messagesAPI.get(this,toId);
-//        ArrayList<Message> tempLst = (ArrayList<Message>) this.messagesListData.getValue();
-//        if (tempLst != null) {
-//            tempLst.add(message);
-//            this.messagesListData.setValue(tempLst);
-//            // insert message to dao.
-//            new Thread(() -> {
-//                dao.insert(message);
-//            }).start();
-//        }
+        messagesAPI.get(this, toId);
+
+        ArrayList<Message> tempLst = (ArrayList<Message>) this.messagesListData.getValue();
+        if (tempLst != null) {
+            tempLst.add(message);
+            this.messagesListData.setValue(tempLst);
+            // insert message to dao.
+            new Thread(() -> {
+                dao.insert(message);
+            }).start();
+        }
     }
 
     class MessagesListData extends MutableLiveData<List<Message>> {
@@ -74,55 +75,41 @@ public class MessagesRepository {
 
         class PrimeThread extends Thread {
             public void run() {
-                List<Message> asd = dao.index(fromId, toId);
                 messagesListData.postValue(dao.index(fromId, toId));
             }
         }
 
-        PrimeThread t = new PrimeThread();
 
         @Override
         protected void onActive() {
             super.onActive();
+            PrimeThread t = new PrimeThread();
             t.start();
             try {
                 t.join();
-                doInBackground();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
 
-        //while we load Messages from local DB, we request new data from API.
-        protected void doInBackground() throws InterruptedException {
-            new Thread(() -> {
- //               dao.insertAll(messagesListData.getValue());
-            }).start();
-
+    }
+        public LiveData<List<Message>> getAll() {
+            return messagesListData;
         }
-    }
-
-    public LiveData<List<Message>> getAll() {
-        return messagesListData;
-    }
-
-    public void handleAPIData(int status, List<Message> messages) {
-        if (status == 200) {
-            messagesListData.setValue(messages);
-            new Thread(() -> {
-                List<Message> a = messagesListData.getValue();
-                dao.insertAll(updateMessagesFields(messages));
-                List<Message> list = dao.getAllData();
-                List<Message> list1 = dao.index(fromId,toId);
-            }).start();
+        public void handleAPIData(int status, List<Message> messages) {
+            if (status == 200) {
+                messagesListData.setValue(messages);
+                new Thread(() -> {
+                    dao.insertAll(updateMessagesFields(messages));
+                }).start();
+            }
         }
-    }
 
-    private List<Message> updateMessagesFields(List<Message> messages){
-        for(Message message : messages){
-            message.setFromId(message.isSent() ? fromId : toId);
-            message.setToId(message.isSent() ? toId : fromId);
+        private List<Message> updateMessagesFields(List<Message> messages) {
+            for (Message message : messages) {
+                message.setFromId(message.isSent() ? fromId : toId);
+                message.setToId(message.isSent() ? toId : fromId);
+            }
+            return messages;
         }
-        return messages;
-    }
 }

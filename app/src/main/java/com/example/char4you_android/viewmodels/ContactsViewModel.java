@@ -5,7 +5,6 @@ import android.content.Context;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.char4you_android.adapters.ContactListAdapter;
 import com.example.char4you_android.api.ContactsAPI;
 import com.example.char4you_android.entities.Contact;
 import com.example.char4you_android.repositories.ContactsRepository;
@@ -17,17 +16,17 @@ public class ContactsViewModel extends ViewModel implements Serializable {
     private final LiveData<List<Contact>> Contacts;
     private final ContactsRepository repository;
 
-    public ContactsViewModel(Context context, ContactListAdapter adapter, ContactsAPI api,String id) {
-        repository = new ContactsRepository(context, adapter, api,id);
-        Contacts = repository.getAll();
+    public ContactsViewModel(Context context, ContactsAPI api, String userId) {
+        this.repository = new ContactsRepository(context, api, userId);
+        this.Contacts = this.repository.getAll();
     }
 
     public LiveData<List<Contact>> get() {
         return Contacts;
     }
 
-    public boolean add(Contact contact) {
-        return repository.add(contact);
+    public void add(Contact contact) {
+        this.repository.add(contact);
     }
 
 

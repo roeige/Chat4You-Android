@@ -1,8 +1,8 @@
 package com.example.char4you_android.dao;
 
 import androidx.room.Dao;
-import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
@@ -18,13 +18,16 @@ public interface ContactsDao {
     @Query("SELECT * FROM contact WHERE ownerId =:ownerId AND id=:contactId")
     Contact get(String ownerId, String contactId);
 
-    @Insert
+    @Query("SELECT * FROM contact")
+    List<Contact> getAll();
+
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insert(Contact... contacts);
 
     @Update
     void update(Contact... contacts);
 
-    @Delete
-    void delete(Contact... contacts);
 
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    void insertAll(List<Contact> contacts);
 }
