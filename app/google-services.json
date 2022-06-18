@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1043711221782",
+    "project_id": "char4you-android",
+    "storage_bucket": "char4you-android.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043711221782:android:b3430c9732be906e36d537",
+        "android_client_info": {
+          "package_name": "com.example.char4you_android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043711221782-bonnkvf38a3rbcvpgga9h64o9vjr4lq8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXSEa9fqPTVm48TYgql1PIzziZ_Nb-8l0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1043711221782-bonnkvf38a3rbcvpgga9h64o9vjr4lq8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

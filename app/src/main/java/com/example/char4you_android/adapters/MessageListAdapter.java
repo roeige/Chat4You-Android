@@ -13,13 +13,14 @@ import com.example.char4you_android.R;
 import com.example.char4you_android.Utils.Utils;
 import com.example.char4you_android.entities.Message;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class MessageListAdapter extends RecyclerView.Adapter {
 
     private final LayoutInflater mInflater;
-    private List<Message> messages;
+    private final ArrayList<Message> messages;
     private static final int View_left = 1;
     private static final int View_right = 2;
 
@@ -51,8 +52,13 @@ public class MessageListAdapter extends RecyclerView.Adapter {
     }
 
     public void setMessages(List<Message> s) {
-        messages = s;
+        messages.clear();
+        messages.addAll(s);
         notifyDataSetChanged();
+    }
+
+    public ArrayList<Message> getMessages() {
+        return messages;
     }
 
     @Override
@@ -73,6 +79,7 @@ public class MessageListAdapter extends RecyclerView.Adapter {
 
     public MessageListAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
+        messages = new ArrayList<>();
     }
 
     class RightMessageViewHolder extends RecyclerView.ViewHolder {
@@ -88,8 +95,8 @@ public class MessageListAdapter extends RecyclerView.Adapter {
         void bind(Message message) {
             msgText.setText(message.getContent());
             int month = Integer.parseInt(message.getCreated().substring(5, 7));
-            timeText.setText(message.getCreated().substring(11,13) + ':' + message.getCreated().substring(14,16));
-            dateText.setText(Utils.getMonth(month) +" " + message.getCreated().substring(8,10));
+            timeText.setText(message.getCreated().substring(11, 13) + ':' + message.getCreated().substring(14, 16));
+            dateText.setText(Utils.getMonth(month) + " " + message.getCreated().substring(8, 10));
         }
     }
 
@@ -106,8 +113,8 @@ public class MessageListAdapter extends RecyclerView.Adapter {
         void bind(Message message) {
             msgText.setText(message.getContent());
             int month = Integer.parseInt(message.getCreated().substring(5, 7));
-            timeText.setText( message.getCreated().substring(11,13) + ':' + message.getCreated().substring(14,16));
-            dateText.setText(Utils.getMonth(month) +" " + message.getCreated().substring(8,10));
+            timeText.setText(message.getCreated().substring(11, 13) + ':' + message.getCreated().substring(14, 16));
+            dateText.setText(Utils.getMonth(month) + " " + message.getCreated().substring(8, 10));
         }
     }
 

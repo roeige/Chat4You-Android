@@ -3,7 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Oriel/AndroidStudioProjects/Chat4You-Android/app/src/main/res/layout-land/activity_chat_screen.xml" value="0.2677083333333333" />
+        <entry key="..\:/Users/Oriel/AndroidStudioProjects/Chat4You-Android/app/src/main/res/layout/activity_chat_screen.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Oriel/AndroidStudioProjects/Chat4You-Android/app/src/main/res/layout/activity_login.xml" value="0.18885869565217392" />
+        <entry key="..\:/Users/Oriel/AndroidStudioProjects/Chat4You-Android/app/src/main/res/layout/activity_register.xml" value="0.33" />
+        <entry key="..\:/Users/Oriel/AndroidStudioProjects/Chat4You-Android/app/src/main/res/layout/activity_single_chat.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Oriel/AndroidStudioProjects/Chat4You-Android/app/src/main/res/layout/contactslist_layout.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/amit.cohen/StudioProjects/Chat4You-Android/app/src/main/res/drawable-night-mdpi/ic_server.xml" value="0.1105" />
         <entry key="..\:/Users/amit.cohen/StudioProjects/Chat4You-Android/app/src/main/res/drawable/border.xml" value="0.1105" />
         <entry key="..\:/Users/amit.cohen/StudioProjects/Chat4You-Android/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.12" />
@@ -23,8 +28,10 @@
         <entry key="..\:/Users/amit.cohen/StudioProjects/Chat4You-Android/app/src/main/res/layout/setserver_dialog.xml" value="0.15625" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/drawable-anydpi/ic_server.xml" value="0.13" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/drawable-anydpi/ic_server_night.xml" value="0.13" />
+        <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/drawable-night-mdpi/ic_nightmode.xml" value="0.1" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/drawable-night-mdpi/ic_server.xml" value="0.13" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/drawable-night/ic_baseline_person_24.xml" value="0.13" />
+        <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/drawable-notnight-mdpi/ic_nightmode.xml" value="0.1" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/drawable-notnight-mdpi/ic_server.xml" value="0.13" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/drawable-notnight/ic_baseline_person_24.xml" value="0.13" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.13" />
@@ -34,16 +41,30 @@
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/drawable/ic_baseline_vpn_key_24_night.xml" value="0.13" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/drawable/ic_launcher_background.xml" value="0.13" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/drawable/ic_nickname_background.xml" value="0.13" />
+        <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/layout-land/activity_chat_screen.xml" value="0.264" />
+        <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/layout-land/activity_single_chat.xml" value="0.176" />
+        <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/layout-land/contact_layout.xml" value="0.264" />
+        <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/layout/activity_chat_screen.xml" value="0.25" />
+        <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/layout/activity_chat_screen_horizontal.xml" value="0.2" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/layout/activity_login.xml" value="0.22727272727272727" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/layout/activity_main.xml" value="0.12158054711246201" />
-        <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/layout/activity_register.xml" value="0.1" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/layout/activity_setting.xml" value="0.264" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/layout/activity_settings.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/layout/activity_single_chat.xml" value="0.144" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/layout/add_contact.xml" value="0.2" />
+        <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/layout/chat_fragment.xml" value="0.25" />
+        <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/layout/contact_layout.xml" value="0.264" />
+        <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/layout/contactslist_layout.xml" value="0.11822916666666666" />
+        <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/layout/left_message_layout.xml" value="0.25" />
+        <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/layout/right_message_layout.xml" value="0.25" />
+        <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/layout/setserver_dialog.xml" value="0.25" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/layout/settings_activity.xml" value="0.136" />
+        <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/menu/menu_scrolling.xml" value="0.25" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.121" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.121" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/mipmap-anydpi-v26/ic_nickname.xml" value="0.121" />
+        <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/mipmap-anydpi-v26/ic_nickname_round.xml" value="0.1095" />
         <entry key="..\:/Users/yhood/AndroidStudioProjects/Char4You_Android/app/src/main/res/xml/root_preferences.xml" value="0.1" />
       </map>
     </option>
