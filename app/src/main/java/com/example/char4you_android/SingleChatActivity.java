@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -28,6 +30,7 @@ import java.io.Serializable;
 public class SingleChatActivity extends AppCompatActivity implements Serializable {
     public static Contact currentContact;
     public static User user;
+    public MessageViewModel messageViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +57,10 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setStackFromEnd(true);
         listMessages.setLayoutManager(manager);
-        MessageAPI messageAPI = new MessageAPI(user.getToken());
-        MessageViewModel messageViewModel = new MessageViewModel(this.getApplicationContext(),
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        String server = preferences.getString("server","http://10.0.2.2:7019");
+        MessageAPI messageAPI = new MessageAPI(user.getToken(),server);
+        messageViewModel = new MessageViewModel(this.getApplicationContext(),
         messageAPI, user.getUsername(), currentContact.getId());
         //swipeRefreshLayout.setOnRefreshListener(messageViewModel::reload);
         messageViewModel.get().observe(this, messages -> {
@@ -80,8 +85,9 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
     private class MyBroadcastReceiver extends BroadcastReceiver {
         @Override
         public void onReceive(Context context, Intent intent) {
-            if(intent.getStringExtra("username")==currentContact.getId()){
-                // need to update chat from api
+            String username = intent.getStringExtra("username");
+            if(intent.getStringExtra("username").equals(currentContact.getId())){
+                messageViewModel.refresh();
             }
         }
     }

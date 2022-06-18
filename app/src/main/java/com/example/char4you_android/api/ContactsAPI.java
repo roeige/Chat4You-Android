@@ -1,9 +1,11 @@
 package com.example.char4you_android.api;
 
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.preference.PreferenceManager;
 
 import com.example.char4you_android.AddContactActivity;
 import com.example.char4you_android.entities.Contact;
@@ -27,11 +29,8 @@ public class ContactsAPI {
     private static ContactsAPI api;
     private String serverUrl;
 
-    public ContactsAPI(String Ctoken) {
-        //need to update it by repository.
-        serverUrl = "http://10.0.2.2:7019/api/";
-//        this.postListData = postListData;
-//        this.dao = dao;
+    public ContactsAPI(String Ctoken,String server) {
+        serverUrl = server+"/api/";
         token = Ctoken;
         retrofit = new Retrofit.Builder()
                 .baseUrl(this.serverUrl)

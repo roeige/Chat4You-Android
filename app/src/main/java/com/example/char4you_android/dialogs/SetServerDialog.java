@@ -3,6 +3,7 @@ package com.example.char4you_android.dialogs;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.preference.PreferenceManager;
 
 import com.example.char4you_android.R;
 
@@ -35,6 +37,8 @@ public class SetServerDialog extends Dialog implements
         setContentView(R.layout.setserver_dialog);
         set = (Button) findViewById(R.id.setServerBtn);
         nextServer = (EditText) findViewById(R.id.setServerAddress);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        nextServer.setHint(preferences.getString("server","http://10.0.2.2:7019"));
         set.setOnClickListener(this);
     }
 

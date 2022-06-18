@@ -2,12 +2,17 @@ package com.example.char4you_android;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.preference.PreferenceManager;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ImageView;
@@ -35,6 +40,8 @@ import okhttp3.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
+    static boolean firstTime = true;
+
     public class LoginTask extends AsyncTask<String, String, JSONObject> {
 
 
@@ -51,7 +58,9 @@ public class LoginActivity extends AppCompatActivity {
                 json.put("username", strings[0]);
                 json.put("password", strings[1]);
                 RequestBody body = RequestBody.create(JSON, json.toString());
-                Request request = new Request.Builder().url("http://10.0.2.2:7019/api/login").post(body).build();
+                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+                String server = preferences.getString("server","http://10.0.2.2:7019");
+                Request request = new Request.Builder().url(server+"/api/login").post(body).build();
                 Response response = client.newCall(request).execute();
                 List<String> Cookielist = response.headers().values("Set-Cookie");
                 String token = "";
@@ -77,7 +86,14 @@ public class LoginActivity extends AppCompatActivity {
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+            preferences.registerOnSharedPreferenceChangeListener(listener);
+            if(firstTime){
+                firstTime = false;
+                listener.onSharedPreferenceChanged(preferences,"nightMode");
+            }
             setTheme(getTheme());
+            Resources.Theme theme = getTheme();
             setContentView(R.layout.activity_login);
             ImageView imgFavorite = (ImageView) findViewById(R.id.settings_button);
             imgFavorite.setOnClickListener(new View.OnClickListener() {
@@ -135,6 +151,15 @@ public class LoginActivity extends AppCompatActivity {
 
 
         }
+
+    private SharedPreferences.OnSharedPreferenceChangeListener listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
+        @Override
+        public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
+            if(key=="nightMode"){
+                AppCompatDelegate.setDefaultNightMode(sharedPreferences.getInt("nightMode",1));
+            }
+        }
+    };
 
 
     }

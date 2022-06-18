@@ -65,7 +65,9 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setReverseLayout(true);
         listContacts.setLayoutManager(manager);
-        ContactsAPI contactsAPI = new ContactsAPI(user.getToken());
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        String server = preferences.getString("server","http://10.0.2.2:7019");
+        ContactsAPI contactsAPI = new ContactsAPI(user.getToken(),server);
         cViewModel = contactViewModelFactory.getViewModel(this.getApplicationContext(), contactsAPI, user.getUsername());
         Button addNewContact = findViewById(R.id.btnAddNewContact);
         cViewModel.get().observe(this, contacts -> {
@@ -80,7 +82,7 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
 
         FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(ChatScreenActivity.this, instanceIdResult -> {
             String newToken = instanceIdResult.getToken();
-            FirebaseAPI firebaseAPI = new FirebaseAPI(user.getToken());
+            FirebaseAPI firebaseAPI = new FirebaseAPI(user.getToken(),server);
             firebaseAPI.post(newToken);
         });
 
@@ -113,7 +115,7 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
         @Override
         public void onReceive(Context context, Intent intent) {
             //need to update contacts
-            int a = 1;
+            cViewModel.refresh();
         }
     }
 }
