@@ -10,7 +10,6 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Base64;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -65,8 +64,8 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
         LinearLayoutManager manager = new LinearLayoutManager(this);
         listContacts.setLayoutManager(manager);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        String server = preferences.getString("server","http://10.0.2.2:7019");
-        ContactsAPI contactsAPI = new ContactsAPI(user.getToken(),server);
+        String server = preferences.getString("server", "http://10.0.2.2:7019");
+        ContactsAPI contactsAPI = new ContactsAPI(user.getToken(), server);
         cViewModel = contactViewModelFactory.getViewModel(this.getApplicationContext(), contactsAPI, user.getUsername());
         Button addNewContact = findViewById(R.id.btnAddNewContact);
         cViewModel.get().observe(this, contacts -> {
@@ -81,7 +80,7 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
 
         FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(ChatScreenActivity.this, instanceIdResult -> {
             String newToken = instanceIdResult.getToken();
-            FirebaseAPI firebaseAPI = new FirebaseAPI(user.getToken(),server);
+            FirebaseAPI firebaseAPI = new FirebaseAPI(user.getToken(), server);
             firebaseAPI.post(newToken);
         });
 
@@ -98,14 +97,14 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
     private void getPicture(String username) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
         String encodedPhoto = preferences.getString(username, "");
-        if(encodedPhoto==""){
-            Uri imgUri= Uri.parse("android.resource://" + getPackageName() + "/drawable/" + "chatlogo");
+        if (encodedPhoto == "") {
+            Uri imgUri = Uri.parse("android.resource://" + getPackageName() + "/drawable/" + "chatlogo");
             profilePicture.setImageURI(null);
             profilePicture.setImageURI(imgUri);
             return;
         }
         byte[] decodedByte = Base64.decode(encodedPhoto, 0);
-        Bitmap bitmap =  BitmapFactory
+        Bitmap bitmap = BitmapFactory
                 .decodeByteArray(decodedByte, 0, decodedByte.length);
         profilePicture.setImageBitmap(bitmap);
     }
@@ -116,5 +115,11 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
             //need to update contacts
             cViewModel.refresh();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }

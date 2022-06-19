@@ -98,4 +98,9 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
             }
         }
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }
