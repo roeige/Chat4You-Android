@@ -20,23 +20,28 @@ public class MessageAPI {
     Retrofit retrofit;
     WebServiceAPI webServiceAPI;
     public static String token;
+    private String server;
 
-    public MessageAPI(String Ctoken,String server) {
+    public MessageAPI(String Ctoken, String server) {
+        this.server = server;
         token = Ctoken;
         retrofit = new Retrofit.Builder()
-                .baseUrl(server+"/api/")
+                .baseUrl(server + "/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         webServiceAPI = retrofit.create(WebServiceAPI.class);
     }
 
+    public String getServer() {
+        return server;
+    }
 
     public void get(MessagesRepository repository, String id) {
         Call<List<Message>> call = webServiceAPI.getMessages("Bearer " + token, id);
         call.enqueue(new Callback<List<Message>>() {
             @Override
             public void onResponse(@NonNull Call<List<Message>> call, @NonNull Response<List<Message>> response) {
-                repository.handleAPIData(response.code(),response.body());
+                repository.handleAPIData(response.code(), response.body());
             }
 
 
@@ -46,13 +51,19 @@ public class MessageAPI {
             }
         });
     }
-public void transfer(Transfer transfer, Message message, MessagesRepository repository){
-        Call<Void> call=webServiceAPI.transfer("Bearer "+token,transfer);
+
+    public void transfer(Transfer transfer, Message message, MessagesRepository repository, WebServiceAPI api) {
+        Call<Void> call;
+        if (api != null) {
+            call = api.transfer("Bearer " + token, transfer);
+        } else {
+            call = webServiceAPI.transfer("Bearer " + token, transfer);
+        }
         call.enqueue(new Callback<Void>() {
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 Log.i("success", "success transfer action");
-                repository.afterTransfer(transfer,message);
+                repository.afterTransfer(transfer, message);
             }
 
             @Override
@@ -62,8 +73,9 @@ public void transfer(Transfer transfer, Message message, MessagesRepository repo
             }
         });
 
-}
-    public void post(String id, Message message,MessagesRepository repository) {
+    }
+
+    public void post(String id, Message message, MessagesRepository repository) {
 //        final boolean[] success = {false};
         Call<Void> call = webServiceAPI.createMessage("Bearer " + token, id, message);
         call.enqueue(new Callback<Void>() {

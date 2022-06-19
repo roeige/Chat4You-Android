@@ -8,6 +8,7 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.char4you_android.DB.AppDB;
 import com.example.char4you_android.api.MessageAPI;
+import com.example.char4you_android.api.WebServiceAPI;
 import com.example.char4you_android.dao.MessageDao;
 import com.example.char4you_android.entities.Message;
 import com.example.char4you_android.entities.Transfer;
@@ -15,16 +16,20 @@ import com.example.char4you_android.entities.Transfer;
 import java.util.LinkedList;
 import java.util.List;
 
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
+
 public class MessagesRepository {
     private final MessageDao dao;
     private final MessagesListData messagesListData;
     private final MessageAPI messagesAPI;
     private final String fromId;
     private final String toId;
+    private final String contactServer;
     AppDB db;
 
 
-    public MessagesRepository(Context context, MessageAPI api, String userId, String toId) {
+    public MessagesRepository(Context context, MessageAPI api, String userId, String toId, String contactServer) {
         this.db = AppDB.getInstance(context);
         this.dao = db.messageDao();
         this.messagesListData = new MessagesListData();
@@ -33,6 +38,7 @@ public class MessagesRepository {
         this.messagesAPI = api;
         this.messagesAPI.get(this, toId);
         this.toId = toId;
+        this.contactServer = contactServer;
         //user of who we chat with right now.
 
     }
@@ -40,7 +46,17 @@ public class MessagesRepository {
     public void add(String toId, @NonNull Message message) {
         // we first want to check if transfer succeeded. if so we activate post action.
         Transfer transfer = new Transfer(fromId, toId, message.getContent());
-        messagesAPI.transfer(transfer, message, this);
+        WebServiceAPI webServiceAPI;
+        if (messagesAPI.getServer().equals(this.contactServer)) {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(this.contactServer)
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            webServiceAPI = retrofit.create(WebServiceAPI.class);
+        } else {
+            webServiceAPI = null;
+        }
+        messagesAPI.transfer(transfer, message, this,webServiceAPI);
     }
 
     public void afterTransfer(Transfer transfer, Message message) {

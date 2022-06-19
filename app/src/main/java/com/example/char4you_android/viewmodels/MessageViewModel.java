@@ -15,8 +15,8 @@ public class MessageViewModel extends ViewModel {
     private MessagesRepository mRepository;
     private LiveData<List<Message>> messages;
 
-    public MessageViewModel(Context context, MessageAPI api, String fromId, String toId) {
-        mRepository = new MessagesRepository(context, api, fromId, toId);
+    public MessageViewModel(Context context, MessageAPI api, String fromId, String toId,String contactServer) {
+        mRepository = new MessagesRepository(context, api, fromId, toId,contactServer);
         messages = mRepository.getAll();
     }
 

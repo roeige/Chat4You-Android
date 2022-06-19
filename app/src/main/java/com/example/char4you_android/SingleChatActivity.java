@@ -61,7 +61,7 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
         String server = preferences.getString("server", "http://10.0.2.2:7019");
         MessageAPI messageAPI = new MessageAPI(user.getToken(), server);
         messageViewModel = new MessageViewModel(this.getApplicationContext(),
-                messageAPI, user.getUsername(), currentContact.getId());
+                messageAPI, user.getUsername(), currentContact.getId(), currentContact.getServer());
         //swipeRefreshLayout.setOnRefreshListener(messageViewModel::reload);
         messageViewModel.get().observe(this, messages -> {
 
@@ -98,6 +98,7 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
             }
         }
     }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();

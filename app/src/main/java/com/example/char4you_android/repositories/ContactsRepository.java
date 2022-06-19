@@ -7,12 +7,16 @@ import androidx.lifecycle.MutableLiveData;
 
 import com.example.char4you_android.DB.AppDB;
 import com.example.char4you_android.api.ContactsAPI;
+import com.example.char4you_android.api.WebServiceAPI;
 import com.example.char4you_android.dao.ContactsDao;
 import com.example.char4you_android.entities.Contact;
 import com.example.char4you_android.entities.Invite;
 
 import java.util.LinkedList;
 import java.util.List;
+
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ContactsRepository {
     private final ContactsDao dao;
@@ -33,7 +37,17 @@ public class ContactsRepository {
 
     public void add(Contact contact) {
         //We want to check if invite first succeeded.
-        contactsAPI.inviteContact(new Invite(contact.getOwnerId(), contact.getId(), contact.getServer()), this, contact);
+        WebServiceAPI webServiceAPI;
+        if (contactsAPI.getServerUrl().equals(contact.getServer())) {
+            Retrofit retrofit = new Retrofit.Builder()
+                    .baseUrl(contact.getServer())
+                    .addConverterFactory(GsonConverterFactory.create())
+                    .build();
+            webServiceAPI = retrofit.create(WebServiceAPI.class);
+        } else {
+            webServiceAPI = null;
+        }
+        contactsAPI.inviteContact(new Invite(contact.getOwnerId(), contact.getId(), contact.getServer()), this, contact, webServiceAPI);
     }
 
     public void afterInvite(Contact contact) {
