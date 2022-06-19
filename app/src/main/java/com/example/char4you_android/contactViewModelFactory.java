@@ -10,7 +10,7 @@ public class contactViewModelFactory {
 
 
     public static ContactsViewModel getViewModel(Context context, ContactsAPI api, String userId) {
-        if (viewModel == null) {
+        if (viewModel == null || !userId.equals(viewModel.getUserId())) {
             viewModel = new ContactsViewModel(context, api, userId);
         }
         return viewModel;

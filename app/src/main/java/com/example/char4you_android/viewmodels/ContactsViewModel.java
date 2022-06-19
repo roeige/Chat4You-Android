@@ -15,10 +15,16 @@ import java.util.List;
 public class ContactsViewModel extends ViewModel implements Serializable {
     private final LiveData<List<Contact>> Contacts;
     private final ContactsRepository repository;
+    private final String userId;
 
     public ContactsViewModel(Context context, ContactsAPI api, String userId) {
         this.repository = new ContactsRepository(context, api, userId);
         this.Contacts = this.repository.getAll();
+        this.userId = userId;
+    }
+
+    public String getUserId() {
+        return userId;
     }
 
     public void refresh() {
