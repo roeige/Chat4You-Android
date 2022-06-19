@@ -20,7 +20,7 @@ import java.util.List;
 public class MessageListAdapter extends RecyclerView.Adapter {
 
     private final LayoutInflater mInflater;
-    private final ArrayList<Message> messages;
+    public final ArrayList<Message> messages;
     private static final int View_left = 1;
     private static final int View_right = 2;
 
@@ -43,10 +43,10 @@ public class MessageListAdapter extends RecyclerView.Adapter {
             final Message current = messages.get(position);
             switch (holder.getItemViewType()) {
                 case View_left:
-                    ((LeftMessageViewHolder) holder).bind(current);
+                    ((LeftMessageViewHolder) holder).bind(current, position);
                     break;
                 case View_right:
-                    ((RightMessageViewHolder) holder).bind(current);
+                    ((RightMessageViewHolder) holder).bind(current, position);
             }
         }
     }
@@ -92,11 +92,24 @@ public class MessageListAdapter extends RecyclerView.Adapter {
             dateText = itemView.findViewById(R.id.dateTextRight);
         }
 
-        void bind(Message message) {
+        void bind(Message message, int position) {
             msgText.setText(message.getContent());
-            int month = Integer.parseInt(message.getCreated().substring(5, 7));
             timeText.setText(message.getCreated().substring(11, 13) + ':' + message.getCreated().substring(14, 16));
-            dateText.setText(Utils.getMonth(month) + " " + message.getCreated().substring(8, 10));
+            String date = Utils.getMonth(Integer.parseInt(message.getCreated().substring(5, 7)))
+                    + " " +
+                    message.getCreated().substring(8, 10);
+            if (position == 0) {
+                dateText.setText(date);
+                return;
+            }
+            String prevDate = Utils.getMonth(Integer.parseInt(messages.get(position - 1)
+                    .getCreated().substring(5, 7)))
+                    + " " +
+                    messages.get(position - 1).getCreated().substring(8, 10);
+            if (date.equals(prevDate))
+                dateText.setText("");
+            else
+                dateText.setText(date);
         }
     }
 
@@ -110,11 +123,24 @@ public class MessageListAdapter extends RecyclerView.Adapter {
             dateText = itemView.findViewById(R.id.text_gchat_date_other);
         }
 
-        void bind(Message message) {
+        void bind(Message message, int position) {
             msgText.setText(message.getContent());
-            int month = Integer.parseInt(message.getCreated().substring(5, 7));
             timeText.setText(message.getCreated().substring(11, 13) + ':' + message.getCreated().substring(14, 16));
-            dateText.setText(Utils.getMonth(month) + " " + message.getCreated().substring(8, 10));
+            String date = Utils.getMonth(Integer.parseInt(message.getCreated().substring(5, 7)))
+                    + " " +
+                    message.getCreated().substring(8, 10);
+            if (position == 0) {
+                dateText.setText(date);
+                return;
+            }
+            String prevDate = Utils.getMonth(Integer.parseInt(messages.get(position - 1)
+                    .getCreated().substring(5, 7)))
+                    + " " +
+                    messages.get(position - 1).getCreated().substring(8, 10);
+            if (date.equals(prevDate))
+                dateText.setText("");
+            else
+                dateText.setText(date);
         }
     }
 

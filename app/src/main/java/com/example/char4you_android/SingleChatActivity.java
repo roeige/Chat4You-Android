@@ -58,14 +58,14 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
         manager.setStackFromEnd(true);
         listMessages.setLayoutManager(manager);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        String server = preferences.getString("server","http://10.0.2.2:7019");
-        MessageAPI messageAPI = new MessageAPI(user.getToken(),server);
+        String server = preferences.getString("server", "http://10.0.2.2:7019");
+        MessageAPI messageAPI = new MessageAPI(user.getToken(), server);
         messageViewModel = new MessageViewModel(this.getApplicationContext(),
-        messageAPI, user.getUsername(), currentContact.getId());
+                messageAPI, user.getUsername(), currentContact.getId());
         //swipeRefreshLayout.setOnRefreshListener(messageViewModel::reload);
         messageViewModel.get().observe(this, messages -> {
 
-            if(messages.size()>0) adapter.setMessages(messages);
+            if (messages.size() > 0) adapter.setMessages(messages);
             // messageViewModel.update();
             swipeRefreshLayout.setRefreshing(false);
         });
@@ -78,6 +78,13 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
             messageViewModel.add(currentContact.getId(), message);
             msgBox.setText(null);
 //            messageAPI.get(adapter, currentContact.getId());
+            messageViewModel.get().observe(this, messages -> {
+
+                if (messages.size() > 0) adapter.setMessages(messages);
+                // messageViewModel.update();
+                swipeRefreshLayout.setRefreshing(false);
+                listMessages.scrollToPosition(messages.size() - 1);
+            });
         });
 
     }
@@ -86,7 +93,7 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
         @Override
         public void onReceive(Context context, Intent intent) {
             String username = intent.getStringExtra("username");
-            if(intent.getStringExtra("username").equals(currentContact.getId())){
+            if (intent.getStringExtra("username").equals(currentContact.getId())) {
                 messageViewModel.refresh();
             }
         }
