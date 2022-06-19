@@ -29,6 +29,9 @@ public interface MessageDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insertAll(List<Message> messages);
 
+    @Query("DELETE FROM message WHERE fromId=:fromId AND toId=:toId")
+    void deleteAll(String fromId, String toId);
+
 
     @Update
     void update(Message... messages);

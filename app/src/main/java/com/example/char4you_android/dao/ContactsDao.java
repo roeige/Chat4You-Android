@@ -27,6 +27,9 @@ public interface ContactsDao {
     @Update
     void update(Contact... contacts);
 
+    @Query("DELETE FROM contact WHERE ownerId=:ownerId")
+    void deleteAll(String ownerId);
+
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insertAll(List<Contact> contacts);

@@ -12,7 +12,6 @@ import com.example.char4you_android.dao.MessageDao;
 import com.example.char4you_android.entities.Message;
 import com.example.char4you_android.entities.Transfer;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -54,7 +53,7 @@ public class MessagesRepository {
      * @param message
      */
     public void postHandle(Message message) {
-        messagesAPI.get(this,toId);
+        messagesAPI.get(this, toId);
     }
 
     class MessagesListData extends MutableLiveData<List<Message>> {
@@ -100,13 +99,14 @@ public class MessagesRepository {
         if (status == 200) {
             messagesListData.setValue(messages);
             new Thread(() -> {
+                dao.deleteAll(fromId, toId);
                 dao.insertAll(updateMessagesFields(messages));
             }).start();
         }
     }
 
-    private List<Message> updateMessagesFields(List<Message> messages){
-        for(Message message : messages){
+    private List<Message> updateMessagesFields(List<Message> messages) {
+        for (Message message : messages) {
             message.setFromId(message.isSent() ? fromId : toId);
             message.setToId(message.isSent() ? toId : fromId);
         }

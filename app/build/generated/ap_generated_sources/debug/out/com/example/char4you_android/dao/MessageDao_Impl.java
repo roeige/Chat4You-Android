@@ -5,6 +5,7 @@ import androidx.room.EntityDeletionOrUpdateAdapter;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
+import androidx.room.SharedSQLiteStatement;
 import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.sqlite.db.SupportSQLiteStatement;
@@ -26,6 +27,8 @@ public final class MessageDao_Impl implements MessageDao {
   private final EntityDeletionOrUpdateAdapter<Message> __deletionAdapterOfMessage;
 
   private final EntityDeletionOrUpdateAdapter<Message> __updateAdapterOfMessage;
+
+  private final SharedSQLiteStatement __preparedStmtOfDeleteAll;
 
   public MessageDao_Impl(RoomDatabase __db) {
     this.__db = __db;
@@ -107,6 +110,13 @@ public final class MessageDao_Impl implements MessageDao {
         stmt.bindLong(7, value.getId());
       }
     };
+    this.__preparedStmtOfDeleteAll = new SharedSQLiteStatement(__db) {
+      @Override
+      public String createQuery() {
+        final String _query = "DELETE FROM message WHERE fromId=? AND toId=?";
+        return _query;
+      }
+    };
   }
 
   @Override
@@ -154,6 +164,32 @@ public final class MessageDao_Impl implements MessageDao {
       __db.setTransactionSuccessful();
     } finally {
       __db.endTransaction();
+    }
+  }
+
+  @Override
+  public void deleteAll(final String fromId, final String toId) {
+    __db.assertNotSuspendingTransaction();
+    final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteAll.acquire();
+    int _argIndex = 1;
+    if (fromId == null) {
+      _stmt.bindNull(_argIndex);
+    } else {
+      _stmt.bindString(_argIndex, fromId);
+    }
+    _argIndex = 2;
+    if (toId == null) {
+      _stmt.bindNull(_argIndex);
+    } else {
+      _stmt.bindString(_argIndex, toId);
+    }
+    __db.beginTransaction();
+    try {
+      _stmt.executeUpdateDelete();
+      __db.setTransactionSuccessful();
+    } finally {
+      __db.endTransaction();
+      __preparedStmtOfDeleteAll.release(_stmt);
     }
   }
 

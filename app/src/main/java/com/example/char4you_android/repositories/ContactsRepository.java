@@ -78,6 +78,7 @@ public class ContactsRepository {
         if (status == 200) {
             this.contactsListData.setValue(contacts);
             new Thread(() -> {
+                this.dao.deleteAll(this.userId);
                 this.dao.insertAll(updateContactsFields(contacts));
             }).start();
         }
@@ -89,7 +90,8 @@ public class ContactsRepository {
         }
         return contacts;
     }
-    public void refresh(){
+
+    public void refresh() {
         this.contactsAPI.get(this);
     }
 
