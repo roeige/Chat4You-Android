@@ -21,12 +21,10 @@ public class MessageAPI {
     WebServiceAPI webServiceAPI;
     public static String token;
 
-    public MessageAPI(String Ctoken) {
-//        this.postListData = postListData;
-//        this.dao = dao;
+    public MessageAPI(String Ctoken,String server) {
         token = Ctoken;
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:7019/api/")
+                .baseUrl(server+"/api/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         webServiceAPI = retrofit.create(WebServiceAPI.class);

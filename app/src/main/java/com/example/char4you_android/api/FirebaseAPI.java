@@ -24,10 +24,10 @@ public class FirebaseAPI {
     WebServiceAPI webServiceAPI;
     public static String token;
 
-    public FirebaseAPI(String Ctoken) {
+    public FirebaseAPI(String Ctoken,String server) {
         token = Ctoken;
         retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:7019/")
+                .baseUrl(server+"/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         webServiceAPI = retrofit.create(WebServiceAPI.class);

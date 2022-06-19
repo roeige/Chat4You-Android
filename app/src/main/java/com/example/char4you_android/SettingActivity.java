@@ -2,7 +2,9 @@ package com.example.char4you_android;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.preference.PreferenceManager;
 
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +21,8 @@ public class SettingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
         setContentView(R.layout.activity_setting);
         SwitchMaterial switchBtn = findViewById(R.id.switchBtn);
         int nightModeFlags =
@@ -34,14 +38,16 @@ public class SettingActivity extends AppCompatActivity {
                 break;
         }
         switchBtn.setOnCheckedChangeListener((buttonView, isNightModeOn) -> {
+
             if (isNightModeOn) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                editor.putInt("nightMode",0).apply();
             } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                editor.putInt("nightMode",1).apply();
             }
         });
         SetServerDialog cdd = new SetServerDialog(SettingActivity.this);
         TextView serverDef = findViewById(R.id.settingsServerAddress);
+        serverDef.setText(preferences.getString("server","http://10.0.2.2:7019"));
         serverDef.setOnClickListener(v -> {
             cdd.show();
             cdd.setDialogResult(new SetServerDialog.OnMyDialogResult() {
@@ -49,6 +55,7 @@ public class SettingActivity extends AppCompatActivity {
                 public void finish(String result) {
                     TextView serverDef = (TextView) findViewById(R.id.settingsServerAddress);
                     serverDef.setText(result);
+                    editor.putString("server",result).apply();
                 }
             });
         });

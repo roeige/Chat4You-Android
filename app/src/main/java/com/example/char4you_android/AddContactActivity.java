@@ -2,6 +2,7 @@ package com.example.char4you_android;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 import com.example.char4you_android.api.ContactsAPI;
 import com.example.char4you_android.entities.Contact;
@@ -37,7 +39,9 @@ public class AddContactActivity extends AppCompatActivity {
 //        if (contactsViewModel == null) {
 //            contactsViewModel = (ContactsViewModel) i.getSerializableExtra("contactsViewModel");
 //        }
-        ContactsAPI contactsAPI = new ContactsAPI(user.getToken());
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+        String server = preferences.getString("server","http://10.0.2.2:7019");
+        ContactsAPI contactsAPI = new ContactsAPI(user.getToken(),server);
         contactsViewModel = contactViewModelFactory.getViewModel(this.getApplicationContext(), contactsAPI, user.getUsername());
         ImageView imgFavorite = (ImageView) findViewById(R.id.settings_button);
         imgFavorite.setOnClickListener(new View.OnClickListener() {
