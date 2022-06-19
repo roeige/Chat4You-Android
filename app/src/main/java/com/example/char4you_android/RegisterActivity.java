@@ -141,7 +141,7 @@ public class RegisterActivity extends AppCompatActivity {
                     } else if (result.getBoolean("success")) {
 
                         Log.i("H", "User created, need to move to chat screen");
-                        savePhoto();
+                        if(bitmap!=null)savePhoto();
                         String token = result.getString("token");
                         User user = new User(username.getText().toString(), username.getText().toString(), token);
                         startActivity(new Intent(RegisterActivity.this,ChatScreenActivity.class).putExtra("user",user));
