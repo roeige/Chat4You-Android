@@ -1,442 +1,442 @@
 [
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-notnight-mdpi_ic_nightmode.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-notnight-mdpi\\ic_nightmode.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-mdpi_ic_server.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-mdpi\\ic_server.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-mdpi_ic_server_night.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-mdpi\\ic_server_night.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxhdpi_ic_logo.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxhdpi\\ic_logo.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-anydpi_ic_nightmode_night.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-anydpi\\ic_nightmode_night.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_right_message_layout.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\right_message_layout.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable_ic_baseline_vpn_key_24_night.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable\\ic_baseline_vpn_key_24_night.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-anydpi-v26_ic_cool_avatar.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-anydpi-v26\\ic_cool_avatar.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-mdpi_ic_monkey.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-mdpi\\ic_monkey.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-hdpi_ic_monkey_foreground.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-hdpi\\ic_monkey_foreground.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\xml\\data_extraction_rules.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-anydpi-v26_ic_cool_avatar_round.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-anydpi-v26\\ic_cool_avatar_round.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-anydpi-v26_ic_monkey_round.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-anydpi-v26\\ic_monkey_round.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-night-mdpi_ic_nightmode.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-night-mdpi\\ic_nightmode.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_activity_login.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\activity_login.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable_border.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable\\border.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xhdpi_ic_logo.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xhdpi\\ic_logo.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xxhdpi_ic_settings.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xxhdpi\\ic_settings.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-mdpi_ic_nightmode_night.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-mdpi\\ic_nightmode_night.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-mdpi_ic_nightmode_night.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-mdpi\\ic_nightmode_night.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-hdpi_ic_cool_avatar_round.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-hdpi\\ic_cool_avatar_round.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-anydpi_ic_server_night.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-anydpi\\ic_server_night.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxxhdpi_ic_monkey.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxxhdpi\\ic_monkey.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\activity_login.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-anydpi-v26_ic_cool_avatar_round.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-anydpi-v26\\ic_cool_avatar_round.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-anydpi-v26_ic_monkey_round.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-anydpi-v26\\ic_monkey_round.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-night-mdpi_ic_nightmode.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-night-mdpi\\ic_nightmode.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xhdpi_ic_nightmode_day.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xhdpi\\ic_nightmode_day.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxhdpi_ic_logo.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxhdpi\\ic_logo.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xhdpi_ic_monkey_round.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xhdpi\\ic_monkey_round.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxhdpi_ic_monkey_foreground.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxhdpi\\ic_monkey_foreground.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "com.example.char4you_android.app-merged_res-36:/layout_setserver_dialog.xml.flat",
-        "source": "com.example.char4you_android.app-main-38:/layout/setserver_dialog.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxxhdpi_ic_cool_avatar.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxxhdpi\\ic_cool_avatar.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_right_message_layout.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\right_message_layout.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable_ic_cool_avatar_background.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable\\ic_cool_avatar_background.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-mdpi_ic_settings_nigh.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-mdpi\\ic_settings_nigh.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-notnight_ic_baseline_person_24.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-notnight\\ic_baseline_person_24.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxxhdpi_ic_monkey_round.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxxhdpi\\ic_monkey_round.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-notnight-mdpi_ic_nightmode.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-notnight-mdpi\\ic_nightmode.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-notnight_ic_baseline_person_24.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-notnight\\ic_baseline_person_24.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-mdpi_ic_server_night.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-mdpi\\ic_server_night.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-mdpi_ic_logo.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-mdpi\\ic_logo.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xhdpi_ic_cool_avatar_foreground.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xhdpi\\ic_cool_avatar_foreground.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-mdpi_ic_cool_avatar.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-mdpi\\ic_cool_avatar.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-hdpi_ic_settings.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-hdpi\\ic_settings.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-anydpi-v26_ic_cool_avatar.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-anydpi-v26\\ic_cool_avatar.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-mdpi_ic_nightmode_day.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-mdpi\\ic_nightmode_day.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-hdpi_ic_monkey_foreground.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-hdpi\\ic_monkey_foreground.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-mdpi_ic_monkey.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-mdpi\\ic_monkey.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_activity_register.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\activity_register.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-hdpi_ic_server_night.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-hdpi\\ic_server_night.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-hdpi_ic_cool_avatar.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-hdpi\\ic_cool_avatar.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-hdpi_ic_logo.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-hdpi\\ic_logo.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable_ic_baseline_person_24.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable\\ic_baseline_person_24.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_add_contact.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\add_contact.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxxhdpi_ic_logo.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxxhdpi\\ic_logo.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xhdpi_ic_monkey_foreground.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xhdpi\\ic_monkey_foreground.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-night-mdpi_ic_server.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-night-mdpi\\ic_server.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-anydpi-v26_ic_monkey.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-anydpi-v26\\ic_monkey.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable_border.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable\\border.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-mdpi_ic_monkey_round.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-mdpi\\ic_monkey_round.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-night_ic_baseline_vpn_key_24.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-night\\ic_baseline_vpn_key_24.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-night-mdpi_ic_settings.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-night-mdpi\\ic_settings.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxxhdpi_ic_cool_avatar_foreground.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxxhdpi\\ic_cool_avatar_foreground.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-anydpi_ic_settings.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-anydpi\\ic_settings.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-mdpi_ic_settings.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-mdpi\\ic_settings.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xxhdpi_ic_nightmode_night.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xxhdpi\\ic_nightmode_night.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout-land_contact_layout.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout-land\\contact_layout.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-hdpi_ic_cool_avatar_round.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-hdpi\\ic_cool_avatar_round.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_activity_setting.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\activity_setting.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxhdpi_ic_cool_avatar.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxhdpi\\ic_cool_avatar.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_contact_layout.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\contact_layout.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-hdpi_ic_nightmode_night.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-hdpi\\ic_nightmode_night.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-hdpi_ic_server_night.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-hdpi\\ic_server_night.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-hdpi_ic_cool_avatar_foreground.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-hdpi\\ic_cool_avatar_foreground.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xhdpi_ic_nightmode_night.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xhdpi\\ic_nightmode_night.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xhdpi_ic_logo.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xhdpi\\ic_logo.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_add_contact.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\add_contact.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-anydpi_ic_server.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-anydpi\\ic_server.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxxhdpi_ic_cool_avatar.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxxhdpi\\ic_cool_avatar.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxhdpi_ic_cool_avatar_round.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxhdpi\\ic_cool_avatar_round.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxhdpi_ic_monkey_round.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxhdpi\\ic_monkey_round.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_activity_setting.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\activity_setting.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-anydpi-v26_ic_monkey.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-anydpi-v26\\ic_monkey.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xxhdpi_ic_server.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xxhdpi\\ic_server.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-hdpi_ic_monkey.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-hdpi\\ic_monkey.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-notnight-mdpi_ic_server.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-notnight-mdpi\\ic_server.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-mdpi_ic_server.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-mdpi\\ic_server.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-night_ic_baseline_vpn_key_24.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-night\\ic_baseline_vpn_key_24.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout-land_activity_single_chat.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout-land\\activity_single_chat.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xxhdpi_ic_settings_nigh.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xxhdpi\\ic_settings_nigh.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxhdpi_ic_monkey.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxhdpi\\ic_monkey.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-hdpi_ic_nightmode_day.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-hdpi\\ic_nightmode_day.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xhdpi_ic_server.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xhdpi\\ic_server.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-anydpi-v26_ic_nickname.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-anydpi-v26\\ic_nickname.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-anydpi_ic_settings.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-anydpi\\ic_settings.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-mdpi_ic_cool_avatar_foreground.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-mdpi\\ic_cool_avatar_foreground.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-anydpi_ic_server_night.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-anydpi\\ic_server_night.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxhdpi_ic_monkey_foreground.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxhdpi\\ic_monkey_foreground.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxhdpi_ic_cool_avatar.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxhdpi\\ic_cool_avatar.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xhdpi_ic_cool_avatar_round.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xhdpi\\ic_cool_avatar_round.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_activity_single_chat.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\activity_single_chat.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_activity_single_chat.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\activity_single_chat.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-night-mdpi_ic_settings.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-night-mdpi\\ic_settings.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xxhdpi_ic_nightmode_day.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xxhdpi\\ic_nightmode_day.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable_ic_baseline_vpn_key_24.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable\\ic_baseline_vpn_key_24.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\menu_menu_scrolling.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\menu\\menu_scrolling.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout-land_activity_single_chat.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout-land\\activity_single_chat.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xhdpi_ic_nightmode_day.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xhdpi\\ic_nightmode_day.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxxhdpi_ic_monkey.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxxhdpi\\ic_monkey.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-hdpi_ic_settings_nigh.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-hdpi\\ic_settings_nigh.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_activity_chat_screen.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\activity_chat_screen.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xhdpi_ic_settings.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xhdpi\\ic_settings.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxhdpi_ic_cool_avatar_foreground.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxhdpi\\ic_cool_avatar_foreground.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-notnight_ic_baseline_vpn_key_24.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-notnight\\ic_baseline_vpn_key_24.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xhdpi_ic_settings.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xhdpi\\ic_settings.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\xml\\backup_rules.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable_ic_baseline_person_24.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable\\ic_baseline_person_24.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxxhdpi_ic_cool_avatar_round.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxxhdpi\\ic_cool_avatar_round.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xhdpi_ic_server.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xhdpi\\ic_server.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_contactslist_layout.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\contactslist_layout.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_activity_register.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\activity_register.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable_ic_baseline_person_24_night.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable\\ic_baseline_person_24_night.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable_ic_baseline_vpn_key_24_night.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable\\ic_baseline_vpn_key_24_night.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-anydpi-v26_ic_nickname.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-anydpi-v26\\ic_nickname.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxxhdpi_ic_monkey_foreground.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxxhdpi\\ic_monkey_foreground.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-anydpi_ic_nightmode_day.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-anydpi\\ic_nightmode_day.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-mdpi_ic_monkey_foreground.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-mdpi\\ic_monkey_foreground.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable_chatlogo.jpg.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable\\chatlogo.jpg"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxhdpi_ic_monkey.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxhdpi\\ic_monkey.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-mdpi_ic_monkey_round.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-mdpi\\ic_monkey_round.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-hdpi_ic_monkey_round.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-hdpi\\ic_monkey_round.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable_ic_baseline_vpn_key_24.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable\\ic_baseline_vpn_key_24.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout-land_activity_chat_screen.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout-land\\activity_chat_screen.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_chat_fragment.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\chat_fragment.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-notnight-mdpi_ic_settings.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-notnight-mdpi\\ic_settings.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-mdpi_ic_cool_avatar_round.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-mdpi\\ic_cool_avatar_round.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-mdpi_ic_settings.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-mdpi\\ic_settings.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-anydpi-v26_ic_nickname_round.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-anydpi-v26\\ic_nickname_round.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-mdpi_ic_cool_avatar_round.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-mdpi\\ic_cool_avatar_round.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxxhdpi_ic_monkey_foreground.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxxhdpi\\ic_monkey_foreground.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-hdpi_ic_cool_avatar_foreground.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-hdpi\\ic_cool_avatar_foreground.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout-land_contact_layout.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout-land\\contact_layout.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-mdpi_ic_nightmode_day.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-mdpi\\ic_nightmode_day.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxxhdpi_ic_monkey_round.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxxhdpi\\ic_monkey_round.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xhdpi_ic_monkey_round.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xhdpi\\ic_monkey_round.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-anydpi_ic_settings_nigh.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-anydpi\\ic_settings_nigh.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable\\ic_launcher_background.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xhdpi_ic_monkey.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xhdpi\\ic_monkey.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_left_message_layout.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\left_message_layout.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xhdpi_ic_cool_avatar.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xhdpi\\ic_cool_avatar.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-mdpi_ic_monkey_foreground.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-mdpi\\ic_monkey_foreground.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable_ic_baseline_person_24_night.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable\\ic_baseline_person_24_night.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\xml_root_preferences.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\xml\\root_preferences.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-hdpi_ic_cool_avatar.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-hdpi\\ic_cool_avatar.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable_umbre.jpg.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable\\umbre.jpg"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable_chatlogo.jpg.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable\\chatlogo.jpg"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xxhdpi_ic_server_night.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xxhdpi\\ic_server_night.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-night_ic_baseline_person_24.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-night\\ic_baseline_person_24.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-mdpi_ic_cool_avatar_foreground.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-mdpi\\ic_cool_avatar_foreground.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-notnight_ic_baseline_vpn_key_24.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-notnight\\ic_baseline_vpn_key_24.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-hdpi_ic_settings.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-hdpi\\ic_settings.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xhdpi_ic_server_night.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xhdpi\\ic_server_night.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-notnight-mdpi_ic_server.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-notnight-mdpi\\ic_server.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxxhdpi_ic_cool_avatar_round.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxxhdpi\\ic_cool_avatar_round.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-notnight-mdpi_ic_settings.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-notnight-mdpi\\ic_settings.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-mdpi_ic_settings_nigh.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-mdpi\\ic_settings_nigh.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xhdpi_ic_settings_nigh.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xhdpi\\ic_settings_nigh.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_left_message_layout.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\left_message_layout.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xxhdpi_ic_settings.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xxhdpi\\ic_settings.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-mdpi_ic_logo.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-mdpi\\ic_logo.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xxhdpi_ic_settings_nigh.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xxhdpi\\ic_settings_nigh.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_chat_fragment.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\chat_fragment.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xhdpi_ic_cool_avatar.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xhdpi\\ic_cool_avatar.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-mdpi_ic_cool_avatar.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-mdpi\\ic_cool_avatar.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xhdpi_ic_server_night.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xhdpi\\ic_server_night.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-anydpi_ic_nightmode_night.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-anydpi\\ic_nightmode_night.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-hdpi_ic_monkey_round.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-hdpi\\ic_monkey_round.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxxhdpi_ic_logo.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxxhdpi\\ic_logo.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-anydpi_ic_server.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-anydpi\\ic_server.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_setserver_dialog.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\setserver_dialog.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-anydpi_ic_settings_nigh.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-anydpi\\ic_settings_nigh.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-night-mdpi_ic_server.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-night-mdpi\\ic_server.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-hdpi_ic_nightmode_night.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-hdpi\\ic_nightmode_night.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-anydpi-v26_ic_nickname_round.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-anydpi-v26\\ic_nickname_round.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-night_ic_baseline_person_24.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-night\\ic_baseline_person_24.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xhdpi_ic_settings_nigh.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xhdpi\\ic_settings_nigh.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xhdpi_ic_cool_avatar_round.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xhdpi\\ic_cool_avatar_round.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xhdpi_ic_nightmode_night.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xhdpi\\ic_nightmode_night.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_setserver_dialog.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\setserver_dialog.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-anydpi_ic_nightmode_day.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-anydpi\\ic_nightmode_day.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xhdpi_ic_monkey.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xhdpi\\ic_monkey.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xxhdpi_ic_server_night.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xxhdpi\\ic_server_night.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_activity_chat_screen.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\activity_chat_screen.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-hdpi_ic_monkey.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-hdpi\\ic_monkey.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-hdpi_ic_nightmode_day.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-hdpi\\ic_nightmode_day.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-hdpi_ic_settings_nigh.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-hdpi\\ic_settings_nigh.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxhdpi_ic_cool_avatar_round.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxhdpi\\ic_cool_avatar_round.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xxhdpi_ic_nightmode_day.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xxhdpi\\ic_nightmode_day.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout-land_activity_chat_screen.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout-land\\activity_chat_screen.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable_umbre.jpg.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable\\umbre.jpg"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xxhdpi_ic_server.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xxhdpi\\ic_server.png"
+        "merged": "com.example.char4you_android.app-merged_res-36:/layout_activity_single_chat.xml.flat",
+        "source": "com.example.char4you_android.app-main-38:/layout/activity_single_chat.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-hdpi_ic_logo.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-hdpi\\ic_logo.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxhdpi_ic_monkey_round.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxhdpi\\ic_monkey_round.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable_ic_cool_avatar_background.xml.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable\\ic_cool_avatar_background.xml"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\xml_root_preferences.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\xml\\root_preferences.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-hdpi_ic_server.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-hdpi\\ic_server.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-hdpi_ic_server.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-hdpi\\ic_server.png"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxhdpi_ic_cool_avatar_foreground.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxhdpi\\ic_cool_avatar_foreground.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\menu_menu_scrolling.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\menu\\menu_scrolling.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\drawable-xxhdpi_ic_nightmode_night.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\drawable-xxhdpi\\ic_nightmode_night.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_contact_layout.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\contact_layout.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xhdpi_ic_cool_avatar_foreground.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xhdpi\\ic_cool_avatar_foreground.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\layout_contactslist_layout.xml.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\layout\\contactslist_layout.xml"
     },
     {
-        "merged": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xhdpi_ic_monkey_foreground.png.flat",
-        "source": "C:\\Users\\Oriel\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xhdpi\\ic_monkey_foreground.png"
+        "merged": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-merged_res-36:\\mipmap-xxxhdpi_ic_cool_avatar_foreground.png.flat",
+        "source": "C:\\Users\\amit.cohen\\.gradle\\daemon\\7.3.3\\com.example.char4you_android.app-main-38:\\mipmap-xxxhdpi\\ic_cool_avatar_foreground.png"
     }
 ]
