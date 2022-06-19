@@ -40,7 +40,7 @@ public class SettingActivity extends AppCompatActivity {
         switchBtn.setOnCheckedChangeListener((buttonView, isNightModeOn) -> {
 
             if (isNightModeOn) {
-                editor.putInt("nightMode",0).apply();
+                editor.putInt("nightMode",2).apply();
             } else {
                 editor.putInt("nightMode",1).apply();
             }

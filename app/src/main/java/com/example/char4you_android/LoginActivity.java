@@ -82,84 +82,84 @@ public class LoginActivity extends AppCompatActivity {
         }
     }
 
-        @RequiresApi(api = Build.VERSION_CODES.Q)
-        @Override
-        protected void onCreate(Bundle savedInstanceState) {
-            super.onCreate(savedInstanceState);
-            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
-            preferences.registerOnSharedPreferenceChangeListener(listener);
-            if(firstTime){
-                firstTime = false;
-                listener.onSharedPreferenceChanged(preferences,"nightMode");
+    @RequiresApi(api = Build.VERSION_CODES.Q)
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        preferences.registerOnSharedPreferenceChangeListener(listener);
+        if(firstTime){
+            firstTime = false;
+            listener.onSharedPreferenceChanged(preferences,"nightMode");
+        }
+        setContentView(R.layout.activity_login);
+        setTheme(getTheme());
+        ImageView imgFavorite = (ImageView) findViewById(R.id.settings_button);
+        imgFavorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, SettingActivity.class));
             }
-            setTheme(getTheme());
-            Resources.Theme theme = getTheme();
-            setContentView(R.layout.activity_login);
-            ImageView imgFavorite = (ImageView) findViewById(R.id.settings_button);
-            imgFavorite.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    startActivity(new Intent(LoginActivity.this, SettingActivity.class));
-                }
-            });
-            TextView username = (TextView) findViewById(R.id.username);
-            TextView password = (TextView) findViewById(R.id.password);
+        });
+        TextView username = (TextView) findViewById(R.id.username);
+        TextView password = (TextView) findViewById(R.id.password);
 
-            MaterialButton loginbtn = (MaterialButton) findViewById(R.id.loginbtn);
-            MaterialButton registerBtn = (MaterialButton) findViewById(R.id.register);
+        MaterialButton loginbtn = (MaterialButton) findViewById(R.id.loginbtn);
+        MaterialButton registerBtn = (MaterialButton) findViewById(R.id.register);
 
-            loginbtn.setOnClickListener(new View.OnClickListener() {
-                                            @Override
-                                            public void onClick(View v) {
-                                                if (username.getText().toString().length() == 0 || password.getText().toString().length() < 6) {
-                                                    Toast.makeText(LoginActivity.this, "Username or password are not valid", Toast.LENGTH_LONG).show();
-                                                } else {
-                                                    try {
-                                                        JSONObject result = new LoginTask().execute(username.getText().toString(), password.getText().toString()).get();
-                                                        if (result == null) {
-                                                            Toast.makeText(LoginActivity.this, "Error occurred", Toast.LENGTH_LONG).show();
-                                                            return;
-                                                        } else if (result.getBoolean("success")) {
-                                                            Log.i("H", "Logged in");
-                                                            String token = result.getString("token");
-                                                            User user = new User(username.getText().toString(),username.getText().toString(),token);
-                                                            startActivity(new Intent(LoginActivity.this,ChatScreenActivity.class).putExtra("user",user));
-                                                            //move to chat activity with the user
-                                                        } else {
-                                                            Log.i("H", "Not");
-                                                            Toast.makeText(LoginActivity.this, result.getString("message"), Toast.LENGTH_LONG).show();
-                                                        }
-                                                    } catch (InterruptedException e) {
-                                                        e.printStackTrace();
-                                                    } catch (ExecutionException e) {
-                                                        e.printStackTrace();
-                                                    } catch (JSONException e) {
-                                                        e.printStackTrace();
+        loginbtn.setOnClickListener(new View.OnClickListener() {
+                                        @Override
+                                        public void onClick(View v) {
+                                            if (username.getText().toString().length() == 0 || password.getText().toString().length() < 6) {
+                                                Toast.makeText(LoginActivity.this, "Username or password are not valid", Toast.LENGTH_LONG).show();
+                                            } else {
+                                                try {
+                                                    JSONObject result = new LoginTask().execute(username.getText().toString(), password.getText().toString()).get();
+                                                    if (result == null) {
+                                                        Toast.makeText(LoginActivity.this, "Error occurred", Toast.LENGTH_LONG).show();
+                                                        return;
+                                                    } else if (result.getBoolean("success")) {
+                                                        Log.i("H", "Logged in");
+                                                        String token = result.getString("token");
+                                                        User user = new User(username.getText().toString(),username.getText().toString(),token);
+                                                        startActivity(new Intent(LoginActivity.this,ChatScreenActivity.class).putExtra("user",user));
+                                                        //move to chat activity with the user
+                                                    } else {
+                                                        Log.i("H", "Not");
+                                                        Toast.makeText(LoginActivity.this, result.getString("message"), Toast.LENGTH_LONG).show();
                                                     }
-
+                                                } catch (InterruptedException e) {
+                                                    e.printStackTrace();
+                                                } catch (ExecutionException e) {
+                                                    e.printStackTrace();
+                                                } catch (JSONException e) {
+                                                    e.printStackTrace();
                                                 }
+
                                             }
                                         }
-            );
+                                    }
+        );
 
-            registerBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
-                }
-            });
+        registerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+            }
+        });
 
 
-        }
+    }
 
     private SharedPreferences.OnSharedPreferenceChangeListener listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
         @Override
         public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
             if(key=="nightMode"){
+                int a = sharedPreferences.getInt("nightMode",1);
                 AppCompatDelegate.setDefaultNightMode(sharedPreferences.getInt("nightMode",1));
             }
         }
     };
 
 
-    }
+}
