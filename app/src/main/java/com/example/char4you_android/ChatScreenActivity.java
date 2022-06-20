@@ -62,6 +62,8 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
         final ContactListAdapter adapter = new ContactListAdapter(this, this);
         listContacts.setAdapter(adapter);
         LinearLayoutManager manager = new LinearLayoutManager(this);
+        manager.setReverseLayout(true);
+        manager.setStackFromEnd(true);
         listContacts.setLayoutManager(manager);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         String server = preferences.getString("server", "http://10.0.2.2:7019");
