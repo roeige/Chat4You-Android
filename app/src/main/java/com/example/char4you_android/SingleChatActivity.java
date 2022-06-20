@@ -66,6 +66,7 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
         messageViewModel.get().observe(this, messages -> {
 
             if (messages.size() > 0) adapter.setMessages(messages);
+            listMessages.scrollToPosition(messages.size() - 1);
             // messageViewModel.update();
             swipeRefreshLayout.setRefreshing(false);
         });
