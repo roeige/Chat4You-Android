@@ -19,10 +19,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.char4you_android.adapters.MessageListAdapter;
+import com.example.char4you_android.api.ContactsAPI;
 import com.example.char4you_android.api.MessageAPI;
 import com.example.char4you_android.entities.Contact;
 import com.example.char4you_android.entities.Message;
 import com.example.char4you_android.entities.User;
+import com.example.char4you_android.repositories.ContactsRepository;
+import com.example.char4you_android.viewmodels.ContactsViewModel;
 import com.example.char4you_android.viewmodels.MessageViewModel;
 
 import java.io.Serializable;
@@ -31,6 +34,7 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
     public static Contact currentContact;
     public static User user;
     public MessageViewModel messageViewModel;
+    ContactsRepository contactsRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +63,7 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
         listMessages.setLayoutManager(manager);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         String server = preferences.getString("server", "http://10.0.2.2:7019");
+        contactsRepository = new ContactsRepository(getBaseContext(),new ContactsAPI(user.getToken(),server),user.getUsername());
         MessageAPI messageAPI = new MessageAPI(user.getToken(), server);
         messageViewModel = new MessageViewModel(this.getApplicationContext(),
                 messageAPI, user.getUsername(), currentContact.getId());
@@ -94,6 +99,7 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
         @Override
         public void onReceive(Context context, Intent intent) {
             String username = intent.getStringExtra("username");
+            contactsRepository.refresh();
             if (intent.getStringExtra("username").equals(currentContact.getId())) {
                 messageViewModel.refresh();
             }

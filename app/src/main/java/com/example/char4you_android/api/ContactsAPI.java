@@ -12,6 +12,7 @@ import com.example.char4you_android.entities.Contact;
 import com.example.char4you_android.entities.Invite;
 import com.example.char4you_android.repositories.ContactsRepository;
 
+import java.io.Serializable;
 import java.util.List;
 
 import retrofit2.Call;
@@ -20,7 +21,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ContactsAPI {
+public class ContactsAPI implements Serializable {
     //    private MutableLiveData<List<Post>> postListData;
 //
     Retrofit retrofit;

@@ -11,10 +11,11 @@ import com.example.char4you_android.dao.ContactsDao;
 import com.example.char4you_android.entities.Contact;
 import com.example.char4you_android.entities.Invite;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ContactsRepository {
+public class ContactsRepository implements Serializable {
     private final ContactsDao dao;
     private final ContactsListData contactsListData;
     private final ContactsAPI contactsAPI;
@@ -45,7 +46,7 @@ public class ContactsRepository {
     }
 
 
-    class ContactsListData extends MutableLiveData<List<Contact>> {
+    class ContactsListData extends MutableLiveData<List<Contact>> implements Serializable{
         public ContactsListData() {
             super();
             setValue(new LinkedList<Contact>());
