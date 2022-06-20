@@ -85,6 +85,12 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
         });
 
     }
+    
+       @Override
+    public void onResume(){
+        super.onResume();
+        cViewModel.refresh();
+    }
 
     @Override
     public void onContactClick(int positon) {
