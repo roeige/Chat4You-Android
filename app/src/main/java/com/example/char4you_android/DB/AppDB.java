@@ -8,7 +8,6 @@ import androidx.room.RoomDatabase;
 
 import com.example.char4you_android.dao.ContactsDao;
 import com.example.char4you_android.dao.MessageDao;
-import com.example.char4you_android.dao.SettingsDao;
 import com.example.char4you_android.entities.Contact;
 import com.example.char4you_android.entities.Message;
 import com.example.char4you_android.entities.Settings;
@@ -29,7 +28,6 @@ public abstract class AppDB extends RoomDatabase implements Serializable {
 
     public abstract MessageDao messageDao();
 
-    public abstract SettingsDao settingsDao();
 
     public abstract ContactsDao contactsDao();
 

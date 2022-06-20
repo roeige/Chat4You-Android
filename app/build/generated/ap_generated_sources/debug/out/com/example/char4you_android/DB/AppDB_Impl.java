@@ -21,8 +21,6 @@ import com.example.char4you_android.dao.ContactsDao;
 import com.example.char4you_android.dao.ContactsDao_Impl;
 import com.example.char4you_android.dao.MessageDao;
 import com.example.char4you_android.dao.MessageDao_Impl;
-import com.example.char4you_android.dao.SettingsDao;
-import com.example.char4you_android.dao.SettingsDao_Impl;
 import java.lang.Class;
 import java.lang.Override;
 import java.lang.String;
@@ -37,8 +35,6 @@ import java.util.Set;
 @SuppressWarnings({"unchecked", "deprecation"})
 public final class AppDB_Impl extends AppDB {
   private volatile MessageDao _messageDao;
-
-  private volatile SettingsDao _settingsDao;
 
   private volatile ContactsDao _contactsDao;
 
@@ -181,7 +177,6 @@ public final class AppDB_Impl extends AppDB {
   protected Map<Class<?>, List<Class<?>>> getRequiredTypeConverters() {
     final HashMap<Class<?>, List<Class<?>>> _typeConvertersMap = new HashMap<Class<?>, List<Class<?>>>();
     _typeConvertersMap.put(MessageDao.class, MessageDao_Impl.getRequiredConverters());
-    _typeConvertersMap.put(SettingsDao.class, SettingsDao_Impl.getRequiredConverters());
     _typeConvertersMap.put(ContactsDao.class, ContactsDao_Impl.getRequiredConverters());
     return _typeConvertersMap;
   }
@@ -208,20 +203,6 @@ public final class AppDB_Impl extends AppDB {
           _messageDao = new MessageDao_Impl(this);
         }
         return _messageDao;
-      }
-    }
-  }
-
-  @Override
-  public SettingsDao settingsDao() {
-    if (_settingsDao != null) {
-      return _settingsDao;
-    } else {
-      synchronized(this) {
-        if(_settingsDao == null) {
-          _settingsDao = new SettingsDao_Impl(this);
-        }
-        return _settingsDao;
       }
     }
   }

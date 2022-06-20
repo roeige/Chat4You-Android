@@ -19,7 +19,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.example.char4you_android.DB.AppDB;
 import com.example.char4you_android.adapters.ContactClickListener;
 import com.example.char4you_android.adapters.ContactListAdapter;
 import com.example.char4you_android.api.ContactsAPI;
@@ -35,7 +34,6 @@ import java.util.List;
 public class ChatScreenActivity extends AppCompatActivity implements Serializable, ContactClickListener {
 
     public static User user;
-    public static AppDB db;
     public static ContactsViewModel cViewModel;
     ImageView profilePicture;
 
@@ -71,7 +69,7 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
         cViewModel = contactViewModelFactory.getViewModel(this.getApplicationContext(), contactsAPI, user.getUsername());
         Button addNewContact = findViewById(R.id.btnAddNewContact);
         cViewModel.get().observe(this, contacts -> {
-            if (contacts.size() > 0) adapter.setContacts(contacts);
+            adapter.setContacts(contacts);
             swipeRefreshLayout.setRefreshing(false);
         });
         settingsBtn.setOnClickListener(v ->

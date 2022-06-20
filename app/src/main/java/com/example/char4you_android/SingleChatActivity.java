@@ -25,7 +25,6 @@ import com.example.char4you_android.entities.Contact;
 import com.example.char4you_android.entities.Message;
 import com.example.char4you_android.entities.User;
 import com.example.char4you_android.repositories.ContactsRepository;
-import com.example.char4you_android.viewmodels.ContactsViewModel;
 import com.example.char4you_android.viewmodels.MessageViewModel;
 
 import java.io.Serializable;
@@ -70,7 +69,7 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
         //swipeRefreshLayout.setOnRefreshListener(messageViewModel::reload);
         messageViewModel.get().observe(this, messages -> {
 
-            if (messages.size() > 0) adapter.setMessages(messages);
+            adapter.setMessages(messages);
             listMessages.scrollToPosition(messages.size() - 1);
             // messageViewModel.update();
             swipeRefreshLayout.setRefreshing(false);
