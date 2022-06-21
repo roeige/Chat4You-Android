@@ -7,18 +7,22 @@
 
 You need to install first:
 
-- Node.js and npm - https://nodejs.org/en/
+- Android-Studio - https://developer.android.com/studio
 - .NET - https://dotnet.microsoft.com/en-us/download
 - MariaDB - https://mariadb.org/download/
 
 
 ## Get the code
+Use those commands:
 
-אוריאל תשלים !!!!!!!
+```
+git clone https://github.com/roeige/Chat4You-Android.git
+cd Chat4You-Android
+```
 
-## Run
+## Run Server
 
-Please open the appsettings.json files in server-api/webAPI, and change the DB section username and password to those you declared in your mariaDB installation.
+Please open the appsettings.json files in server/webAPI, and change the DB section username and password to those you declared in your mariaDB installation.
 
 It is recommended for you to delete the Repository/Migrations folder, and type those commands on the NuGet CLI:
 
@@ -27,18 +31,12 @@ add-migration init
 database-update
 ```
 
-run these commands:
-
+you can start the server by this command: (make sure you are in the main directory - ./Chat4You-Android
 ```
-cd client-chat
-npm install
-cd ..
-npm install
+dotnet run --project server/webAPI
 ```
 
-it will install the dependencies in node_moudles
-
-## opreate the Android application
+## Run Android Client
 
 After the server is up, you can run the Android studio code and start to chat.
 
