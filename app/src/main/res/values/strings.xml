@@ -28,8 +28,8 @@
     <string name="settings">Settings</string>
     <string name="enable_darkmode">Enable DarkMode</string>
     <string name="default_server">Default Server</string>
-    <string name="set_server">http://10.0.2.2:7019/</string>
-    <string name="BaseUrl">http://10.0.2.2:7019/api</string>
+    <string name="set_server">10.0.2.2:7019/</string>
+    <string name="BaseUrl">10.0.2.2:7019/api</string>
     <string name="nickname">Nickname</string>
     <string name="server_address">Server Address</string>
     <string name="registerTitle">Register</string>
