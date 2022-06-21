@@ -31,7 +31,7 @@ public class ContactsAPI implements Serializable {
     private String serverUrl;
 
     public ContactsAPI(String Ctoken,String server) {
-        if(server.startsWith("localhost")) server = "10.0.2.2:7019";
+        if(server.startsWith("localhost")) server = server.replace("localhost","10.0.2.2");
         serverUrl = "http://"+server+"/api/";
         token = Ctoken;
         retrofit = new Retrofit.Builder()
