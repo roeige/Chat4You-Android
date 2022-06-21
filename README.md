@@ -1,8 +1,5 @@
 # Chat4You-Android
 
-## How to operate the server
-
-
 ## Prerequisites
 
 You need to install first:
