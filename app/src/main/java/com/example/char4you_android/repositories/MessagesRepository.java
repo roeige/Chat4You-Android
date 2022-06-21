@@ -38,13 +38,12 @@ public class MessagesRepository {
     }
 
     public void add(String toId, @NonNull Message message) {
-        // we first want to check if transfer succeeded. if so we activate post action.
-        Transfer transfer = new Transfer(fromId, toId, message.getContent());
-        messagesAPI.transfer(transfer, message, this);
+        messagesAPI.post(toId, message, this);
     }
 
-    public void afterTransfer(Transfer transfer, Message message) {
-        messagesAPI.post(transfer.getTo(), message, this);
+    public void afterPost(String toId, Message message) {
+        Transfer transfer = new Transfer(fromId, toId, message.getContent());
+        messagesAPI.transfer(transfer, message, this);
     }
 
     /**

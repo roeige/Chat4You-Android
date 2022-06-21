@@ -54,7 +54,8 @@ public void transfer(Transfer transfer, Message message, MessagesRepository repo
             @Override
             public void onResponse(Call<Void> call, Response<Void> response) {
                 Log.i("success", "success transfer action");
-                repository.afterTransfer(transfer,message);
+                repository.postHandle(message);
+
             }
 
             @Override
@@ -73,7 +74,7 @@ public void transfer(Transfer transfer, Message message, MessagesRepository repo
             @Override
             public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
                 Log.i("success", "success post message");
-                repository.postHandle(message);
+                repository.afterPost(id,message);
             }
 
             @Override
