@@ -17,7 +17,7 @@ git clone https://github.com/roeige/Chat4You-Android.git
 cd Chat4You-Android
 ```
 
-## Run Server
+## Run the Server
 
 Please open the appsettings.json files in server/webAPI, and change the DB section username and password to those you declared in your mariaDB installation.
 
