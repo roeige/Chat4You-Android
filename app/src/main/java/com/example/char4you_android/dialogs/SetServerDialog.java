@@ -38,7 +38,7 @@ public class SetServerDialog extends Dialog implements
         set = (Button) findViewById(R.id.setServerBtn);
         nextServer = (EditText) findViewById(R.id.setServerAddress);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getContext());
-        nextServer.setHint(preferences.getString("server","http://10.0.2.2:7019"));
+        nextServer.setHint(preferences.getString("server","10.0.2.2:7019"));
         set.setOnClickListener(this);
     }
 

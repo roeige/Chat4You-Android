@@ -47,7 +47,7 @@ public class SettingActivity extends AppCompatActivity {
         });
         SetServerDialog cdd = new SetServerDialog(SettingActivity.this);
         TextView serverDef = findViewById(R.id.settingsServerAddress);
-        serverDef.setText(preferences.getString("server","http://10.0.2.2:7019"));
+        serverDef.setText(preferences.getString("server","10.0.2.2:7019"));
         serverDef.setOnClickListener(v -> {
             cdd.show();
             cdd.setDialogResult(new SetServerDialog.OnMyDialogResult() {

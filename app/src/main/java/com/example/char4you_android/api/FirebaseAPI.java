@@ -26,6 +26,8 @@ public class FirebaseAPI {
 
     public FirebaseAPI(String Ctoken,String server) {
         token = Ctoken;
+        if(server.startsWith("localhost")) server = "10.0.2.2:7019";
+        server = "http://"+server;
         retrofit = new Retrofit.Builder()
                 .baseUrl(server+"/")
                 .addConverterFactory(GsonConverterFactory.create())

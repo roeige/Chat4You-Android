@@ -40,7 +40,7 @@ public class AddContactActivity extends AppCompatActivity {
 //            contactsViewModel = (ContactsViewModel) i.getSerializableExtra("contactsViewModel");
 //        }
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        String server = preferences.getString("server","http://10.0.2.2:7019");
+        String server = preferences.getString("server","10.0.2.2:7019");
         ContactsAPI contactsAPI = new ContactsAPI(user.getToken(),server);
         contactsViewModel = contactViewModelFactory.getViewModel(this.getApplicationContext(), contactsAPI, user.getUsername());
         ImageView imgFavorite = (ImageView) findViewById(R.id.settings_button);

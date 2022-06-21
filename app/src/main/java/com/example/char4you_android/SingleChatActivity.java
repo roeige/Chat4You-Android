@@ -61,7 +61,7 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
         manager.setStackFromEnd(true);
         listMessages.setLayoutManager(manager);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        String server = preferences.getString("server", "http://10.0.2.2:7019");
+        String server = preferences.getString("server", "10.0.2.2:7019");
         contactsRepository = new ContactsRepository(getBaseContext(),new ContactsAPI(user.getToken(),server),user.getUsername());
         MessageAPI messageAPI = new MessageAPI(user.getToken(), server);
         messageViewModel = new MessageViewModel(this.getApplicationContext(),

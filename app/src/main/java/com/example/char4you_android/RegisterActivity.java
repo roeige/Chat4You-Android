@@ -61,8 +61,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                 RequestBody body = RequestBody.create(JSON, json.toString());
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-                String server = preferences.getString("server","http://10.0.2.2:7019");
-                Request request = new Request.Builder().url(server+"/api/register").post(body).build();
+                String server = preferences.getString("server","10.0.2.2:7019");
+                Request request = new Request.Builder().url("http://"+server+"/api/register").post(body).build();
                 Response response = client.newCall(request).execute();
                 List<String> Cookielist = response.headers().values("Set-Cookie");
                 String token = "";
