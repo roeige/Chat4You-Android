@@ -43,6 +43,7 @@ public class ContactsRepository implements Serializable {
     }
 
     public void afterInvite(Contact contact) {
+        contact.setOwnerId(userId);
         contactsAPI.post(contact, this);
     }
 
