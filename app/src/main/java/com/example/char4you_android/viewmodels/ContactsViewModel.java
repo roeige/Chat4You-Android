@@ -17,8 +17,8 @@ public class ContactsViewModel extends ViewModel implements Serializable {
     private final ContactsRepository repository;
     private final String userId;
 
-    public ContactsViewModel(Context context, ContactsAPI api, String userId) {
-        this.repository = new ContactsRepository(context, api, userId);
+    public ContactsViewModel(Context context, ContactsAPI api, String userId,String server) {
+        this.repository = new ContactsRepository(context, api, userId,server);
         this.Contacts = this.repository.getAll();
         this.userId = userId;
     }
@@ -35,8 +35,8 @@ public class ContactsViewModel extends ViewModel implements Serializable {
         return Contacts;
     }
 
-    public void add(Contact contact) {
-        this.repository.add(contact);
+    public void add(Contact contact,String token) {
+        this.repository.add(contact,token);
     }
 
     public ContactsRepository getRepository() {

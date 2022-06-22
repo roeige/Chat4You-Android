@@ -66,7 +66,7 @@ public void transfer(Transfer transfer, Message message, MessagesRepository repo
         });
 
 }
-    public void post(String id, Message message,MessagesRepository repository) {
+    public void post(String id, Message message,MessagesRepository repository,String contactServer,String token) {
 //        final boolean[] success = {false};
         Call<Void> call = webServiceAPI.createMessage("Bearer " + token, id, message);
         call.enqueue(new Callback<Void>() {
@@ -74,7 +74,7 @@ public void transfer(Transfer transfer, Message message, MessagesRepository repo
             @Override
             public void onResponse(@NonNull Call<Void> call, @NonNull Response<Void> response) {
                 Log.i("success", "success post message");
-                repository.afterPost(id,message);
+                repository.afterPost(id,message,contactServer,token);
             }
 
             @Override

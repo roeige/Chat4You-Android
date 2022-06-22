@@ -66,7 +66,7 @@ public class ChatScreenActivity extends AppCompatActivity implements Serializabl
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         String server = preferences.getString("server", "10.0.2.2:7019");
         ContactsAPI contactsAPI = new ContactsAPI(user.getToken(), server);
-        cViewModel = contactViewModelFactory.getViewModel(this.getApplicationContext(), contactsAPI, user.getUsername());
+        cViewModel = contactViewModelFactory.getViewModel(this.getApplicationContext(), contactsAPI, user.getUsername(),server);
         Button addNewContact = findViewById(R.id.btnAddNewContact);
         cViewModel.get().observe(this, contacts -> {
             adapter.setContacts(contacts);

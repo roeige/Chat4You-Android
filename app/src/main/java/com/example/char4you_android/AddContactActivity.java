@@ -42,7 +42,7 @@ public class AddContactActivity extends AppCompatActivity {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         String server = preferences.getString("server","10.0.2.2:7019");
         ContactsAPI contactsAPI = new ContactsAPI(user.getToken(),server);
-        contactsViewModel = contactViewModelFactory.getViewModel(this.getApplicationContext(), contactsAPI, user.getUsername());
+        contactsViewModel = contactViewModelFactory.getViewModel(this.getApplicationContext(), contactsAPI, user.getUsername(),server);
         ImageView imgFavorite = (ImageView) findViewById(R.id.settings_button);
         imgFavorite.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,7 +69,7 @@ public class AddContactActivity extends AppCompatActivity {
             /**
              * NEED TO POST HERE with repository
              */
-            contactsViewModel.add(contact);
+            contactsViewModel.add(contact,user.getToken());
             startActivity(new Intent(AddContactActivity.this, ChatScreenActivity.class).putExtra("user", user));
         });
     }

@@ -62,7 +62,7 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
         listMessages.setLayoutManager(manager);
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         String server = preferences.getString("server", "10.0.2.2:7019");
-        contactsRepository = new ContactsRepository(getBaseContext(),new ContactsAPI(user.getToken(),server),user.getUsername());
+        contactsRepository = new ContactsRepository(getBaseContext(),new ContactsAPI(user.getToken(),server),user.getUsername(),server);
         MessageAPI messageAPI = new MessageAPI(user.getToken(), server);
         messageViewModel = new MessageViewModel(this.getApplicationContext(),
                 messageAPI, user.getUsername(), currentContact.getId());
@@ -80,7 +80,7 @@ public class SingleChatActivity extends AppCompatActivity implements Serializabl
             Message message = new Message(0, msgBox.getText().toString()
                     , null, true, user.getUsername(), currentContact.getId());
 
-            messageViewModel.add(currentContact.getId(), message);
+            messageViewModel.add(currentContact.getId(), message,currentContact.getServer(),user.getToken());
             msgBox.setText(null);
 //            messageAPI.get(adapter, currentContact.getId());
             messageViewModel.get().observe(this, messages -> {

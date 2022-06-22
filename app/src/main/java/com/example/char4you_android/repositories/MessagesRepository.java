@@ -37,13 +37,13 @@ public class MessagesRepository {
 
     }
 
-    public void add(String toId, @NonNull Message message) {
-        messagesAPI.post(toId, message, this);
+    public void add(String toId, @NonNull Message message,String contactServer,String token) {
+        messagesAPI.post(toId, message, this,contactServer,token);
     }
 
-    public void afterPost(String toId, Message message) {
+    public void afterPost(String toId, Message message,String contactServer,String token) {
         Transfer transfer = new Transfer(fromId, toId, message.getContent());
-        messagesAPI.transfer(transfer, message, this);
+        new MessageAPI(token,contactServer).transfer(transfer, message, this);
     }
 
     /**

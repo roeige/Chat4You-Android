@@ -1,11 +1,14 @@
 package com.example.char4you_android.repositories;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
+import androidx.preference.PreferenceManager;
 
 import com.example.char4you_android.DB.AppDB;
+import com.example.char4you_android.RegisterActivity;
 import com.example.char4you_android.api.ContactsAPI;
 import com.example.char4you_android.dao.ContactsDao;
 import com.example.char4you_android.entities.Contact;
@@ -21,8 +24,9 @@ public class ContactsRepository implements Serializable {
     private final ContactsAPI contactsAPI;
     private final String userId;
     private final AppDB db;
+    private String currentServer;
 
-    public ContactsRepository(Context context, ContactsAPI api, String userId) {
+    public ContactsRepository(Context context, ContactsAPI api, String userId,String currentServer) {
         this.db = AppDB.getInstance(context);
         this.dao = db.contactsDao();
         this.contactsListData = new ContactsListData();
@@ -30,11 +34,12 @@ public class ContactsRepository implements Serializable {
         this.contactsAPI = api;
         this.contactsAPI.get(this);
         this.userId = userId;
+        this.currentServer = currentServer;
     }
 
-    public void add(Contact contact) {
+    public void add(Contact contact,String token) {
         //We want to check if invite first succeeded.
-        contactsAPI.inviteContact(new Invite(contact.getOwnerId(), contact.getId(), contact.getServer()), this, contact);
+        new ContactsAPI(token,contact.getServer()).inviteContact(new Invite(contact.getOwnerId(), contact.getId(), currentServer), this, contact);
     }
 
     public void afterInvite(Contact contact) {

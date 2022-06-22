@@ -29,8 +29,8 @@ public class MessageViewModel extends ViewModel {
         this.mRepository.refresh();
     }
 
-    public void add(String id, Message message) {
-        mRepository.add(id, message);
+    public void add(String id, Message message, String contactServer,String token) {
+        mRepository.add(id, message,contactServer,token);
     }
 
 
