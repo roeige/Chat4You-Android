@@ -67,9 +67,9 @@ namespace webAPI.Controllers
                 if (!fromExists)
                 {
                     messages_service.Create(transfer.to, message);
-                    
+                    contacts_service.UpdateContact(transfer.to, transfer.from, new Contact(null, null, null, null, transfer.content, DateTime.Now));
                 }
-                if (contacts_service.isContactExists(transfer.from, transfer.to))
+                else if (contacts_service.isContactExists(transfer.from, transfer.to))
                 {
                     contacts_service.UpdateContact(transfer.to, transfer.from, new Contact(null, null, null, null, transfer.content, DateTime.Now));
                 }

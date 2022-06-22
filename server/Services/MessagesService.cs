@@ -26,8 +26,6 @@ namespace Services
 
         public void Create(string contact_id,Message message)
         {
-            int contact_exists = _context.Contacts.Count(contact => contact.id == contact_id);
-            if (contact_exists == 0) throw new Exception("Contact does not exists");
             _context.Messages.Add(message);
             _context.SaveChanges();
         }
